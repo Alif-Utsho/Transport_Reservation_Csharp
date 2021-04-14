@@ -83,6 +83,7 @@ namespace Project
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.Size = new System.Drawing.Size(341, 44);
             this.passwordTB.TabIndex = 5;
+            this.passwordTB.UseSystemPasswordChar = true;
             // 
             // label2
             // 
