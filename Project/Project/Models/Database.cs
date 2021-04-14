@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace Project
+namespace Project.Models
 {
-    class Database
+    public class Database
     {
-        public static SqlConnection ConnectDB()
+        public Authentication Authentication { get; set; }
+        public Database()
         {
             string connectionString = @"Server=LAPTOP-LSE8ACET\SQL_SERVER;Database=TransportReservation;User Id=sa;Password=12345;";
             SqlConnection conn = new SqlConnection(connectionString);
-            return conn;
+
+            Authentication = new Authentication(conn);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Project.Controllers;
 
 namespace Project
 {
@@ -49,29 +50,20 @@ namespace Project
                 return;
             }
             
-            if (role.ToLower().Equals("admin") || role.ToLower().Equals("manager") || role.ToLower().Equals("salesman"))
+            if (role.ToLower().Equals("admin") || role.ToLower().Equals("managers") || role.ToLower().Equals("salesman"))
             {
-                SqlConnection conn = Database.ConnectDB();
-                conn.Open();
-
-                string query = string.Format("select Username, Password from {0} where Username='{1}' and Password='{2}'", role, username, password);
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                bool auth = false;
-                while (reader.Read()) auth = true;
-
-                if (auth)
+                var result = AuthenticateController.AuthController(username, password, role);
+                
+                if(result == null)
                 {
-                    this.Hide();
-                    new AdminDashboard().Show();
+                    MessageBox.Show("Invalid Credentials");
+                    return;
                 }
-                else MessageBox.Show("Invalid Credentials");
+                this.Hide();
+                new AdminDashboard().Show();
+                
             }
-            else
-            {
-                MessageBox.Show("Choose a Valid Role");
-            }
+            else MessageBox.Show("Choose a Valid Role");
             
         }
     }

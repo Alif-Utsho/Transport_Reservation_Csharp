@@ -109,7 +109,7 @@ namespace Project
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Items.AddRange(new object[] {
             "Admin",
-            "Manager",
+            "Managers",
             "Salesman"});
             this.comboBox.Location = new System.Drawing.Point(258, 271);
             this.comboBox.Name = "comboBox";
