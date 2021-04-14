@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project.Controllers;
+using Project.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,8 @@ namespace Project
         public AdminDashboard()
         {
             InitializeComponent();
+
+            reloadManager();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -157,6 +161,131 @@ namespace Project
             customersPanel.Show();
 
             homeLabel.Visible = true;
+        }
+
+        private void managerAddBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void managerAddBtn_Click_1(object sender, EventArgs e)
+        {
+            var manager = new
+            {
+                name = managerName.Text,
+                username = managerUsername.Text,
+                password = managerPassword.Text,
+            };
+
+            if (manager.name.Trim().Length == 0 || manager.username.Trim().Length == 0 || manager.password.Trim().Length == 0)
+            {
+                MessageBox.Show("Fill all the required field");
+                return;
+            }
+            bool result = ManagersController.AddManager(manager);
+            if (result) 
+            {
+                managerName.Text = "";
+                managerUsername.Text = "";
+                managerPassword.Text = "";
+
+                dynamic managerlist = ManagersController.getAllManager();
+                managerGridView.DataSource = managerlist;
+
+                MessageBox.Show("Manager Added");
+            }
+            else MessageBox.Show("Could not Add");
+
+        }
+
+        private void managerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+            reloadManager();
+
+        }
+
+        public void reloadManager()
+        {
+
+            managerName.Text = "";
+            managerUsername.Text = "";
+            managerPassword.Text = "";
+            managerSearchBox.Text = "";
+
+            dynamic managerlist = ManagersController.getAllManager();
+            managerGridView.DataSource = managerlist;
+        }
+
+        private void managerSearchBtn_Click(object sender, EventArgs e)
+        {
+            string username = managerSearchBox.Text;
+            var manager = ManagersController.getSingleManager(username);
+            if (manager == null)
+            {
+                MessageBox.Show("Manager not found");
+            }
+            else
+            {
+                managerName.Text = manager.Name;
+                managerUsername.Text = manager.Username;
+                managerPassword.Text = manager.Password;
+            }
+
+        }
+
+        private void managerUpdateBtn_Click(object sender, EventArgs e)
+        {
+            string username = managerSearchBox.Text;
+            var manager = ManagersController.getSingleManager(username);
+
+            if (manager == null)
+            {
+                MessageBox.Show("Search a manager first");
+                return;
+            }
+
+            var newManager = new
+            {
+                id = manager.Id,
+                name = managerName.Text,
+                username = managerUsername.Text,
+                password = managerPassword.Text
+            };
+
+            bool res = ManagersController.updateManager(newManager);
+            if (res)
+            {
+                reloadManager();
+
+                MessageBox.Show("Manager updated");
+            }
+            else MessageBox.Show("Could not updated");
+        }
+
+        private void managerDeleteBtn_Click(object sender, EventArgs e)
+        {
+            string username = managerSearchBox.Text;
+            var manager = ManagersController.getSingleManager(username);
+
+            if (manager == null)
+            {
+                MessageBox.Show("Search a manager first");
+                return;
+            }
+
+            bool res = ManagersController.deleteManager(manager.Id);
+            if (res)
+            {
+                reloadManager();
+
+                MessageBox.Show("Manager Deleted");
+            }
+            else MessageBox.Show("Could not Delete");
         }
     }
 }

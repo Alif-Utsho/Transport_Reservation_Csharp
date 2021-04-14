@@ -66,20 +66,6 @@ namespace Project
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.managersPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.updateButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.managerPassword = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.managerUsername = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.managerName = new System.Windows.Forms.TextBox();
-            this.manageName = new System.Windows.Forms.Label();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.searchBox = new System.Windows.Forms.TextBox();
             this.salesmanPanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -121,6 +107,8 @@ namespace Project
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.customersPanel = new System.Windows.Forms.Panel();
+            this.customerPhoneBox = new System.Windows.Forms.TextBox();
+            this.customerNameBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.customerGridView = new System.Windows.Forms.DataGridView();
             this.label26 = new System.Windows.Forms.Label();
@@ -128,16 +116,27 @@ namespace Project
             this.customerAddBtn = new System.Windows.Forms.Button();
             this.customerRemoveBtn = new System.Windows.Forms.Button();
             this.customerUpdateBtn = new System.Windows.Forms.Button();
-            this.customerPhoneBox = new System.Windows.Forms.TextBox();
-            this.customerNameBox = new System.Windows.Forms.TextBox();
+            this.managersPanel = new System.Windows.Forms.Panel();
+            this.managerAddBtn = new System.Windows.Forms.Button();
+            this.managerDeleteBtn = new System.Windows.Forms.Button();
+            this.managerUpdateBtn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.managerGridView = new System.Windows.Forms.DataGridView();
+            this.managerPassword = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.managerUsername = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.managerName = new System.Windows.Forms.TextBox();
+            this.manageName = new System.Windows.Forms.Label();
+            this.managerSearchBtn = new System.Windows.Forms.Button();
+            this.managerSearchBox = new System.Windows.Forms.TextBox();
+            this.reload = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.AdminPanel.SuspendLayout();
             this.ticketsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.managersPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.salesmanPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -146,6 +145,8 @@ namespace Project
             this.groupBox2.SuspendLayout();
             this.customersPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).BeginInit();
+            this.managersPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.managerGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -286,7 +287,6 @@ namespace Project
             // AdminPanel
             // 
             this.AdminPanel.Controls.Add(this.ticketsPanel);
-            this.AdminPanel.Controls.Add(this.managersPanel);
             this.AdminPanel.Controls.Add(this.salesmanPanel);
             this.AdminPanel.Controls.Add(this.welcomePanel);
             this.AdminPanel.Location = new System.Drawing.Point(115, 74);
@@ -598,158 +598,6 @@ namespace Project
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(205, 30);
             this.textBox9.TabIndex = 0;
-            // 
-            // managersPanel
-            // 
-            this.managersPanel.Controls.Add(this.button1);
-            this.managersPanel.Controls.Add(this.deleteButton);
-            this.managersPanel.Controls.Add(this.updateButton);
-            this.managersPanel.Controls.Add(this.label8);
-            this.managersPanel.Controls.Add(this.dataGridView1);
-            this.managersPanel.Controls.Add(this.managerPassword);
-            this.managersPanel.Controls.Add(this.label7);
-            this.managersPanel.Controls.Add(this.managerUsername);
-            this.managersPanel.Controls.Add(this.label6);
-            this.managersPanel.Controls.Add(this.managerName);
-            this.managersPanel.Controls.Add(this.manageName);
-            this.managersPanel.Controls.Add(this.searchButton);
-            this.managersPanel.Controls.Add(this.searchBox);
-            this.managersPanel.Font = new System.Drawing.Font("Fira Code Retina", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managersPanel.Location = new System.Drawing.Point(1, 0);
-            this.managersPanel.Name = "managersPanel";
-            this.managersPanel.Size = new System.Drawing.Size(883, 460);
-            this.managersPanel.TabIndex = 3;
-            this.managersPanel.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(149, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(297, 32);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Add Manager";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.OrangeRed;
-            this.deleteButton.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.Location = new System.Drawing.Point(149, 414);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(147, 32);
-            this.deleteButton.TabIndex = 11;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            // 
-            // updateButton
-            // 
-            this.updateButton.BackColor = System.Drawing.Color.Gold;
-            this.updateButton.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.Location = new System.Drawing.Point(299, 414);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(147, 32);
-            this.updateButton.TabIndex = 10;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Fira Code Retina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(476, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(394, 27);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Managers List";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(480, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 376);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // managerPassword
-            // 
-            this.managerPassword.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managerPassword.Location = new System.Drawing.Point(149, 303);
-            this.managerPassword.Name = "managerPassword";
-            this.managerPassword.Size = new System.Drawing.Size(297, 30);
-            this.managerPassword.TabIndex = 7;
-            this.managerPassword.UseSystemPasswordChar = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 306);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Password";
-            // 
-            // managerUsername
-            // 
-            this.managerUsername.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managerUsername.Location = new System.Drawing.Point(149, 241);
-            this.managerUsername.Name = "managerUsername";
-            this.managerUsername.Size = new System.Drawing.Size(297, 30);
-            this.managerUsername.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 244);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 24);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Username";
-            // 
-            // managerName
-            // 
-            this.managerName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managerName.Location = new System.Drawing.Point(149, 177);
-            this.managerName.Name = "managerName";
-            this.managerName.Size = new System.Drawing.Size(297, 30);
-            this.managerName.TabIndex = 3;
-            // 
-            // manageName
-            // 
-            this.manageName.AutoSize = true;
-            this.manageName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageName.Location = new System.Drawing.Point(20, 180);
-            this.manageName.Name = "manageName";
-            this.manageName.Size = new System.Drawing.Size(62, 24);
-            this.manageName.TabIndex = 2;
-            this.manageName.Text = "Name";
-            // 
-            // searchButton
-            // 
-            this.searchButton.BackColor = System.Drawing.Color.DarkCyan;
-            this.searchButton.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(299, 70);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(147, 32);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = false;
-            // 
-            // searchBox
-            // 
-            this.searchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBox.Location = new System.Drawing.Point(24, 25);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(422, 30);
-            this.searchBox.TabIndex = 0;
             // 
             // salesmanPanel
             // 
@@ -1199,6 +1047,22 @@ namespace Project
             this.customersPanel.TabIndex = 18;
             this.customersPanel.Visible = false;
             // 
+            // customerPhoneBox
+            // 
+            this.customerPhoneBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPhoneBox.Location = new System.Drawing.Point(126, 197);
+            this.customerPhoneBox.Name = "customerPhoneBox";
+            this.customerPhoneBox.Size = new System.Drawing.Size(297, 30);
+            this.customerPhoneBox.TabIndex = 30;
+            // 
+            // customerNameBox
+            // 
+            this.customerNameBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameBox.Location = new System.Drawing.Point(126, 150);
+            this.customerNameBox.Name = "customerNameBox";
+            this.customerNameBox.Size = new System.Drawing.Size(297, 30);
+            this.customerNameBox.TabIndex = 29;
+            // 
             // label25
             // 
             this.label25.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1272,21 +1136,177 @@ namespace Project
             this.customerUpdateBtn.Text = "Update";
             this.customerUpdateBtn.UseVisualStyleBackColor = false;
             // 
-            // customerPhoneBox
+            // managersPanel
             // 
-            this.customerPhoneBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPhoneBox.Location = new System.Drawing.Point(126, 197);
-            this.customerPhoneBox.Name = "customerPhoneBox";
-            this.customerPhoneBox.Size = new System.Drawing.Size(297, 30);
-            this.customerPhoneBox.TabIndex = 30;
+            this.managersPanel.Controls.Add(this.managerAddBtn);
+            this.managersPanel.Controls.Add(this.managerDeleteBtn);
+            this.managersPanel.Controls.Add(this.managerUpdateBtn);
+            this.managersPanel.Controls.Add(this.label8);
+            this.managersPanel.Controls.Add(this.managerGridView);
+            this.managersPanel.Controls.Add(this.managerPassword);
+            this.managersPanel.Controls.Add(this.label7);
+            this.managersPanel.Controls.Add(this.managerUsername);
+            this.managersPanel.Controls.Add(this.label6);
+            this.managersPanel.Controls.Add(this.managerName);
+            this.managersPanel.Controls.Add(this.manageName);
+            this.managersPanel.Controls.Add(this.managerSearchBtn);
+            this.managersPanel.Controls.Add(this.managerSearchBox);
+            this.managersPanel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managersPanel.Location = new System.Drawing.Point(116, 74);
+            this.managersPanel.Name = "managersPanel";
+            this.managersPanel.Size = new System.Drawing.Size(883, 460);
+            this.managersPanel.TabIndex = 19;
+            this.managersPanel.Visible = false;
             // 
-            // customerNameBox
+            // managerAddBtn
             // 
-            this.customerNameBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameBox.Location = new System.Drawing.Point(126, 150);
-            this.customerNameBox.Name = "customerNameBox";
-            this.customerNameBox.Size = new System.Drawing.Size(297, 30);
-            this.customerNameBox.TabIndex = 29;
+            this.managerAddBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.managerAddBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerAddBtn.Location = new System.Drawing.Point(149, 358);
+            this.managerAddBtn.Name = "managerAddBtn";
+            this.managerAddBtn.Size = new System.Drawing.Size(297, 32);
+            this.managerAddBtn.TabIndex = 12;
+            this.managerAddBtn.Text = "Add Manager";
+            this.managerAddBtn.UseVisualStyleBackColor = false;
+            this.managerAddBtn.Click += new System.EventHandler(this.managerAddBtn_Click_1);
+            // 
+            // managerDeleteBtn
+            // 
+            this.managerDeleteBtn.BackColor = System.Drawing.Color.OrangeRed;
+            this.managerDeleteBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerDeleteBtn.Location = new System.Drawing.Point(149, 414);
+            this.managerDeleteBtn.Name = "managerDeleteBtn";
+            this.managerDeleteBtn.Size = new System.Drawing.Size(147, 32);
+            this.managerDeleteBtn.TabIndex = 11;
+            this.managerDeleteBtn.Text = "Delete";
+            this.managerDeleteBtn.UseVisualStyleBackColor = false;
+            this.managerDeleteBtn.Click += new System.EventHandler(this.managerDeleteBtn_Click);
+            // 
+            // managerUpdateBtn
+            // 
+            this.managerUpdateBtn.BackColor = System.Drawing.Color.Gold;
+            this.managerUpdateBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerUpdateBtn.Location = new System.Drawing.Point(299, 414);
+            this.managerUpdateBtn.Name = "managerUpdateBtn";
+            this.managerUpdateBtn.Size = new System.Drawing.Size(147, 32);
+            this.managerUpdateBtn.TabIndex = 10;
+            this.managerUpdateBtn.Text = "Update";
+            this.managerUpdateBtn.UseVisualStyleBackColor = false;
+            this.managerUpdateBtn.Click += new System.EventHandler(this.managerUpdateBtn_Click);
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Fira Code Retina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(476, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(394, 27);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Managers List";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // managerGridView
+            // 
+            this.managerGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.managerGridView.AllowUserToAddRows = false;
+            this.managerGridView.AllowUserToDeleteRows = false;
+            this.managerGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.managerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.managerGridView.Enabled = false;
+            this.managerGridView.EnableHeadersVisualStyles = false;
+            this.managerGridView.Location = new System.Drawing.Point(480, 70);
+            this.managerGridView.Name = "managerGridView";
+            this.managerGridView.ReadOnly = true;
+            this.managerGridView.RowHeadersVisible = false;
+            this.managerGridView.RowHeadersWidth = 51;
+            this.managerGridView.RowTemplate.Height = 24;
+            this.managerGridView.Size = new System.Drawing.Size(390, 376);
+            this.managerGridView.TabIndex = 8;
+            this.managerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.managerGridView_CellContentClick);
+            // 
+            // managerPassword
+            // 
+            this.managerPassword.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerPassword.Location = new System.Drawing.Point(149, 303);
+            this.managerPassword.Name = "managerPassword";
+            this.managerPassword.Size = new System.Drawing.Size(297, 30);
+            this.managerPassword.TabIndex = 7;
+            this.managerPassword.UseSystemPasswordChar = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(20, 306);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 24);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Password";
+            // 
+            // managerUsername
+            // 
+            this.managerUsername.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerUsername.Location = new System.Drawing.Point(149, 241);
+            this.managerUsername.Name = "managerUsername";
+            this.managerUsername.Size = new System.Drawing.Size(297, 30);
+            this.managerUsername.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 24);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Username";
+            // 
+            // managerName
+            // 
+            this.managerName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerName.Location = new System.Drawing.Point(149, 177);
+            this.managerName.Name = "managerName";
+            this.managerName.Size = new System.Drawing.Size(297, 30);
+            this.managerName.TabIndex = 3;
+            // 
+            // manageName
+            // 
+            this.manageName.AutoSize = true;
+            this.manageName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageName.Location = new System.Drawing.Point(20, 180);
+            this.manageName.Name = "manageName";
+            this.manageName.Size = new System.Drawing.Size(62, 24);
+            this.manageName.TabIndex = 2;
+            this.manageName.Text = "Name";
+            // 
+            // managerSearchBtn
+            // 
+            this.managerSearchBtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.managerSearchBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerSearchBtn.Location = new System.Drawing.Point(299, 70);
+            this.managerSearchBtn.Name = "managerSearchBtn";
+            this.managerSearchBtn.Size = new System.Drawing.Size(147, 32);
+            this.managerSearchBtn.TabIndex = 1;
+            this.managerSearchBtn.Text = "Search";
+            this.managerSearchBtn.UseVisualStyleBackColor = false;
+            this.managerSearchBtn.Click += new System.EventHandler(this.managerSearchBtn_Click);
+            // 
+            // managerSearchBox
+            // 
+            this.managerSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerSearchBox.Location = new System.Drawing.Point(24, 25);
+            this.managerSearchBox.Name = "managerSearchBox";
+            this.managerSearchBox.Size = new System.Drawing.Size(422, 30);
+            this.managerSearchBox.TabIndex = 0;
+            // 
+            // reload
+            // 
+            this.reload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reload.Image = ((System.Drawing.Image)(resources.GetObject("reload.Image")));
+            this.reload.Location = new System.Drawing.Point(958, 545);
+            this.reload.Name = "reload";
+            this.reload.Size = new System.Drawing.Size(54, 46);
+            this.reload.TabIndex = 20;
+            this.reload.Click += new System.EventHandler(this.label28_Click);
             // 
             // AdminDashboard
             // 
@@ -1294,7 +1314,9 @@ namespace Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.DarkCyan;
-            this.ClientSize = new System.Drawing.Size(1008, 565);
+            this.ClientSize = new System.Drawing.Size(1008, 592);
+            this.Controls.Add(this.reload);
+            this.Controls.Add(this.managersPanel);
             this.Controls.Add(this.customersPanel);
             this.Controls.Add(this.busesPanel);
             this.Controls.Add(this.AdminPanel);
@@ -1313,9 +1335,6 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.managersPanel.ResumeLayout(false);
-            this.managersPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.salesmanPanel.ResumeLayout(false);
             this.salesmanPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -1328,6 +1347,9 @@ namespace Project
             this.customersPanel.ResumeLayout(false);
             this.customersPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).EndInit();
+            this.managersPanel.ResumeLayout(false);
+            this.managersPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.managerGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1343,21 +1365,7 @@ namespace Project
         private System.Windows.Forms.Label managerLabel;
         private System.Windows.Forms.Label salesmanLabel;
         private System.Windows.Forms.Label busesLabel;
-        private System.Windows.Forms.Panel managersPanel;
-        private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.TextBox managerName;
-        private System.Windows.Forms.Label manageName;
-        private System.Windows.Forms.TextBox managerUsername;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button updateButton;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox managerPassword;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label homeLabel;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -1434,5 +1442,20 @@ namespace Project
         private System.Windows.Forms.Button customerAddBtn;
         private System.Windows.Forms.Button customerRemoveBtn;
         private System.Windows.Forms.Button customerUpdateBtn;
+        private System.Windows.Forms.Panel managersPanel;
+        private System.Windows.Forms.Button managerAddBtn;
+        private System.Windows.Forms.Button managerDeleteBtn;
+        private System.Windows.Forms.Button managerUpdateBtn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView managerGridView;
+        private System.Windows.Forms.TextBox managerPassword;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox managerUsername;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox managerName;
+        private System.Windows.Forms.Label manageName;
+        private System.Windows.Forms.Button managerSearchBtn;
+        private System.Windows.Forms.TextBox managerSearchBox;
+        private System.Windows.Forms.Label reload;
     }
 }

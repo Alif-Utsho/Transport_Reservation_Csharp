@@ -47,8 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AuthenticateController.cs" />
+    <Compile Include="Controllers\ManagersController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\Authentication.cs" />
+    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\Managers.cs" />
     <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

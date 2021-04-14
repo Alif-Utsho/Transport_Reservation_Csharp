@@ -61,7 +61,6 @@ namespace Project
                 }
                 this.Hide();
                 new AdminDashboard().Show();
-                
             }
             else MessageBox.Show("Choose a Valid Role");
             
