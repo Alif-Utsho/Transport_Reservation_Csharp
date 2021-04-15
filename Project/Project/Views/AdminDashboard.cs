@@ -19,6 +19,7 @@ namespace Project
             InitializeComponent();
 
             reloadManager();
+            reloadSalesman();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -172,12 +173,12 @@ namespace Project
         {
             var manager = new
             {
-                name = managerName.Text,
-                username = managerUsername.Text,
-                password = managerPassword.Text,
+                name = managerName.Text.Trim(),
+                username = managerUsername.Text.Trim(),
+                password = managerPassword.Text.Trim(),
             };
 
-            if (manager.name.Trim().Length == 0 || manager.username.Trim().Length == 0 || manager.password.Trim().Length == 0)
+            if (manager.name.Length == 0 || manager.username.Length == 0 || manager.password.Length == 0)
             {
                 MessageBox.Show("Fill all the required field");
                 return;
@@ -185,13 +186,7 @@ namespace Project
             bool result = ManagersController.AddManager(manager);
             if (result) 
             {
-                managerName.Text = "";
-                managerUsername.Text = "";
-                managerPassword.Text = "";
-
-                dynamic managerlist = ManagersController.getAllManager();
-                managerGridView.DataSource = managerlist;
-
+                reloadManager();
                 MessageBox.Show("Manager Added");
             }
             else MessageBox.Show("Could not Add");
@@ -221,6 +216,8 @@ namespace Project
             managerGridView.DataSource = managerlist;
         }
 
+        
+
         private void managerSearchBtn_Click(object sender, EventArgs e)
         {
             string username = managerSearchBox.Text;
@@ -249,6 +246,7 @@ namespace Project
                 return;
             }
 
+
             var newManager = new
             {
                 id = manager.Id,
@@ -256,12 +254,16 @@ namespace Project
                 username = managerUsername.Text,
                 password = managerPassword.Text
             };
+            if(newManager.name.Length==0 || newManager.username.Length==0 || newManager.password.Length == 0)
+            {
+                MessageBox.Show("Fill all the required fields");
+                return;
+            }
 
             bool res = ManagersController.updateManager(newManager);
             if (res)
             {
                 reloadManager();
-
                 MessageBox.Show("Manager updated");
             }
             else MessageBox.Show("Could not updated");
@@ -284,6 +286,108 @@ namespace Project
                 reloadManager();
 
                 MessageBox.Show("Manager Deleted");
+            }
+            else MessageBox.Show("Could not Delete");
+        }
+
+        public void reloadSalesman()
+        {
+            salesmanName.Text = "";
+            salesmanUsername.Text = "";
+            salesmanPassword.Text = "";
+            salesmanSearchBox.Text = "";
+
+            dynamic salesmanlist = SalesmanController.getAllSalesman();
+            salesmanGridView.DataSource = salesmanlist;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Salesman Add
+            var salesman = new
+            {
+                name = salesmanName.Text.Trim(),
+                username = salesmanUsername.Text.Trim(),
+                password = salesmanPassword.Text.Trim()
+            };
+
+            if(salesman.name.Length==0 || salesman.username.Length==0 || salesman.password.Length == 0)
+            {
+                MessageBox.Show("Fill all the required field");
+                return;
+            }
+            bool res = SalesmanController.addSalesman(salesman);
+            if (res)
+            {
+                reloadSalesman();
+                MessageBox.Show("Salesman Added");
+            }
+            else MessageBox.Show("Could not be added");
+        }
+
+        private void salesmanSearchBtn_Click(object sender, EventArgs e)
+        {
+            string username = salesmanSearchBox.Text.Trim();
+            dynamic salesman = SalesmanController.searchSalesman(username);
+            if (salesman == null)
+            {
+                MessageBox.Show("Salesman not Found");
+                return;
+            }
+            salesmanName.Text = salesman.Name;
+            salesmanUsername.Text = salesman.Username;
+            salesmanPassword.Text = salesman.Password;
+        }
+
+        private void salesmanUpdateBtn_Click(object sender, EventArgs e)
+        {
+            string username = salesmanSearchBox.Text.Trim();
+            dynamic salesman = SalesmanController.searchSalesman(username);
+            if (salesman == null)
+            {
+                MessageBox.Show("Search a Salesman First");
+                return;
+            }
+            var newSalesman = new
+            {
+                id = salesman.Id,
+                name = salesmanName.Text.Trim(),
+                username = salesmanUsername.Text.Trim(),
+                password = salesmanPassword.Text.Trim()
+            };
+            if(newSalesman.name.Length==0 || newSalesman.username.Length==0 || newSalesman.password.Length == 0)
+            {
+                MessageBox.Show("Fill all the required fields");
+                return;
+            }
+            bool res = SalesmanController.updateSalesman(newSalesman);
+            if (res)
+            {
+                reloadSalesman();
+                MessageBox.Show("Salesman Updated");
+            }
+            else MessageBox.Show("Could not update Salesman");
+        }
+
+        private void salesmanDeleteBtn_Click(object sender, EventArgs e)
+        {
+            string username = salesmanSearchBox.Text.Trim();
+            dynamic salesman = SalesmanController.searchSalesman(username);
+            if (salesman == null)
+            {
+                MessageBox.Show("Search a Salesman First");
+                return;
+            }
+            else if (salesman.Name.Length == 0 || salesman.Username.Length == 0 || salesman.Password.Length == 0)
+            {
+                MessageBox.Show("Fill all the required fields");
+                return;
+            }
+            bool res = SalesmanController.deleteSalesman(salesman.Id);
+            if (res)
+            {
+                reloadSalesman();
+                MessageBox.Show("Salesman Deleted");
             }
             else MessageBox.Show("Could not Delete");
         }

@@ -40,8 +40,8 @@ namespace Project.Models
             {
                 manager = new Manager();
                 manager.Id = reader.GetInt32(reader.GetOrdinal("Id"));
-                manager.Name = reader.GetString(reader.GetOrdinal("Name"));
-                manager.Username = reader.GetString(reader.GetOrdinal("Username"));
+                manager.Name = reader.GetString(reader.GetOrdinal("Name")).Trim();
+                manager.Username = reader.GetString(reader.GetOrdinal("Username")).Trim();
                 manager.Password = "*****";
                 managerlist.Add(manager);
             }
@@ -60,9 +60,9 @@ namespace Project.Models
             {
                 manager = new Manager();
                 manager.Id = reader.GetInt32(reader.GetOrdinal("Id"));
-                manager.Name = reader.GetString(reader.GetOrdinal("Name"));
-                manager.Username = reader.GetString(reader.GetOrdinal("Username"));
-                manager.Password = reader.GetString(reader.GetOrdinal("Password"));
+                manager.Name = reader.GetString(reader.GetOrdinal("Name")).Trim();
+                manager.Username = reader.GetString(reader.GetOrdinal("Username")).Trim();
+                manager.Password = reader.GetString(reader.GetOrdinal("Password")).Trim();
             }
             conn.Close();
             return manager;

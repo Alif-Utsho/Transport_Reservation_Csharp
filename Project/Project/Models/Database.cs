@@ -11,6 +11,7 @@ namespace Project.Models
     {
         public Authentication Authentication { get; set; }
         public Managers Managers;
+        public Sellers Sellers;
         public Database()
         {
             string connectionString = @"Server=LAPTOP-LSE8ACET\SQL_SERVER;Database=TransportReservation;User Id=sa;Password=12345;";
@@ -18,6 +19,7 @@ namespace Project.Models
 
             Authentication = new Authentication(conn);
             Managers = new Managers(conn);
+            Sellers = new Sellers(conn);
         }
     }
 }
