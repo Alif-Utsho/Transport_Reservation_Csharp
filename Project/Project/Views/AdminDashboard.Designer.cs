@@ -41,31 +41,6 @@ namespace Project
             this.managerLabel = new System.Windows.Forms.Label();
             this.ticketsLabel = new System.Windows.Forms.Label();
             this.AdminPanel = new System.Windows.Forms.Panel();
-            this.ticketsPanel = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button13 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.journeyDate = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.welcomePanel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -131,12 +106,34 @@ namespace Project
             this.label14 = new System.Windows.Forms.Label();
             this.salesmanSearchBtn = new System.Windows.Forms.Button();
             this.salesmanSearchBox = new System.Windows.Forms.TextBox();
+            this.ticketsPanel = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.ticketSearchBtn = new System.Windows.Forms.Button();
+            this.coachBox = new System.Windows.Forms.ComboBox();
+            this.busType = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.journeyTime = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.journeyDate = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.ticketDest = new System.Windows.Forms.ComboBox();
+            this.ticketSource = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.ticketBookBtn = new System.Windows.Forms.Button();
+            this.ticketCancelBtn = new System.Windows.Forms.Button();
+            this.ticketUpdateBtn = new System.Windows.Forms.Button();
+            this.customerName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.ticketSearchBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.AdminPanel.SuspendLayout();
-            this.ticketsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.busesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
@@ -147,6 +144,9 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.managerGridView)).BeginInit();
             this.salesmanPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).BeginInit();
+            this.ticketsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.busType.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -286,317 +286,11 @@ namespace Project
             // 
             // AdminPanel
             // 
-            this.AdminPanel.Controls.Add(this.ticketsPanel);
             this.AdminPanel.Controls.Add(this.welcomePanel);
             this.AdminPanel.Location = new System.Drawing.Point(115, 74);
             this.AdminPanel.Name = "AdminPanel";
             this.AdminPanel.Size = new System.Drawing.Size(883, 461);
             this.AdminPanel.TabIndex = 2;
-            // 
-            // ticketsPanel
-            // 
-            this.ticketsPanel.Controls.Add(this.label23);
-            this.ticketsPanel.Controls.Add(this.dataGridView4);
-            this.ticketsPanel.Controls.Add(this.button13);
-            this.ticketsPanel.Controls.Add(this.comboBox4);
-            this.ticketsPanel.Controls.Add(this.groupBox1);
-            this.ticketsPanel.Controls.Add(this.label22);
-            this.ticketsPanel.Controls.Add(this.label21);
-            this.ticketsPanel.Controls.Add(this.comboBox3);
-            this.ticketsPanel.Controls.Add(this.label17);
-            this.ticketsPanel.Controls.Add(this.journeyDate);
-            this.ticketsPanel.Controls.Add(this.label16);
-            this.ticketsPanel.Controls.Add(this.comboBox2);
-            this.ticketsPanel.Controls.Add(this.comboBox1);
-            this.ticketsPanel.Controls.Add(this.label20);
-            this.ticketsPanel.Controls.Add(this.label19);
-            this.ticketsPanel.Controls.Add(this.label15);
-            this.ticketsPanel.Controls.Add(this.button10);
-            this.ticketsPanel.Controls.Add(this.button11);
-            this.ticketsPanel.Controls.Add(this.button12);
-            this.ticketsPanel.Controls.Add(this.textBox7);
-            this.ticketsPanel.Controls.Add(this.label18);
-            this.ticketsPanel.Controls.Add(this.textBox9);
-            this.ticketsPanel.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticketsPanel.Location = new System.Drawing.Point(1, 0);
-            this.ticketsPanel.Name = "ticketsPanel";
-            this.ticketsPanel.Size = new System.Drawing.Size(883, 460);
-            this.ticketsPanel.TabIndex = 16;
-            this.ticketsPanel.Visible = false;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(3, 21);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(397, 23);
-            this.label23.TabIndex = 28;
-            this.label23.Text = "Tickets List";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label23.Click += new System.EventHandler(this.label23_Click);
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 53);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(397, 404);
-            this.dataGridView4.TabIndex = 27;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.DarkCyan;
-            this.button13.Location = new System.Drawing.Point(790, 20);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(86, 29);
-            this.button13.TabIndex = 26;
-            this.button13.Text = "Search";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E"});
-            this.comboBox4.Location = new System.Drawing.Point(579, 245);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(297, 29);
-            this.comboBox4.TabIndex = 25;
-            this.comboBox4.Text = "Coach";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(579, 191);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(297, 35);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(150, 7);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(97, 25);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Non AC";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(22, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(53, 25);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "AC";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(412, 247);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(75, 24);
-            this.label22.TabIndex = 23;
-            this.label22.Text = "Coach";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(412, 203);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(114, 24);
-            this.label21.TabIndex = 22;
-            this.label21.Text = "Bus Type";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "07:00 AM",
-            "10:00 AM",
-            "12:00 PM",
-            "02:00 PM",
-            "05:00 PM",
-            "07:00 PM",
-            "10:00 PM"});
-            this.comboBox3.Location = new System.Drawing.Point(579, 332);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(297, 29);
-            this.comboBox3.TabIndex = 21;
-            this.comboBox3.Text = "Time";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(412, 338);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(166, 24);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "Journey Time";
-            // 
-            // journeyDate
-            // 
-            this.journeyDate.CustomFormat = "";
-            this.journeyDate.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.journeyDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.journeyDate.Location = new System.Drawing.Point(579, 289);
-            this.journeyDate.MinDate = new System.DateTime(2021, 4, 14, 3, 7, 45, 0);
-            this.journeyDate.Name = "journeyDate";
-            this.journeyDate.Size = new System.Drawing.Size(297, 28);
-            this.journeyDate.TabIndex = 19;
-            this.journeyDate.Value = new System.DateTime(2021, 4, 14, 3, 7, 45, 0);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(412, 294);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(166, 24);
-            this.label16.TabIndex = 18;
-            this.label16.Text = "Journey Date";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Dhaka",
-            "Chittagong",
-            "Rajshahi",
-            "Khulna",
-            "Barishal",
-            "Sylhet",
-            "Rangpur"});
-            this.comboBox2.Location = new System.Drawing.Point(579, 156);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(297, 29);
-            this.comboBox2.TabIndex = 17;
-            this.comboBox2.Text = "To";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Dhaka",
-            "Chittagong",
-            "Rajshahi",
-            "Khulna",
-            "Barishal",
-            "Sylhet",
-            "Rangpur"});
-            this.comboBox1.Location = new System.Drawing.Point(579, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(297, 29);
-            this.comboBox1.TabIndex = 16;
-            this.comboBox1.Text = "From";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(412, 161);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(153, 24);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "Destination";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(412, 115);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 24);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Source";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(412, 27);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 24);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Phone";
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button10.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(579, 375);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(297, 32);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "Book Ticket";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.OrangeRed;
-            this.button11.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(579, 422);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(147, 32);
-            this.button11.TabIndex = 11;
-            this.button11.Text = "Cancel";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.Gold;
-            this.button12.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(729, 422);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(147, 32);
-            this.button12.TabIndex = 10;
-            this.button12.Text = "Update";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(579, 68);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(297, 30);
-            this.textBox7.TabIndex = 3;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(412, 71);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 24);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Name";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(579, 21);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(205, 30);
-            this.textBox9.TabIndex = 0;
             // 
             // welcomePanel
             // 
@@ -1320,6 +1014,313 @@ namespace Project
             this.salesmanSearchBox.Size = new System.Drawing.Size(422, 30);
             this.salesmanSearchBox.TabIndex = 0;
             // 
+            // ticketsPanel
+            // 
+            this.ticketsPanel.Controls.Add(this.label23);
+            this.ticketsPanel.Controls.Add(this.dataGridView4);
+            this.ticketsPanel.Controls.Add(this.ticketSearchBtn);
+            this.ticketsPanel.Controls.Add(this.coachBox);
+            this.ticketsPanel.Controls.Add(this.busType);
+            this.ticketsPanel.Controls.Add(this.label22);
+            this.ticketsPanel.Controls.Add(this.label21);
+            this.ticketsPanel.Controls.Add(this.journeyTime);
+            this.ticketsPanel.Controls.Add(this.label17);
+            this.ticketsPanel.Controls.Add(this.journeyDate);
+            this.ticketsPanel.Controls.Add(this.label16);
+            this.ticketsPanel.Controls.Add(this.ticketDest);
+            this.ticketsPanel.Controls.Add(this.ticketSource);
+            this.ticketsPanel.Controls.Add(this.label20);
+            this.ticketsPanel.Controls.Add(this.label19);
+            this.ticketsPanel.Controls.Add(this.label15);
+            this.ticketsPanel.Controls.Add(this.ticketBookBtn);
+            this.ticketsPanel.Controls.Add(this.ticketCancelBtn);
+            this.ticketsPanel.Controls.Add(this.ticketUpdateBtn);
+            this.ticketsPanel.Controls.Add(this.customerName);
+            this.ticketsPanel.Controls.Add(this.label18);
+            this.ticketsPanel.Controls.Add(this.ticketSearchBox);
+            this.ticketsPanel.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketsPanel.Location = new System.Drawing.Point(116, 74);
+            this.ticketsPanel.Name = "ticketsPanel";
+            this.ticketsPanel.Size = new System.Drawing.Size(883, 460);
+            this.ticketsPanel.TabIndex = 22;
+            this.ticketsPanel.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label23.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label23.Location = new System.Drawing.Point(4, 201);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(877, 23);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "Tickets List";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(4, 224);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.Size = new System.Drawing.Size(877, 230);
+            this.dataGridView4.TabIndex = 27;
+            // 
+            // ticketSearchBtn
+            // 
+            this.ticketSearchBtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.ticketSearchBtn.Location = new System.Drawing.Point(242, 6);
+            this.ticketSearchBtn.Name = "ticketSearchBtn";
+            this.ticketSearchBtn.Size = new System.Drawing.Size(86, 29);
+            this.ticketSearchBtn.TabIndex = 26;
+            this.ticketSearchBtn.Text = "Search";
+            this.ticketSearchBtn.UseVisualStyleBackColor = false;
+            // 
+            // coachBox
+            // 
+            this.coachBox.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coachBox.FormattingEnabled = true;
+            this.coachBox.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"});
+            this.coachBox.Location = new System.Drawing.Point(500, 10);
+            this.coachBox.Name = "coachBox";
+            this.coachBox.Size = new System.Drawing.Size(206, 29);
+            this.coachBox.TabIndex = 25;
+            this.coachBox.Text = "Coach";
+            // 
+            // busType
+            // 
+            this.busType.Controls.Add(this.radioButton2);
+            this.busType.Controls.Add(this.radioButton1);
+            this.busType.Location = new System.Drawing.Point(500, 45);
+            this.busType.Name = "busType";
+            this.busType.Size = new System.Drawing.Size(205, 35);
+            this.busType.TabIndex = 24;
+            this.busType.TabStop = false;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(97, 7);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(97, 25);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Non AC";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(14, 7);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(53, 25);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "AC";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(333, 12);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 24);
+            this.label22.TabIndex = 23;
+            this.label22.Text = "Coach";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(333, 57);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(114, 24);
+            this.label21.TabIndex = 22;
+            this.label21.Text = "Bus Type";
+            // 
+            // journeyTime
+            // 
+            this.journeyTime.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.journeyTime.FormattingEnabled = true;
+            this.journeyTime.Items.AddRange(new object[] {
+            "07:00 AM",
+            "10:00 AM",
+            "12:00 PM",
+            "02:00 PM",
+            "05:00 PM",
+            "07:00 PM",
+            "10:00 PM"});
+            this.journeyTime.Location = new System.Drawing.Point(500, 140);
+            this.journeyTime.Name = "journeyTime";
+            this.journeyTime.Size = new System.Drawing.Size(206, 29);
+            this.journeyTime.TabIndex = 21;
+            this.journeyTime.Text = "Time";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(333, 145);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(166, 24);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Journey Time";
+            // 
+            // journeyDate
+            // 
+            this.journeyDate.CustomFormat = "";
+            this.journeyDate.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.journeyDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.journeyDate.Location = new System.Drawing.Point(500, 98);
+            this.journeyDate.MinDate = new System.DateTime(2021, 4, 14, 3, 7, 45, 0);
+            this.journeyDate.Name = "journeyDate";
+            this.journeyDate.Size = new System.Drawing.Size(205, 28);
+            this.journeyDate.TabIndex = 19;
+            this.journeyDate.Value = new System.DateTime(2021, 4, 14, 3, 7, 45, 0);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(333, 102);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(166, 24);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Journey Date";
+            // 
+            // ticketDest
+            // 
+            this.ticketDest.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketDest.FormattingEnabled = true;
+            this.ticketDest.Items.AddRange(new object[] {
+            "Dhaka",
+            "Chittagong",
+            "Rajshahi",
+            "Khulna",
+            "Barishal",
+            "Sylhet",
+            "Rangpur"});
+            this.ticketDest.Location = new System.Drawing.Point(93, 140);
+            this.ticketDest.Name = "ticketDest";
+            this.ticketDest.Size = new System.Drawing.Size(235, 29);
+            this.ticketDest.TabIndex = 17;
+            this.ticketDest.Text = "To";
+            // 
+            // ticketSource
+            // 
+            this.ticketSource.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketSource.FormattingEnabled = true;
+            this.ticketSource.Items.AddRange(new object[] {
+            "Dhaka",
+            "Chittagong",
+            "Rajshahi",
+            "Khulna",
+            "Barishal",
+            "Sylhet",
+            "Rangpur"});
+            this.ticketSource.Location = new System.Drawing.Point(93, 98);
+            this.ticketSource.Name = "ticketSource";
+            this.ticketSource.Size = new System.Drawing.Size(235, 29);
+            this.ticketSource.TabIndex = 16;
+            this.ticketSource.Text = "From";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 145);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(75, 24);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Dest.";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(3, 102);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 24);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Source";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 24);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Phone";
+            // 
+            // ticketBookBtn
+            // 
+            this.ticketBookBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ticketBookBtn.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketBookBtn.Location = new System.Drawing.Point(735, 98);
+            this.ticketBookBtn.Name = "ticketBookBtn";
+            this.ticketBookBtn.Size = new System.Drawing.Size(133, 71);
+            this.ticketBookBtn.TabIndex = 12;
+            this.ticketBookBtn.Text = "Book Ticket";
+            this.ticketBookBtn.UseVisualStyleBackColor = false;
+            // 
+            // ticketCancelBtn
+            // 
+            this.ticketCancelBtn.BackColor = System.Drawing.Color.OrangeRed;
+            this.ticketCancelBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketCancelBtn.Location = new System.Drawing.Point(735, 7);
+            this.ticketCancelBtn.Name = "ticketCancelBtn";
+            this.ticketCancelBtn.Size = new System.Drawing.Size(133, 32);
+            this.ticketCancelBtn.TabIndex = 11;
+            this.ticketCancelBtn.Text = "Cancel";
+            this.ticketCancelBtn.UseVisualStyleBackColor = false;
+            // 
+            // ticketUpdateBtn
+            // 
+            this.ticketUpdateBtn.BackColor = System.Drawing.Color.Gold;
+            this.ticketUpdateBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketUpdateBtn.Location = new System.Drawing.Point(735, 51);
+            this.ticketUpdateBtn.Name = "ticketUpdateBtn";
+            this.ticketUpdateBtn.Size = new System.Drawing.Size(133, 32);
+            this.ticketUpdateBtn.TabIndex = 10;
+            this.ticketUpdateBtn.Text = "Update";
+            this.ticketUpdateBtn.UseVisualStyleBackColor = false;
+            // 
+            // customerName
+            // 
+            this.customerName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerName.Location = new System.Drawing.Point(92, 53);
+            this.customerName.Name = "customerName";
+            this.customerName.Size = new System.Drawing.Size(236, 30);
+            this.customerName.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 56);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 24);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Name";
+            // 
+            // ticketSearchBox
+            // 
+            this.ticketSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketSearchBox.Location = new System.Drawing.Point(92, 6);
+            this.ticketSearchBox.Name = "ticketSearchBox";
+            this.ticketSearchBox.Size = new System.Drawing.Size(144, 30);
+            this.ticketSearchBox.TabIndex = 0;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 37F);
@@ -1327,6 +1328,7 @@ namespace Project
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1008, 569);
+            this.Controls.Add(this.ticketsPanel);
             this.Controls.Add(this.salesmanPanel);
             this.Controls.Add(this.reload);
             this.Controls.Add(this.managersPanel);
@@ -1343,11 +1345,6 @@ namespace Project
             this.panel1.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.AdminPanel.ResumeLayout(false);
-            this.ticketsPanel.ResumeLayout(false);
-            this.ticketsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.busesPanel.ResumeLayout(false);
             this.busesPanel.PerformLayout();
@@ -1363,6 +1360,11 @@ namespace Project
             this.salesmanPanel.ResumeLayout(false);
             this.salesmanPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).EndInit();
+            this.ticketsPanel.ResumeLayout(false);
+            this.ticketsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.busType.ResumeLayout(false);
+            this.busType.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1392,31 +1394,6 @@ namespace Project
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Panel ticketsPanel;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker journeyDate;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label customersLabel;
         private System.Windows.Forms.Label logoutLabel;
         private System.Windows.Forms.Panel busesPanel;
@@ -1470,5 +1447,30 @@ namespace Project
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button salesmanSearchBtn;
         private System.Windows.Forms.TextBox salesmanSearchBox;
+        private System.Windows.Forms.Panel ticketsPanel;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button ticketSearchBtn;
+        private System.Windows.Forms.ComboBox coachBox;
+        private System.Windows.Forms.GroupBox busType;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox journeyTime;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker journeyDate;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox ticketDest;
+        private System.Windows.Forms.ComboBox ticketSource;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button ticketBookBtn;
+        private System.Windows.Forms.Button ticketCancelBtn;
+        private System.Windows.Forms.Button ticketUpdateBtn;
+        private System.Windows.Forms.TextBox customerName;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox ticketSearchBox;
     }
 }
