@@ -108,12 +108,12 @@ namespace Project
             this.salesmanSearchBox = new System.Windows.Forms.TextBox();
             this.ticketsPanel = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.ticketsGridView = new System.Windows.Forms.DataGridView();
             this.ticketSearchBtn = new System.Windows.Forms.Button();
             this.coachBox = new System.Windows.Forms.ComboBox();
             this.busType = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.nonAcRadioBtn = new System.Windows.Forms.RadioButton();
+            this.acRadioBtn = new System.Windows.Forms.RadioButton();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.journeyTime = new System.Windows.Forms.ComboBox();
@@ -130,7 +130,8 @@ namespace Project
             this.ticketUpdateBtn = new System.Windows.Forms.Button();
             this.customerName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.ticketSearchBox = new System.Windows.Forms.TextBox();
+            this.phoneBox = new System.Windows.Forms.TextBox();
+            this.trashTicket = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.AdminPanel.SuspendLayout();
@@ -145,7 +146,7 @@ namespace Project
             this.salesmanPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).BeginInit();
             this.ticketsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsGridView)).BeginInit();
             this.busType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1016,8 +1017,9 @@ namespace Project
             // 
             // ticketsPanel
             // 
+            this.ticketsPanel.Controls.Add(this.trashTicket);
+            this.ticketsPanel.Controls.Add(this.ticketsGridView);
             this.ticketsPanel.Controls.Add(this.label23);
-            this.ticketsPanel.Controls.Add(this.dataGridView4);
             this.ticketsPanel.Controls.Add(this.ticketSearchBtn);
             this.ticketsPanel.Controls.Add(this.coachBox);
             this.ticketsPanel.Controls.Add(this.busType);
@@ -1037,8 +1039,8 @@ namespace Project
             this.ticketsPanel.Controls.Add(this.ticketUpdateBtn);
             this.ticketsPanel.Controls.Add(this.customerName);
             this.ticketsPanel.Controls.Add(this.label18);
-            this.ticketsPanel.Controls.Add(this.ticketSearchBox);
-            this.ticketsPanel.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketsPanel.Controls.Add(this.phoneBox);
+            this.ticketsPanel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketsPanel.Location = new System.Drawing.Point(116, 74);
             this.ticketsPanel.Name = "ticketsPanel";
             this.ticketsPanel.Size = new System.Drawing.Size(883, 460);
@@ -1057,23 +1059,37 @@ namespace Project
             this.label23.Text = "Tickets List";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView4
+            // ticketsGridView
             // 
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(4, 224);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(877, 230);
-            this.dataGridView4.TabIndex = 27;
+            this.ticketsGridView.AllowUserToAddRows = false;
+            this.ticketsGridView.AllowUserToDeleteRows = false;
+            this.ticketsGridView.AllowUserToResizeColumns = false;
+            this.ticketsGridView.AllowUserToResizeRows = false;
+            this.ticketsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ticketsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ticketsGridView.Location = new System.Drawing.Point(4, 224);
+            this.ticketsGridView.MultiSelect = false;
+            this.ticketsGridView.Name = "ticketsGridView";
+            this.ticketsGridView.ReadOnly = true;
+            this.ticketsGridView.RowHeadersVisible = false;
+            this.ticketsGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.ticketsGridView.RowTemplate.Height = 24;
+            this.ticketsGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ticketsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ticketsGridView.ShowCellErrors = false;
+            this.ticketsGridView.ShowEditingIcon = false;
+            this.ticketsGridView.Size = new System.Drawing.Size(877, 230);
+            this.ticketsGridView.TabIndex = 27;
+            this.ticketsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.managerGridView_CellContentClick);
+            this.ticketsGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGridView_CellContentDoubleClick);
+            this.ticketsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGridView_CellContentDoubleClick);
             // 
             // ticketSearchBtn
             // 
             this.ticketSearchBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.ticketSearchBtn.Location = new System.Drawing.Point(242, 6);
+            this.ticketSearchBtn.Location = new System.Drawing.Point(242, 4);
             this.ticketSearchBtn.Name = "ticketSearchBtn";
-            this.ticketSearchBtn.Size = new System.Drawing.Size(86, 29);
+            this.ticketSearchBtn.Size = new System.Drawing.Size(86, 30);
             this.ticketSearchBtn.TabIndex = 26;
             this.ticketSearchBtn.Text = "Search";
             this.ticketSearchBtn.UseVisualStyleBackColor = false;
@@ -1096,35 +1112,37 @@ namespace Project
             // 
             // busType
             // 
-            this.busType.Controls.Add(this.radioButton2);
-            this.busType.Controls.Add(this.radioButton1);
+            this.busType.Controls.Add(this.nonAcRadioBtn);
+            this.busType.Controls.Add(this.acRadioBtn);
             this.busType.Location = new System.Drawing.Point(500, 45);
             this.busType.Name = "busType";
             this.busType.Size = new System.Drawing.Size(205, 35);
             this.busType.TabIndex = 24;
             this.busType.TabStop = false;
             // 
-            // radioButton2
+            // nonAcRadioBtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(97, 7);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(97, 25);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Non AC";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.nonAcRadioBtn.AutoSize = true;
+            this.nonAcRadioBtn.Location = new System.Drawing.Point(97, 7);
+            this.nonAcRadioBtn.Name = "nonAcRadioBtn";
+            this.nonAcRadioBtn.Size = new System.Drawing.Size(86, 23);
+            this.nonAcRadioBtn.TabIndex = 1;
+            this.nonAcRadioBtn.TabStop = true;
+            this.nonAcRadioBtn.Text = "Non AC";
+            this.nonAcRadioBtn.UseVisualStyleBackColor = true;
+            this.nonAcRadioBtn.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // acRadioBtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(14, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(53, 25);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "AC";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.acRadioBtn.AutoSize = true;
+            this.acRadioBtn.Location = new System.Drawing.Point(14, 7);
+            this.acRadioBtn.Name = "acRadioBtn";
+            this.acRadioBtn.Size = new System.Drawing.Size(53, 23);
+            this.acRadioBtn.TabIndex = 0;
+            this.acRadioBtn.TabStop = true;
+            this.acRadioBtn.Text = "AC";
+            this.acRadioBtn.UseVisualStyleBackColor = true;
+            this.acRadioBtn.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label22
             // 
@@ -1180,11 +1198,11 @@ namespace Project
             this.journeyDate.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.journeyDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.journeyDate.Location = new System.Drawing.Point(500, 98);
-            this.journeyDate.MinDate = new System.DateTime(2021, 4, 14, 3, 7, 45, 0);
+            this.journeyDate.MinDate = new System.DateTime(2021, 4, 14, 0, 0, 0, 0);
             this.journeyDate.Name = "journeyDate";
             this.journeyDate.Size = new System.Drawing.Size(205, 28);
             this.journeyDate.TabIndex = 19;
-            this.journeyDate.Value = new System.DateTime(2021, 4, 14, 3, 7, 45, 0);
+            this.journeyDate.Value = new System.DateTime(2021, 4, 15, 0, 0, 0, 0);
             // 
             // label16
             // 
@@ -1272,6 +1290,7 @@ namespace Project
             this.ticketBookBtn.TabIndex = 12;
             this.ticketBookBtn.Text = "Book Ticket";
             this.ticketBookBtn.UseVisualStyleBackColor = false;
+            this.ticketBookBtn.Click += new System.EventHandler(this.ticketBookBtn_Click);
             // 
             // ticketCancelBtn
             // 
@@ -1313,13 +1332,24 @@ namespace Project
             this.label18.TabIndex = 2;
             this.label18.Text = "Name";
             // 
-            // ticketSearchBox
+            // phoneBox
             // 
-            this.ticketSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticketSearchBox.Location = new System.Drawing.Point(92, 6);
-            this.ticketSearchBox.Name = "ticketSearchBox";
-            this.ticketSearchBox.Size = new System.Drawing.Size(144, 30);
-            this.ticketSearchBox.TabIndex = 0;
+            this.phoneBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneBox.Location = new System.Drawing.Point(92, 6);
+            this.phoneBox.Name = "phoneBox";
+            this.phoneBox.Size = new System.Drawing.Size(144, 30);
+            this.phoneBox.TabIndex = 0;
+            // 
+            // trashTicket
+            // 
+            this.trashTicket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trashTicket.Image = ((System.Drawing.Image)(resources.GetObject("trashTicket.Image")));
+            this.trashTicket.Location = new System.Drawing.Point(827, 189);
+            this.trashTicket.Name = "trashTicket";
+            this.trashTicket.Size = new System.Drawing.Size(41, 32);
+            this.trashTicket.TabIndex = 29;
+            this.trashTicket.Visible = false;
+            this.trashTicket.Click += new System.EventHandler(this.label28_Click_1);
             // 
             // AdminDashboard
             // 
@@ -1362,7 +1392,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).EndInit();
             this.ticketsPanel.ResumeLayout(false);
             this.ticketsPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsGridView)).EndInit();
             this.busType.ResumeLayout(false);
             this.busType.PerformLayout();
             this.ResumeLayout(false);
@@ -1449,12 +1479,12 @@ namespace Project
         private System.Windows.Forms.TextBox salesmanSearchBox;
         private System.Windows.Forms.Panel ticketsPanel;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView ticketsGridView;
         private System.Windows.Forms.Button ticketSearchBtn;
         private System.Windows.Forms.ComboBox coachBox;
         private System.Windows.Forms.GroupBox busType;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton nonAcRadioBtn;
+        private System.Windows.Forms.RadioButton acRadioBtn;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox journeyTime;
@@ -1471,6 +1501,7 @@ namespace Project
         private System.Windows.Forms.Button ticketUpdateBtn;
         private System.Windows.Forms.TextBox customerName;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox ticketSearchBox;
+        private System.Windows.Forms.TextBox phoneBox;
+        private System.Windows.Forms.Label trashTicket;
     }
 }

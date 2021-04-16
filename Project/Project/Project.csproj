@@ -56,6 +56,8 @@
     <Compile Include="Models\Managers.cs" />
     <Compile Include="Models\Salesman.cs" />
     <Compile Include="Models\Sellers.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\Tickets.cs" />
     <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

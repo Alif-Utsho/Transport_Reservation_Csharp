@@ -18,6 +18,7 @@ namespace Project
         {
             InitializeComponent();
 
+            reloadTickets();
             reloadManager();
             reloadSalesman();
         }
@@ -390,6 +391,113 @@ namespace Project
                 MessageBox.Show("Salesman Deleted");
             }
             else MessageBox.Show("Could not Delete");
+        }
+        string bustype = "";
+        int ticketId = 0;
+
+        public void reloadTickets()
+        {
+            ticketId = 0;
+            customerName.Text = "";
+            phoneBox.Text = "";
+            ticketSource.Text = "From";
+            ticketDest.Text = "To";
+            coachBox.Text = "Coach";
+            acRadioBtn.Checked = false;
+            nonAcRadioBtn.Checked = false;
+            journeyDate.Text = DateTime.Now.ToString();
+            journeyTime.Text = "";
+
+            ticketBookBtn.Enabled = true;
+
+            var tickets = TicketsController.getAllTickets();
+            ticketsGridView.DataSource = tickets;
+        }
+        private void ticketBookBtn_Click(object sender, EventArgs e)
+        {
+            var ticket = new
+            {
+                name = customerName.Text.Trim(),
+                phone = phoneBox.Text.Trim(),
+                source = ticketSource.Text.Trim(),
+                destination = ticketDest.Text.Trim(),
+                coach = coachBox.Text.Trim(),
+                type = bustype,
+                date = journeyDate.Value.ToShortDateString(),
+                time = journeyTime.Text.Trim()
+            };
+            if(ticket.name.Length==0 || ticket.phone.Length==0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
+                ticket.coach.Equals("Coach") || ticket.type.Length== 0 || ticket.time.Equals("Time"))
+            {
+                MessageBox.Show("Fill all the required fields");
+                return;
+            }
+            try
+            {
+                bool res = TicketsController.boolTicket(ticket);
+                if (res)
+                {
+                    reloadTickets();
+                    MessageBox.Show("Ticket booked");
+                }
+                else MessageBox.Show("Could not booked");
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            bustype = "AC";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            bustype = "Non AC";
+        }
+
+        private void ticketsGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.ticketsGridView.Rows[e.RowIndex];
+                ticketId = Int32.Parse(row.Cells["Id"].Value.ToString());
+                customerName.Text = row.Cells["Name"].Value.ToString();
+                phoneBox.Text = row.Cells["Phone"].Value.ToString();
+                ticketSource.Text = row.Cells["Source"].Value.ToString();
+                ticketDest.Text = row.Cells["Destination"].Value.ToString();
+                coachBox.Text = row.Cells["Coach"].Value.ToString();
+                //busType.Text = row.Cells["BusType"].Value.ToString();
+                journeyDate.Text = row.Cells["Date"].Value.ToString();
+                journeyTime.Text = row.Cells["Time"].Value.ToString();
+
+                var abustype = row.Cells["BusType"].Value.ToString();
+                if (abustype.Equals("AC"))
+                {
+                    acRadioBtn.Checked = true;
+                    nonAcRadioBtn.Checked = false;
+                }
+                else if (abustype == "Non AC")
+                {
+                    nonAcRadioBtn.Checked = true;
+                    acRadioBtn.Checked = false;
+                }
+                else
+                {
+                    acRadioBtn.Checked = false;
+                    nonAcRadioBtn.Checked = false;
+                }
+
+                if (ticketId > 0)
+                {
+                    ticketBookBtn.Enabled = false;
+                }
+                trashTicket.Visible = true;
+            }
+        }
+
+        private void label28_Click_1(object sender, EventArgs e)
+        {
+            reloadTickets();
+            trashTicket.Visible = false;
         }
     }
 }
