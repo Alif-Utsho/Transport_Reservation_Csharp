@@ -14,6 +14,13 @@ namespace Project
 {
     public partial class AdminDashboard : Form
     {
+        string bustype = "";
+        int ticketId = 0;
+        int managerId = 0;
+        int salesmanId = 0;
+        int customerId = 0;
+        int busId = 0;
+
         public AdminDashboard()
         {
             InitializeComponent();
@@ -21,6 +28,7 @@ namespace Project
             reloadTickets();
             reloadManager();
             reloadSalesman();
+            reloadCustomer();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -184,6 +192,12 @@ namespace Project
                 MessageBox.Show("Fill all the required field");
                 return;
             }
+            var has= ManagersController.getSingleManager(manager.username);
+            if (has != null)
+            {
+                MessageBox.Show("Username Already used");
+                return;
+            }
             bool result = ManagersController.AddManager(manager);
             if (result) 
             {
@@ -317,6 +331,12 @@ namespace Project
                 MessageBox.Show("Fill all the required field");
                 return;
             }
+            var has = SalesmanController.searchSalesman(salesman.username);
+            if (has != null)
+            {
+                MessageBox.Show("Username Already used");
+                return;
+            }
             bool res = SalesmanController.addSalesman(salesman);
             if (res)
             {
@@ -344,7 +364,7 @@ namespace Project
         {
             string username = salesmanSearchBox.Text.Trim();
             dynamic salesman = SalesmanController.searchSalesman(username);
-            if (salesman == null)
+            if (salesman==null)
             {
                 MessageBox.Show("Search a Salesman First");
                 return;
@@ -392,9 +412,7 @@ namespace Project
             }
             else MessageBox.Show("Could not Delete");
         }
-        string bustype = "";
-        int ticketId = 0;
-
+        
         public void reloadTickets()
         {
             ticketId = 0;
@@ -405,10 +423,15 @@ namespace Project
             coachBox.Text = "Coach";
             acRadioBtn.Checked = false;
             nonAcRadioBtn.Checked = false;
-            journeyDate.Text = DateTime.Now.ToString();
-            journeyTime.Text = "";
+            journeyDate.Text = DateTime.Now.ToShortDateString();
+            journeyTime.Text = "Time";
+
+            journeyDate.MinDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            // for manager and salesman
+            // journeyDate.MaxDate = DateTime.Parse(DateTime.Now.AddDays(6).ToShortDateString());
 
             ticketBookBtn.Enabled = true;
+            trashTicket.Visible = false;
 
             var tickets = TicketsController.getAllTickets();
             ticketsGridView.DataSource = tickets;
@@ -432,6 +455,15 @@ namespace Project
                 MessageBox.Show("Fill all the required fields");
                 return;
             }
+
+            //Customer Adding
+            var hasCus = CustomerController.searchCustomer(ticket.phone);
+            if (hasCus == null)
+            {
+                bool customeradd = CustomerController.addCustomer(ticket);
+                reloadCustomer();
+            }
+
             try
             {
                 bool res = TicketsController.boolTicket(ticket);
@@ -466,8 +498,16 @@ namespace Project
                 ticketDest.Text = row.Cells["Destination"].Value.ToString();
                 coachBox.Text = row.Cells["Coach"].Value.ToString();
                 //busType.Text = row.Cells["BusType"].Value.ToString();
-                journeyDate.Text = row.Cells["Date"].Value.ToString();
                 journeyTime.Text = row.Cells["Time"].Value.ToString();
+
+                DateTime date = DateTime.Parse(row.Cells["Date"].Value.ToString());
+                if (date < journeyDate.MinDate)
+                {
+                    MessageBox.Show("You cannot modify or delete previous Tickets");
+                    reloadTickets();
+                    return;
+                }
+                else journeyDate.Text = date.ToString();
 
                 var abustype = row.Cells["BusType"].Value.ToString();
                 if (abustype.Equals("AC"))
@@ -498,6 +538,139 @@ namespace Project
         {
             reloadTickets();
             trashTicket.Visible = false;
+        }
+
+        private void ticketCancelBtn_Click(object sender, EventArgs e)
+        {
+            if (ticketId == 0)
+            {
+                MessageBox.Show("Select a ticket first");
+                return;
+            }
+            bool res = TicketsController.cancelTicket(ticketId);
+            if (res)
+            {
+                reloadTickets();
+                MessageBox.Show("Ticket Cancelled");
+            }
+            else MessageBox.Show("Could not cancel");
+        }
+
+        private void ticketUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (ticketId == 0)
+            {
+                MessageBox.Show("Select a ticket first");
+                return;
+            }
+
+            var ticket = new
+            {
+                id = ticketId,
+                name = customerName.Text.Trim(),
+                phone = phoneBox.Text.Trim(),
+                source = ticketSource.Text.Trim(),
+                destination = ticketDest.Text.Trim(),
+                coach = coachBox.Text.Trim(),
+                type = bustype,
+                date = journeyDate.Value.ToShortDateString(),
+                time = journeyTime.Text.Trim()
+            };
+            if (ticket.name.Length == 0 || ticket.phone.Length == 0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
+                ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time"))
+            {
+                MessageBox.Show("Fill all the required fields");
+                return;
+            }
+            try
+            {
+                bool res = TicketsController.updateTicket(ticket);
+                if (res)
+                {
+                    reloadTickets();
+                    MessageBox.Show("Ticket updated");
+                }
+                else MessageBox.Show("Could not update");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+        }
+        public void reloadCustomer()
+        {
+            customerId = 0;
+            customerNameBox.Text = "";
+            customerPhoneBox.Text = "";
+            customerSearchBox.Text = "";
+            customerTrash.Visible = false;
+
+            var customerlist = CustomerController.getAllCustomer();
+            customerGridView.DataSource = customerlist;
+        }
+
+        private void customerSearchBtn_Click(object sender, EventArgs e)
+        {
+            string phone = customerSearchBox.Text;
+            var customer = CustomerController.searchCustomer(phone);
+            if(customer == null)
+            {
+                MessageBox.Show("Customer not found");
+                return;
+            }
+            customerId = customer.Id;
+            customerNameBox.Text = customer.Name;
+            customerPhoneBox.Text = customer.Phone;
+            customerTrash.Visible = true;
+        }
+
+        private void customerTrash_Click(object sender, EventArgs e)
+        {
+            reloadCustomer();
+        }
+
+        private void customerRemoveBtn_Click(object sender, EventArgs e)
+        {
+            if (customerId == 0)
+            {
+                MessageBox.Show("Search a customer first");
+                return;
+            }
+            bool res = CustomerController.deleteCustomer(customerId);
+            if (res)
+            {
+                reloadCustomer();
+                MessageBox.Show("Customer Deleted");
+            }
+            else MessageBox.Show("Could not Delete");
+        }
+
+        private void customerUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (customerId == 0)
+            {
+                MessageBox.Show("Search a customer first");
+                return;
+            }
+            var customer = CustomerController.searchCustomer(customerPhoneBox.Text);
+            customerId = customer.Id;
+
+            var newCustomer = new
+            {
+                id = customerId,
+                name = customerNameBox.Text,
+                phone = customerPhoneBox.Text
+            };
+            if(newCustomer.name.Length==0 || newCustomer.phone.Length == 0)
+            {
+                MessageBox.Show("Fill all the required Fields");
+                return;
+            }
+            bool res = CustomerController.updateCustomer(newCustomer);
+            if (res)
+            {
+                reloadCustomer();
+                MessageBox.Show("Customer Updated");
+            }
+            else MessageBox.Show("Could not update Customer");
         }
     }
 }

@@ -18,5 +18,13 @@ namespace Project.Controllers
         {
             return db.Tickets.getAllTickets();
         }
+        public static bool cancelTicket(int ticketId)
+        {
+            return db.Tickets.cancelTicket(ticketId);
+        }
+        public static bool updateTicket(dynamic ticket)
+        {
+            return db.Tickets.updateTicket(ticket);
+        }
     }
 }
