@@ -68,6 +68,9 @@ namespace Project
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.customersPanel = new System.Windows.Forms.Panel();
+            this.customerTrash = new System.Windows.Forms.Label();
+            this.customerSearchBtn = new System.Windows.Forms.Button();
+            this.customerSearchBox = new System.Windows.Forms.TextBox();
             this.customerPhoneBox = new System.Windows.Forms.TextBox();
             this.customerNameBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -77,7 +80,7 @@ namespace Project
             this.customerRemoveBtn = new System.Windows.Forms.Button();
             this.customerUpdateBtn = new System.Windows.Forms.Button();
             this.managersPanel = new System.Windows.Forms.Panel();
-            this.salesmanAddBtn = new System.Windows.Forms.Button();
+            this.managerAddBtn = new System.Windows.Forms.Button();
             this.managerDeleteBtn = new System.Windows.Forms.Button();
             this.managerUpdateBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -117,7 +120,7 @@ namespace Project
             this.label18 = new System.Windows.Forms.Label();
             this.phoneBox = new System.Windows.Forms.TextBox();
             this.salesmanPanel = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.salesmanAddBtn = new System.Windows.Forms.Button();
             this.salesmanDeleteBtn = new System.Windows.Forms.Button();
             this.salesmanUpdateBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -130,9 +133,24 @@ namespace Project
             this.label14 = new System.Windows.Forms.Label();
             this.salesmanSearchBtn = new System.Windows.Forms.Button();
             this.salesmanSearchBox = new System.Windows.Forms.TextBox();
-            this.customerSearchBox = new System.Windows.Forms.TextBox();
-            this.customerSearchBtn = new System.Windows.Forms.Button();
-            this.customerTrash = new System.Windows.Forms.Label();
+            this.managerTrash = new System.Windows.Forms.Label();
+            this.salesmanTrash = new System.Windows.Forms.Label();
+            this.adminLabels = new System.Windows.Forms.Label();
+            this.adminPanelView = new System.Windows.Forms.Panel();
+            this.adminTrash = new System.Windows.Forms.Label();
+            this.adminAddBtn = new System.Windows.Forms.Button();
+            this.adminDeleteBtn = new System.Windows.Forms.Button();
+            this.adminUpdateBtn = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.adminPasswordBox = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.adminUsernameBox = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.adminNameBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.adminSearchBtn = new System.Windows.Forms.Button();
+            this.adminSearchBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.AdminPanel.SuspendLayout();
@@ -149,6 +167,8 @@ namespace Project
             this.busType.SuspendLayout();
             this.salesmanPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).BeginInit();
+            this.adminPanelView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -168,6 +188,7 @@ namespace Project
             // 
             this.logoutLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logoutLabel.Font = new System.Drawing.Font("Fira Code Retina", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.logoutLabel.Image = ((System.Drawing.Image)(resources.GetObject("logoutLabel.Image")));
             this.logoutLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.logoutLabel.Location = new System.Drawing.Point(923, 7);
@@ -201,6 +222,7 @@ namespace Project
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.DimGray;
+            this.menuPanel.Controls.Add(this.adminLabels);
             this.menuPanel.Controls.Add(this.customersLabel);
             this.menuPanel.Controls.Add(this.busesLabel);
             this.menuPanel.Controls.Add(this.salesmanLabel);
@@ -218,7 +240,7 @@ namespace Project
             this.customersLabel.ForeColor = System.Drawing.Color.Cornsilk;
             this.customersLabel.Image = ((System.Drawing.Image)(resources.GetObject("customersLabel.Image")));
             this.customersLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.customersLabel.Location = new System.Drawing.Point(0, 400);
+            this.customersLabel.Location = new System.Drawing.Point(0, 440);
             this.customersLabel.Name = "customersLabel";
             this.customersLabel.Size = new System.Drawing.Size(112, 62);
             this.customersLabel.TabIndex = 4;
@@ -233,7 +255,7 @@ namespace Project
             this.busesLabel.ForeColor = System.Drawing.Color.Cornsilk;
             this.busesLabel.Image = ((System.Drawing.Image)(resources.GetObject("busesLabel.Image")));
             this.busesLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.busesLabel.Location = new System.Drawing.Point(0, 312);
+            this.busesLabel.Location = new System.Drawing.Point(0, 355);
             this.busesLabel.Name = "busesLabel";
             this.busesLabel.Size = new System.Drawing.Size(112, 62);
             this.busesLabel.TabIndex = 3;
@@ -248,7 +270,7 @@ namespace Project
             this.salesmanLabel.ForeColor = System.Drawing.Color.Cornsilk;
             this.salesmanLabel.Image = ((System.Drawing.Image)(resources.GetObject("salesmanLabel.Image")));
             this.salesmanLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.salesmanLabel.Location = new System.Drawing.Point(0, 216);
+            this.salesmanLabel.Location = new System.Drawing.Point(0, 265);
             this.salesmanLabel.Name = "salesmanLabel";
             this.salesmanLabel.Size = new System.Drawing.Size(113, 62);
             this.salesmanLabel.TabIndex = 2;
@@ -263,7 +285,7 @@ namespace Project
             this.managerLabel.ForeColor = System.Drawing.Color.Cornsilk;
             this.managerLabel.Image = ((System.Drawing.Image)(resources.GetObject("managerLabel.Image")));
             this.managerLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.managerLabel.Location = new System.Drawing.Point(0, 125);
+            this.managerLabel.Location = new System.Drawing.Point(0, 175);
             this.managerLabel.Name = "managerLabel";
             this.managerLabel.Size = new System.Drawing.Size(113, 62);
             this.managerLabel.TabIndex = 1;
@@ -278,7 +300,7 @@ namespace Project
             this.ticketsLabel.ForeColor = System.Drawing.Color.Cornsilk;
             this.ticketsLabel.Image = ((System.Drawing.Image)(resources.GetObject("ticketsLabel.Image")));
             this.ticketsLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.ticketsLabel.Location = new System.Drawing.Point(0, 38);
+            this.ticketsLabel.Location = new System.Drawing.Point(0, 4);
             this.ticketsLabel.Name = "ticketsLabel";
             this.ticketsLabel.Size = new System.Drawing.Size(113, 62);
             this.ticketsLabel.TabIndex = 0;
@@ -592,6 +614,37 @@ namespace Project
             this.customersPanel.TabIndex = 18;
             this.customersPanel.Visible = false;
             // 
+            // customerTrash
+            // 
+            this.customerTrash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customerTrash.Image = ((System.Drawing.Image)(resources.GetObject("customerTrash.Image")));
+            this.customerTrash.Location = new System.Drawing.Point(229, 99);
+            this.customerTrash.Name = "customerTrash";
+            this.customerTrash.Size = new System.Drawing.Size(41, 32);
+            this.customerTrash.TabIndex = 33;
+            this.customerTrash.Visible = false;
+            this.customerTrash.Click += new System.EventHandler(this.customerTrash_Click);
+            // 
+            // customerSearchBtn
+            // 
+            this.customerSearchBtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.customerSearchBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerSearchBtn.Location = new System.Drawing.Point(276, 99);
+            this.customerSearchBtn.Name = "customerSearchBtn";
+            this.customerSearchBtn.Size = new System.Drawing.Size(147, 32);
+            this.customerSearchBtn.TabIndex = 32;
+            this.customerSearchBtn.Text = "Search";
+            this.customerSearchBtn.UseVisualStyleBackColor = false;
+            this.customerSearchBtn.Click += new System.EventHandler(this.customerSearchBtn_Click);
+            // 
+            // customerSearchBox
+            // 
+            this.customerSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerSearchBox.Location = new System.Drawing.Point(62, 53);
+            this.customerSearchBox.Name = "customerSearchBox";
+            this.customerSearchBox.Size = new System.Drawing.Size(361, 30);
+            this.customerSearchBox.TabIndex = 31;
+            // 
             // customerPhoneBox
             // 
             this.customerPhoneBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -685,7 +738,8 @@ namespace Project
             // 
             // managersPanel
             // 
-            this.managersPanel.Controls.Add(this.salesmanAddBtn);
+            this.managersPanel.Controls.Add(this.managerTrash);
+            this.managersPanel.Controls.Add(this.managerAddBtn);
             this.managersPanel.Controls.Add(this.managerDeleteBtn);
             this.managersPanel.Controls.Add(this.managerUpdateBtn);
             this.managersPanel.Controls.Add(this.label8);
@@ -705,17 +759,17 @@ namespace Project
             this.managersPanel.TabIndex = 19;
             this.managersPanel.Visible = false;
             // 
-            // salesmanAddBtn
+            // managerAddBtn
             // 
-            this.salesmanAddBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.salesmanAddBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salesmanAddBtn.Location = new System.Drawing.Point(149, 358);
-            this.salesmanAddBtn.Name = "salesmanAddBtn";
-            this.salesmanAddBtn.Size = new System.Drawing.Size(297, 32);
-            this.salesmanAddBtn.TabIndex = 12;
-            this.salesmanAddBtn.Text = "Add Manager";
-            this.salesmanAddBtn.UseVisualStyleBackColor = false;
-            this.salesmanAddBtn.Click += new System.EventHandler(this.managerAddBtn_Click_1);
+            this.managerAddBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.managerAddBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managerAddBtn.Location = new System.Drawing.Point(149, 358);
+            this.managerAddBtn.Name = "managerAddBtn";
+            this.managerAddBtn.Size = new System.Drawing.Size(297, 32);
+            this.managerAddBtn.TabIndex = 12;
+            this.managerAddBtn.Text = "Add Manager";
+            this.managerAddBtn.UseVisualStyleBackColor = false;
+            this.managerAddBtn.Click += new System.EventHandler(this.managerAddBtn_Click_1);
             // 
             // managerDeleteBtn
             // 
@@ -929,12 +983,14 @@ namespace Project
             // ticketSearchBtn
             // 
             this.ticketSearchBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.ticketSearchBtn.Location = new System.Drawing.Point(242, 4);
+            this.ticketSearchBtn.Location = new System.Drawing.Point(239, 4);
             this.ticketSearchBtn.Name = "ticketSearchBtn";
             this.ticketSearchBtn.Size = new System.Drawing.Size(86, 30);
             this.ticketSearchBtn.TabIndex = 26;
             this.ticketSearchBtn.Text = "Search";
             this.ticketSearchBtn.UseVisualStyleBackColor = false;
+            this.ticketSearchBtn.TextChanged += new System.EventHandler(this.ticketSearchBtn_Click);
+            this.ticketSearchBtn.Click += new System.EventHandler(this.ticketSearchBtn_Click);
             // 
             // coachBox
             // 
@@ -990,7 +1046,7 @@ namespace Project
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(333, 12);
+            this.label22.Location = new System.Drawing.Point(339, 12);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(75, 24);
             this.label22.TabIndex = 23;
@@ -1000,7 +1056,7 @@ namespace Project
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(333, 57);
+            this.label21.Location = new System.Drawing.Point(339, 57);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(114, 24);
             this.label21.TabIndex = 22;
@@ -1018,7 +1074,7 @@ namespace Project
             "05:00 PM",
             "07:00 PM",
             "10:00 PM"});
-            this.journeyTime.Location = new System.Drawing.Point(500, 140);
+            this.journeyTime.Location = new System.Drawing.Point(500, 141);
             this.journeyTime.Name = "journeyTime";
             this.journeyTime.Size = new System.Drawing.Size(206, 29);
             this.journeyTime.TabIndex = 21;
@@ -1028,7 +1084,7 @@ namespace Project
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(333, 145);
+            this.label17.Location = new System.Drawing.Point(339, 144);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(166, 24);
             this.label17.TabIndex = 20;
@@ -1050,7 +1106,7 @@ namespace Project
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(333, 102);
+            this.label16.Location = new System.Drawing.Point(339, 101);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(166, 24);
             this.label16.TabIndex = 18;
@@ -1068,7 +1124,7 @@ namespace Project
             "Barishal",
             "Sylhet",
             "Rangpur"});
-            this.ticketDest.Location = new System.Drawing.Point(93, 140);
+            this.ticketDest.Location = new System.Drawing.Point(90, 140);
             this.ticketDest.Name = "ticketDest";
             this.ticketDest.Size = new System.Drawing.Size(235, 29);
             this.ticketDest.TabIndex = 17;
@@ -1086,7 +1142,7 @@ namespace Project
             "Barishal",
             "Sylhet",
             "Rangpur"});
-            this.ticketSource.Location = new System.Drawing.Point(93, 98);
+            this.ticketSource.Location = new System.Drawing.Point(90, 98);
             this.ticketSource.Name = "ticketSource";
             this.ticketSource.Size = new System.Drawing.Size(235, 29);
             this.ticketSource.TabIndex = 16;
@@ -1161,7 +1217,7 @@ namespace Project
             // customerName
             // 
             this.customerName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerName.Location = new System.Drawing.Point(92, 53);
+            this.customerName.Location = new System.Drawing.Point(89, 53);
             this.customerName.Name = "customerName";
             this.customerName.Size = new System.Drawing.Size(236, 30);
             this.customerName.TabIndex = 3;
@@ -1179,14 +1235,16 @@ namespace Project
             // phoneBox
             // 
             this.phoneBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneBox.Location = new System.Drawing.Point(92, 6);
+            this.phoneBox.Location = new System.Drawing.Point(89, 6);
             this.phoneBox.Name = "phoneBox";
             this.phoneBox.Size = new System.Drawing.Size(144, 30);
             this.phoneBox.TabIndex = 0;
+            this.phoneBox.TextChanged += new System.EventHandler(this.ticketSearchBtn_Click);
             // 
             // salesmanPanel
             // 
-            this.salesmanPanel.Controls.Add(this.button6);
+            this.salesmanPanel.Controls.Add(this.salesmanTrash);
+            this.salesmanPanel.Controls.Add(this.salesmanAddBtn);
             this.salesmanPanel.Controls.Add(this.salesmanDeleteBtn);
             this.salesmanPanel.Controls.Add(this.salesmanUpdateBtn);
             this.salesmanPanel.Controls.Add(this.label3);
@@ -1206,17 +1264,17 @@ namespace Project
             this.salesmanPanel.TabIndex = 23;
             this.salesmanPanel.Visible = false;
             // 
-            // button6
+            // salesmanAddBtn
             // 
-            this.button6.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button6.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(149, 358);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(297, 32);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Add Salesman";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.salesmanAddBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.salesmanAddBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesmanAddBtn.Location = new System.Drawing.Point(149, 358);
+            this.salesmanAddBtn.Name = "salesmanAddBtn";
+            this.salesmanAddBtn.Size = new System.Drawing.Size(297, 32);
+            this.salesmanAddBtn.TabIndex = 12;
+            this.salesmanAddBtn.Text = "Add Salesman";
+            this.salesmanAddBtn.UseVisualStyleBackColor = false;
+            this.salesmanAddBtn.Click += new System.EventHandler(this.button6_Click);
             // 
             // salesmanDeleteBtn
             // 
@@ -1347,36 +1405,212 @@ namespace Project
             this.salesmanSearchBox.Size = new System.Drawing.Size(422, 30);
             this.salesmanSearchBox.TabIndex = 0;
             // 
-            // customerSearchBox
+            // managerTrash
             // 
-            this.customerSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerSearchBox.Location = new System.Drawing.Point(62, 53);
-            this.customerSearchBox.Name = "customerSearchBox";
-            this.customerSearchBox.Size = new System.Drawing.Size(361, 30);
-            this.customerSearchBox.TabIndex = 31;
+            this.managerTrash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.managerTrash.Image = ((System.Drawing.Image)(resources.GetObject("managerTrash.Image")));
+            this.managerTrash.Location = new System.Drawing.Point(255, 70);
+            this.managerTrash.Name = "managerTrash";
+            this.managerTrash.Size = new System.Drawing.Size(41, 32);
+            this.managerTrash.TabIndex = 30;
+            this.managerTrash.Visible = false;
+            this.managerTrash.Click += new System.EventHandler(this.managerTrash_Click);
             // 
-            // customerSearchBtn
+            // salesmanTrash
             // 
-            this.customerSearchBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.customerSearchBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerSearchBtn.Location = new System.Drawing.Point(276, 99);
-            this.customerSearchBtn.Name = "customerSearchBtn";
-            this.customerSearchBtn.Size = new System.Drawing.Size(147, 32);
-            this.customerSearchBtn.TabIndex = 32;
-            this.customerSearchBtn.Text = "Search";
-            this.customerSearchBtn.UseVisualStyleBackColor = false;
-            this.customerSearchBtn.Click += new System.EventHandler(this.customerSearchBtn_Click);
+            this.salesmanTrash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.salesmanTrash.Image = ((System.Drawing.Image)(resources.GetObject("salesmanTrash.Image")));
+            this.salesmanTrash.Location = new System.Drawing.Point(255, 70);
+            this.salesmanTrash.Name = "salesmanTrash";
+            this.salesmanTrash.Size = new System.Drawing.Size(41, 32);
+            this.salesmanTrash.TabIndex = 31;
+            this.salesmanTrash.Visible = false;
+            this.salesmanTrash.Click += new System.EventHandler(this.salesmanTrash_Click);
             // 
-            // customerTrash
+            // adminLabels
             // 
-            this.customerTrash.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customerTrash.Image = ((System.Drawing.Image)(resources.GetObject("customerTrash.Image")));
-            this.customerTrash.Location = new System.Drawing.Point(229, 99);
-            this.customerTrash.Name = "customerTrash";
-            this.customerTrash.Size = new System.Drawing.Size(41, 32);
-            this.customerTrash.TabIndex = 33;
-            this.customerTrash.Visible = false;
-            this.customerTrash.Click += new System.EventHandler(this.customerTrash_Click);
+            this.adminLabels.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminLabels.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminLabels.ForeColor = System.Drawing.Color.Cornsilk;
+            this.adminLabels.Image = ((System.Drawing.Image)(resources.GetObject("adminLabels.Image")));
+            this.adminLabels.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.adminLabels.Location = new System.Drawing.Point(0, 88);
+            this.adminLabels.Name = "adminLabels";
+            this.adminLabels.Size = new System.Drawing.Size(113, 62);
+            this.adminLabels.TabIndex = 5;
+            this.adminLabels.Text = "Admin";
+            this.adminLabels.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.adminLabels.Click += new System.EventHandler(this.adminLabels_Click);
+            // 
+            // adminPanelView
+            // 
+            this.adminPanelView.Controls.Add(this.adminTrash);
+            this.adminPanelView.Controls.Add(this.adminAddBtn);
+            this.adminPanelView.Controls.Add(this.adminDeleteBtn);
+            this.adminPanelView.Controls.Add(this.adminUpdateBtn);
+            this.adminPanelView.Controls.Add(this.label29);
+            this.adminPanelView.Controls.Add(this.dataGridView1);
+            this.adminPanelView.Controls.Add(this.adminPasswordBox);
+            this.adminPanelView.Controls.Add(this.label30);
+            this.adminPanelView.Controls.Add(this.adminUsernameBox);
+            this.adminPanelView.Controls.Add(this.label31);
+            this.adminPanelView.Controls.Add(this.adminNameBox);
+            this.adminPanelView.Controls.Add(this.label32);
+            this.adminPanelView.Controls.Add(this.adminSearchBtn);
+            this.adminPanelView.Controls.Add(this.adminSearchBox);
+            this.adminPanelView.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPanelView.Location = new System.Drawing.Point(116, 74);
+            this.adminPanelView.Name = "adminPanelView";
+            this.adminPanelView.Size = new System.Drawing.Size(883, 460);
+            this.adminPanelView.TabIndex = 24;
+            this.adminPanelView.Visible = false;
+            // 
+            // adminTrash
+            // 
+            this.adminTrash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminTrash.Image = ((System.Drawing.Image)(resources.GetObject("adminTrash.Image")));
+            this.adminTrash.Location = new System.Drawing.Point(255, 70);
+            this.adminTrash.Name = "adminTrash";
+            this.adminTrash.Size = new System.Drawing.Size(41, 32);
+            this.adminTrash.TabIndex = 31;
+            this.adminTrash.Visible = false;
+            // 
+            // adminAddBtn
+            // 
+            this.adminAddBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.adminAddBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminAddBtn.Location = new System.Drawing.Point(149, 358);
+            this.adminAddBtn.Name = "adminAddBtn";
+            this.adminAddBtn.Size = new System.Drawing.Size(297, 32);
+            this.adminAddBtn.TabIndex = 12;
+            this.adminAddBtn.Text = "Add Salesman";
+            this.adminAddBtn.UseVisualStyleBackColor = false;
+            // 
+            // adminDeleteBtn
+            // 
+            this.adminDeleteBtn.BackColor = System.Drawing.Color.OrangeRed;
+            this.adminDeleteBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminDeleteBtn.Location = new System.Drawing.Point(149, 414);
+            this.adminDeleteBtn.Name = "adminDeleteBtn";
+            this.adminDeleteBtn.Size = new System.Drawing.Size(147, 32);
+            this.adminDeleteBtn.TabIndex = 11;
+            this.adminDeleteBtn.Text = "Delete";
+            this.adminDeleteBtn.UseVisualStyleBackColor = false;
+            // 
+            // adminUpdateBtn
+            // 
+            this.adminUpdateBtn.BackColor = System.Drawing.Color.Gold;
+            this.adminUpdateBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminUpdateBtn.Location = new System.Drawing.Point(299, 414);
+            this.adminUpdateBtn.Name = "adminUpdateBtn";
+            this.adminUpdateBtn.Size = new System.Drawing.Size(147, 32);
+            this.adminUpdateBtn.TabIndex = 10;
+            this.adminUpdateBtn.Text = "Update";
+            this.adminUpdateBtn.UseVisualStyleBackColor = false;
+            // 
+            // label29
+            // 
+            this.label29.Font = new System.Drawing.Font("Fira Code Retina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(476, 28);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(394, 27);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Admin List";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Enabled = false;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(480, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView1.Size = new System.Drawing.Size(390, 376);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // adminPasswordBox
+            // 
+            this.adminPasswordBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPasswordBox.Location = new System.Drawing.Point(149, 303);
+            this.adminPasswordBox.Name = "adminPasswordBox";
+            this.adminPasswordBox.Size = new System.Drawing.Size(297, 30);
+            this.adminPasswordBox.TabIndex = 7;
+            this.adminPasswordBox.UseSystemPasswordChar = true;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(20, 306);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(114, 24);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Password";
+            // 
+            // adminUsernameBox
+            // 
+            this.adminUsernameBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminUsernameBox.Location = new System.Drawing.Point(149, 241);
+            this.adminUsernameBox.Name = "adminUsernameBox";
+            this.adminUsernameBox.Size = new System.Drawing.Size(297, 30);
+            this.adminUsernameBox.TabIndex = 5;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(20, 244);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(114, 24);
+            this.label31.TabIndex = 4;
+            this.label31.Text = "Username";
+            // 
+            // adminNameBox
+            // 
+            this.adminNameBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminNameBox.Location = new System.Drawing.Point(149, 177);
+            this.adminNameBox.Name = "adminNameBox";
+            this.adminNameBox.Size = new System.Drawing.Size(297, 30);
+            this.adminNameBox.TabIndex = 3;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(20, 180);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(62, 24);
+            this.label32.TabIndex = 2;
+            this.label32.Text = "Name";
+            // 
+            // adminSearchBtn
+            // 
+            this.adminSearchBtn.BackColor = System.Drawing.Color.DarkCyan;
+            this.adminSearchBtn.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminSearchBtn.Location = new System.Drawing.Point(299, 70);
+            this.adminSearchBtn.Name = "adminSearchBtn";
+            this.adminSearchBtn.Size = new System.Drawing.Size(147, 32);
+            this.adminSearchBtn.TabIndex = 1;
+            this.adminSearchBtn.Text = "Search";
+            this.adminSearchBtn.UseVisualStyleBackColor = false;
+            // 
+            // adminSearchBox
+            // 
+            this.adminSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminSearchBox.Location = new System.Drawing.Point(24, 25);
+            this.adminSearchBox.Name = "adminSearchBox";
+            this.adminSearchBox.Size = new System.Drawing.Size(422, 30);
+            this.adminSearchBox.TabIndex = 0;
             // 
             // AdminDashboard
             // 
@@ -1385,10 +1619,11 @@ namespace Project
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1008, 569);
-            this.Controls.Add(this.customersPanel);
-            this.Controls.Add(this.ticketsPanel);
+            this.Controls.Add(this.adminPanelView);
             this.Controls.Add(this.salesmanPanel);
+            this.Controls.Add(this.ticketsPanel);
             this.Controls.Add(this.managersPanel);
+            this.Controls.Add(this.customersPanel);
             this.Controls.Add(this.busesPanel);
             this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.menuPanel);
@@ -1421,6 +1656,9 @@ namespace Project
             this.salesmanPanel.ResumeLayout(false);
             this.salesmanPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).EndInit();
+            this.adminPanelView.ResumeLayout(false);
+            this.adminPanelView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1474,7 +1712,7 @@ namespace Project
         private System.Windows.Forms.Button customerRemoveBtn;
         private System.Windows.Forms.Button customerUpdateBtn;
         private System.Windows.Forms.Panel managersPanel;
-        private System.Windows.Forms.Button salesmanAddBtn;
+        private System.Windows.Forms.Button managerAddBtn;
         private System.Windows.Forms.Button managerDeleteBtn;
         private System.Windows.Forms.Button managerUpdateBtn;
         private System.Windows.Forms.Label label8;
@@ -1514,7 +1752,7 @@ namespace Project
         private System.Windows.Forms.TextBox phoneBox;
         private System.Windows.Forms.Label trashTicket;
         private System.Windows.Forms.Panel salesmanPanel;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button salesmanAddBtn;
         private System.Windows.Forms.Button salesmanDeleteBtn;
         private System.Windows.Forms.Button salesmanUpdateBtn;
         private System.Windows.Forms.Label label3;
@@ -1530,5 +1768,23 @@ namespace Project
         private System.Windows.Forms.Button customerSearchBtn;
         private System.Windows.Forms.TextBox customerSearchBox;
         private System.Windows.Forms.Label customerTrash;
+        private System.Windows.Forms.Label managerTrash;
+        private System.Windows.Forms.Label salesmanTrash;
+        private System.Windows.Forms.Label adminLabels;
+        private System.Windows.Forms.Panel adminPanelView;
+        private System.Windows.Forms.Label adminTrash;
+        private System.Windows.Forms.Button adminAddBtn;
+        private System.Windows.Forms.Button adminDeleteBtn;
+        private System.Windows.Forms.Button adminUpdateBtn;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox adminPasswordBox;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox adminUsernameBox;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox adminNameBox;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button adminSearchBtn;
+        private System.Windows.Forms.TextBox adminSearchBox;
     }
 }

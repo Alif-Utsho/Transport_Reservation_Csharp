@@ -59,8 +59,22 @@ namespace Project
                     MessageBox.Show("Invalid Credentials");
                     return;
                 }
-                this.Hide();
-                new AdminDashboard().Show();
+                //new AdminDashboard().Show();
+                if (role.ToLower().Equals("admin"))
+                {
+                    this.Hide();
+                    new AdminDashboard().Show();
+                }
+                else if (role.ToLower().Equals("salesman"))
+                {
+                    //new SalesManDashboard().Show();
+                    MessageBox.Show("Salesman Dashboard Will be Created");
+                }
+                else if (role.ToLower().Equals("managers"))
+                {
+                    //new ManagerDashboard().Show();
+                    MessageBox.Show("Manager Dashboard Will be Created");
+                }
             }
             else MessageBox.Show("Choose a Valid Role");
             

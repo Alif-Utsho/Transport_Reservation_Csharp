@@ -49,6 +49,7 @@ namespace Project
             salesmanLabel.BackColor = Color.DimGray;
             busesLabel.BackColor = Color.DimGray;
             customersLabel.BackColor = Color.DimGray;
+            adminLabels.BackColor = Color.DimGray;
 
             welcomePanel.Hide();
             salesmanPanel.Hide();
@@ -56,9 +57,32 @@ namespace Project
             ticketsPanel.Hide();
             busesPanel.Hide();
             customersPanel.Hide();
+            adminPanelView.Hide();
 
             homeLabel.Visible = true;
 
+        }
+
+
+        private void adminLabels_Click(object sender, EventArgs e)
+        {
+            adminLabels.BackColor = Color.DarkCyan;
+
+            managerLabel.BackColor = Color.DimGray;
+            ticketsLabel.BackColor = Color.DimGray;
+            salesmanLabel.BackColor = Color.DimGray;
+            busesLabel.BackColor = Color.DimGray;
+            customersLabel.BackColor = Color.DimGray;
+
+            welcomePanel.Hide();
+            salesmanPanel.Hide();
+            managersPanel.Hide();
+            ticketsPanel.Hide();
+            busesPanel.Hide();
+            customersPanel.Hide();
+            adminPanelView.Show();
+
+            homeLabel.Visible = true;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -69,6 +93,7 @@ namespace Project
             managerLabel.BackColor = Color.DimGray;
             busesLabel.BackColor = Color.DimGray;
             customersLabel.BackColor = Color.DimGray;
+            adminLabels.BackColor = Color.DimGray;
 
             welcomePanel.Hide();
             managersPanel.Hide();
@@ -76,6 +101,7 @@ namespace Project
             ticketsPanel.Hide();
             busesPanel.Hide();
             customersPanel.Hide();
+            adminPanelView.Hide();
 
             homeLabel.Visible = true;
         }
@@ -86,6 +112,7 @@ namespace Project
             ticketsLabel.BackColor = Color.DimGray;
             managerLabel.BackColor = Color.DimGray;
             busesLabel.BackColor = Color.DimGray;
+            adminLabels.BackColor = Color.DimGray;
 
             welcomePanel.Show();
             managersPanel.Hide();
@@ -93,6 +120,7 @@ namespace Project
             ticketsPanel.Hide();
             busesPanel.Hide();
             customersPanel.Hide();
+            adminPanelView.Hide();
 
             homeLabel.Visible = false;
         }
@@ -110,12 +138,14 @@ namespace Project
             managerLabel.BackColor = Color.DimGray;
             busesLabel.BackColor = Color.DimGray;
             customersLabel.BackColor = Color.DimGray;
+            adminLabels.BackColor = Color.DimGray;
 
             welcomePanel.Hide();
             managersPanel.Hide();
             salesmanPanel.Hide();
             busesPanel.Hide();
             customersPanel.Hide();
+            adminPanelView.Hide();
 
             ticketsPanel.Show();
 
@@ -141,12 +171,14 @@ namespace Project
             salesmanLabel.BackColor = Color.DimGray;
             managerLabel.BackColor = Color.DimGray;
             customersLabel.BackColor = Color.DimGray;
+            adminLabels.BackColor = Color.DimGray;
 
             welcomePanel.Hide();
             managersPanel.Hide();
             salesmanPanel.Hide();
             ticketsPanel.Hide();
             customersPanel.Hide();
+            adminPanelView.Hide();
 
             busesPanel.Show();
 
@@ -161,12 +193,14 @@ namespace Project
             salesmanLabel.BackColor = Color.DimGray;
             managerLabel.BackColor = Color.DimGray;
             busesLabel.BackColor = Color.DimGray;
+            adminLabels.BackColor = Color.DimGray;
 
             welcomePanel.Hide();
             managersPanel.Hide();
             salesmanPanel.Hide();
             ticketsPanel.Hide();
             busesPanel.Hide();
+            adminPanelView.Hide();
 
             customersPanel.Show();
 
@@ -227,19 +261,25 @@ namespace Project
             managerPassword.Text = "";
             managerSearchBox.Text = "";
 
+            managerId = 0;
+            managerTrash.Visible = false;
+            managerAddBtn.Enabled = true;
+
             dynamic managerlist = ManagersController.getAllManager();
             managerGridView.DataSource = managerlist;
         }
 
-        
+
 
         private void managerSearchBtn_Click(object sender, EventArgs e)
         {
             string username = managerSearchBox.Text;
             var manager = ManagersController.getSingleManager(username);
+            
             if (manager == null)
             {
                 MessageBox.Show("Manager not found");
+                return;
             }
             else
             {
@@ -247,24 +287,26 @@ namespace Project
                 managerUsername.Text = manager.Username;
                 managerPassword.Text = manager.Password;
             }
+            managerId = manager.Id;
+            if (managerId > 0) 
+            {
+                managerTrash.Visible = true;
+                managerAddBtn.Enabled = false;
+            }
 
         }
 
         private void managerUpdateBtn_Click(object sender, EventArgs e)
         {
-            string username = managerSearchBox.Text;
-            var manager = ManagersController.getSingleManager(username);
-
-            if (manager == null)
+            if (managerId==0)
             {
                 MessageBox.Show("Search a manager first");
                 return;
             }
 
-
             var newManager = new
             {
-                id = manager.Id,
+                id = managerId,
                 name = managerName.Text,
                 username = managerUsername.Text,
                 password = managerPassword.Text
@@ -286,16 +328,13 @@ namespace Project
 
         private void managerDeleteBtn_Click(object sender, EventArgs e)
         {
-            string username = managerSearchBox.Text;
-            var manager = ManagersController.getSingleManager(username);
-
-            if (manager == null)
+            if (managerId==0)
             {
                 MessageBox.Show("Search a manager first");
                 return;
             }
 
-            bool res = ManagersController.deleteManager(manager.Id);
+            bool res = ManagersController.deleteManager(managerId);
             if (res)
             {
                 reloadManager();
@@ -311,6 +350,10 @@ namespace Project
             salesmanUsername.Text = "";
             salesmanPassword.Text = "";
             salesmanSearchBox.Text = "";
+
+            salesmanId = 0;
+            salesmanAddBtn.Enabled = true;
+            salesmanTrash.Visible = false;
 
             dynamic salesmanlist = SalesmanController.getAllSalesman();
             salesmanGridView.DataSource = salesmanlist;
@@ -355,6 +398,11 @@ namespace Project
                 MessageBox.Show("Salesman not Found");
                 return;
             }
+
+            salesmanId = salesman.Id;
+            salesmanAddBtn.Enabled = false;
+            salesmanTrash.Visible = true;
+
             salesmanName.Text = salesman.Name;
             salesmanUsername.Text = salesman.Username;
             salesmanPassword.Text = salesman.Password;
@@ -362,16 +410,14 @@ namespace Project
 
         private void salesmanUpdateBtn_Click(object sender, EventArgs e)
         {
-            string username = salesmanSearchBox.Text.Trim();
-            dynamic salesman = SalesmanController.searchSalesman(username);
-            if (salesman==null)
+            if (salesmanId==0)
             {
                 MessageBox.Show("Search a Salesman First");
                 return;
             }
             var newSalesman = new
             {
-                id = salesman.Id,
+                id = salesmanId,
                 name = salesmanName.Text.Trim(),
                 username = salesmanUsername.Text.Trim(),
                 password = salesmanPassword.Text.Trim()
@@ -392,19 +438,13 @@ namespace Project
 
         private void salesmanDeleteBtn_Click(object sender, EventArgs e)
         {
-            string username = salesmanSearchBox.Text.Trim();
-            dynamic salesman = SalesmanController.searchSalesman(username);
-            if (salesman == null)
+            if (salesmanId == 0)
             {
                 MessageBox.Show("Search a Salesman First");
                 return;
             }
-            else if (salesman.Name.Length == 0 || salesman.Username.Length == 0 || salesman.Password.Length == 0)
-            {
-                MessageBox.Show("Fill all the required fields");
-                return;
-            }
-            bool res = SalesmanController.deleteSalesman(salesman.Id);
+            
+            bool res = SalesmanController.deleteSalesman(salesmanId);
             if (res)
             {
                 reloadSalesman();
@@ -595,6 +635,16 @@ namespace Project
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
+        private void ticketSearchBtn_Click(object sender, EventArgs e)
+        {
+            string phone = phoneBox.Text;
+            var customer = CustomerController.searchCustomer(phone);
+            if (customer != null)
+            {
+                customerName.Text = customer.Name;
+            }
+            else customerName.Text = "";
+        }
         public void reloadCustomer()
         {
             customerId = 0;
@@ -672,5 +722,21 @@ namespace Project
             }
             else MessageBox.Show("Could not update Customer");
         }
+
+        private void ticketSearchBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void managerTrash_Click(object sender, EventArgs e)
+        {
+            reloadManager();
+        }
+
+        private void salesmanTrash_Click(object sender, EventArgs e)
+        {
+            reloadSalesman();
+        }
+
     }
 }

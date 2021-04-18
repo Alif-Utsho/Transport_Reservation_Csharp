@@ -119,7 +119,7 @@ namespace Project
             // 
             // loginBtn
             // 
-            this.loginBtn.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.loginBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.loginBtn.Location = new System.Drawing.Point(258, 344);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(341, 53);
