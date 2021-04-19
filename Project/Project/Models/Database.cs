@@ -14,6 +14,7 @@ namespace Project.Models
         public Sellers Sellers;
         public Tickets Tickets;
         public Customers Customers;
+        public Buses Buses;
         public Database()
         {
             string connectionString = @"Server=LAPTOP-LSE8ACET\SQL_SERVER;Database=TransportReservation;User Id=sa;Password=12345;";
@@ -24,6 +25,7 @@ namespace Project.Models
             Sellers = new Sellers(conn);
             Tickets = new Tickets(conn);
             Customers = new Customers(conn);
+            Buses = new Buses(conn);
         }
     }
 }

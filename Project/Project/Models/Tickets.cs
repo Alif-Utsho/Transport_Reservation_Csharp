@@ -30,7 +30,7 @@ namespace Project.Models
         public List<Ticket> getAllTickets()
         {
             conn.Open();
-            string query = string.Format("SELECT * FROM Tickets");
+            string query = string.Format("SELECT * FROM Tickets ORDER BY CONVERT(DATETIME, DATE) DESC");
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             List<Ticket> ticket = new List<Ticket>();

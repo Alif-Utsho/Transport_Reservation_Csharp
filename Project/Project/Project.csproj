@@ -47,12 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AuthenticateController.cs" />
+    <Compile Include="Controllers\BusesController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ManagersController.cs" />
     <Compile Include="Controllers\SalesmanController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\Authentication.cs" />
+    <Compile Include="Models\Bus.cs" />
+    <Compile Include="Models\Buses.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Manager.cs" />

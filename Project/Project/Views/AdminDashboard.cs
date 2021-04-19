@@ -29,6 +29,7 @@ namespace Project
             reloadManager();
             reloadSalesman();
             reloadCustomer();
+            reloadBuses();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -43,7 +44,7 @@ namespace Project
 
         private void label3_Click(object sender, EventArgs e)
         {
-            managerLabel.BackColor = Color.DarkCyan;
+            managerLabel.BackColor = Color.Teal;
 
             ticketsLabel.BackColor = Color.DimGray;
             salesmanLabel.BackColor = Color.DimGray;
@@ -51,7 +52,7 @@ namespace Project
             customersLabel.BackColor = Color.DimGray;
             adminLabels.BackColor = Color.DimGray;
 
-            welcomePanel.Hide();
+            AdminPanel.Hide();
             salesmanPanel.Hide();
             managersPanel.Show();
             ticketsPanel.Hide();
@@ -66,7 +67,7 @@ namespace Project
 
         private void adminLabels_Click(object sender, EventArgs e)
         {
-            adminLabels.BackColor = Color.DarkCyan;
+            adminLabels.BackColor = Color.Teal;
 
             managerLabel.BackColor = Color.DimGray;
             ticketsLabel.BackColor = Color.DimGray;
@@ -74,7 +75,7 @@ namespace Project
             busesLabel.BackColor = Color.DimGray;
             customersLabel.BackColor = Color.DimGray;
 
-            welcomePanel.Hide();
+            AdminPanel.Hide();
             salesmanPanel.Hide();
             managersPanel.Hide();
             ticketsPanel.Hide();
@@ -87,7 +88,7 @@ namespace Project
 
         private void label4_Click(object sender, EventArgs e)
         {
-            salesmanLabel.BackColor = Color.DarkCyan;
+            salesmanLabel.BackColor = Color.Teal;
 
             ticketsLabel.BackColor = Color.DimGray;
             managerLabel.BackColor = Color.DimGray;
@@ -95,7 +96,7 @@ namespace Project
             customersLabel.BackColor = Color.DimGray;
             adminLabels.BackColor = Color.DimGray;
 
-            welcomePanel.Hide();
+            AdminPanel.Hide();
             managersPanel.Hide();
             salesmanPanel.Show();
             ticketsPanel.Hide();
@@ -113,8 +114,9 @@ namespace Project
             managerLabel.BackColor = Color.DimGray;
             busesLabel.BackColor = Color.DimGray;
             adminLabels.BackColor = Color.DimGray;
+            customersLabel.BackColor = Color.DimGray;
 
-            welcomePanel.Show();
+            AdminPanel.Show();
             managersPanel.Hide();
             salesmanPanel.Hide();
             ticketsPanel.Hide();
@@ -132,7 +134,7 @@ namespace Project
 
         private void label2_Click_2(object sender, EventArgs e)
         {
-            ticketsLabel.BackColor = Color.DarkCyan;
+            ticketsLabel.BackColor = Color.Teal;
 
             salesmanLabel.BackColor = Color.DimGray;
             managerLabel.BackColor = Color.DimGray;
@@ -140,7 +142,7 @@ namespace Project
             customersLabel.BackColor = Color.DimGray;
             adminLabels.BackColor = Color.DimGray;
 
-            welcomePanel.Hide();
+            AdminPanel.Hide();
             managersPanel.Hide();
             salesmanPanel.Hide();
             busesPanel.Hide();
@@ -165,7 +167,7 @@ namespace Project
 
         private void busesLabel_Click(object sender, EventArgs e)
         {
-            busesLabel.BackColor = Color.DarkCyan;
+            busesLabel.BackColor = Color.Teal;
 
             ticketsLabel.BackColor = Color.DimGray;
             salesmanLabel.BackColor = Color.DimGray;
@@ -173,7 +175,7 @@ namespace Project
             customersLabel.BackColor = Color.DimGray;
             adminLabels.BackColor = Color.DimGray;
 
-            welcomePanel.Hide();
+            AdminPanel.Hide();
             managersPanel.Hide();
             salesmanPanel.Hide();
             ticketsPanel.Hide();
@@ -187,7 +189,7 @@ namespace Project
 
         private void customersLabel_Click(object sender, EventArgs e)
         {
-            customersLabel.BackColor = Color.DarkCyan;
+            customersLabel.BackColor = Color.Teal;
 
             ticketsLabel.BackColor = Color.DimGray;
             salesmanLabel.BackColor = Color.DimGray;
@@ -195,7 +197,7 @@ namespace Project
             busesLabel.BackColor = Color.DimGray;
             adminLabels.BackColor = Color.DimGray;
 
-            welcomePanel.Hide();
+            AdminPanel.Hide();
             managersPanel.Hide();
             salesmanPanel.Hide();
             ticketsPanel.Hide();
@@ -461,8 +463,8 @@ namespace Project
             ticketSource.Text = "From";
             ticketDest.Text = "To";
             coachBox.Text = "Coach";
-            acRadioBtn.Checked = false;
-            nonAcRadioBtn.Checked = false;
+            acRadioButton.Checked = false;
+            nonAcRadioButton.Checked = false;
             journeyDate.Text = DateTime.Now.ToShortDateString();
             journeyTime.Text = "Time";
 
@@ -552,13 +554,13 @@ namespace Project
                 var abustype = row.Cells["BusType"].Value.ToString();
                 if (abustype.Equals("AC"))
                 {
-                    acRadioBtn.Checked = true;
-                    nonAcRadioBtn.Checked = false;
+                    acRadioButton.Checked = true;
+                    nonAcRadioButton.Checked = false;
                 }
                 else if (abustype == "Non AC")
                 {
-                    nonAcRadioBtn.Checked = true;
-                    acRadioBtn.Checked = false;
+                    nonAcRadioButton.Checked = true;
+                    acRadioButton.Checked = false;
                 }
                 else
                 {
@@ -738,5 +740,122 @@ namespace Project
             reloadSalesman();
         }
 
+        string busType="";
+        private void busAcRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            busType = "AC";
+        }
+
+        private void busNonAcRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            busType = "Non AC";
+        }
+
+        public void reloadBuses()
+        {
+            busSearchBox.Text = "";
+            busCoachBox.Text = "";
+            busAcRadio.Checked = false;
+            busNonAcRadio.Checked = false;
+
+            busId = 0;
+
+            busTrash.Visible = false;
+            busAddBtn.Enabled = true;
+
+            var bus = BusesController.getAllBus();
+            busGridView.DataSource = bus;
+        }
+
+        private void busAddBtn_Click(object sender, EventArgs e)
+        {
+            var bus = new
+            {
+                coach = busCoachBox.Text.Trim(),
+                type = busType,
+            };
+
+            if (bus.coach.Length == 0 || bus.type.Length == 0)
+            {
+                MessageBox.Show("Fill all the required fields");
+                return;
+            }
+            bool res = BusesController.addBus(bus);
+            if (res) 
+            {
+                reloadBuses();
+                MessageBox.Show("Bus Added"); 
+            }
+            else MessageBox.Show("Could not add");
+        }
+
+        private void busSearchBtn_Click(object sender, EventArgs e)
+        {
+            string coach = busSearchBox.Text.Trim();
+            var bus = BusesController.searchBus(coach);
+            if (bus == null)
+            {
+                MessageBox.Show("Bus not found");
+                return;
+            }
+            busCoachBox.Text = bus.Coach;
+            if (bus.Type == "AC") busAcRadio.Checked = true;
+            else busNonAcRadio.Checked = true;
+
+            busId = bus.Id;
+
+            busAddBtn.Enabled = false;
+            busTrash.Visible = true;
+        }
+
+        private void busTrash_Click(object sender, EventArgs e)
+        {
+            reloadBuses();
+        }
+
+        private void busUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (busId == 0)
+            {
+                MessageBox.Show("Search a bus first");
+                return;
+            }
+            var bus = new
+            {
+                id = busId,
+                coach = busCoachBox.Text.Trim(),
+                type = busType,
+            };
+
+            if (bus.coach.Length == 0 || bus.type.Length == 0)
+            {
+                MessageBox.Show("Fill all the required fields");
+                return;
+            }
+            bool res = BusesController.updateBus(bus);
+            if (res)
+            {
+                reloadBuses();
+                MessageBox.Show("Bus updated");
+            }
+            else MessageBox.Show("Could not update");
+
+        }
+
+        private void busRemoveBtn_Click(object sender, EventArgs e)
+        {
+            if (busId == 0)
+            {
+                MessageBox.Show("Search a bus first");
+                return;
+            }
+            bool res = BusesController.deleteBus(busId);
+            if (res)
+            {
+                reloadBuses();
+                MessageBox.Show("Bus deleted");
+            }
+            else MessageBox.Show("Could not delete");
+        }
     }
 }
