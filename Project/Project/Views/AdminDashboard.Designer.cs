@@ -119,7 +119,7 @@ namespace Project
             this.adminDeleteBtn = new System.Windows.Forms.Button();
             this.adminUpdateBtn = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.adminGridView = new System.Windows.Forms.DataGridView();
             this.adminPasswordBox = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.adminUsernameBox = new System.Windows.Forms.TextBox();
@@ -170,7 +170,7 @@ namespace Project
             this.salesmanPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).BeginInit();
             this.adminPanelView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGridView)).BeginInit();
             this.ticketsPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -411,7 +411,7 @@ namespace Project
             this.textBox1.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(149, 303);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 30);
+            this.textBox1.Size = new System.Drawing.Size(297, 25);
             this.textBox1.TabIndex = 7;
             this.textBox1.UseSystemPasswordChar = true;
             // 
@@ -430,7 +430,7 @@ namespace Project
             this.textBox2.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(149, 241);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(297, 30);
+            this.textBox2.Size = new System.Drawing.Size(297, 25);
             this.textBox2.TabIndex = 5;
             // 
             // label11
@@ -448,7 +448,7 @@ namespace Project
             this.textBox3.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(149, 177);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(297, 30);
+            this.textBox3.Size = new System.Drawing.Size(297, 25);
             this.textBox3.TabIndex = 3;
             // 
             // label12
@@ -476,7 +476,7 @@ namespace Project
             this.textBox4.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(24, 25);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(422, 30);
+            this.textBox4.Size = new System.Drawing.Size(422, 25);
             this.textBox4.TabIndex = 0;
             // 
             // busesPanel
@@ -505,7 +505,7 @@ namespace Project
             this.busCoachBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busCoachBox.Location = new System.Drawing.Point(571, 215);
             this.busCoachBox.Name = "busCoachBox";
-            this.busCoachBox.Size = new System.Drawing.Size(297, 30);
+            this.busCoachBox.Size = new System.Drawing.Size(297, 25);
             this.busCoachBox.TabIndex = 37;
             // 
             // busTrash
@@ -536,7 +536,7 @@ namespace Project
             this.busSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busSearchBox.Location = new System.Drawing.Point(498, 53);
             this.busSearchBox.Name = "busSearchBox";
-            this.busSearchBox.Size = new System.Drawing.Size(361, 30);
+            this.busSearchBox.Size = new System.Drawing.Size(361, 25);
             this.busSearchBox.TabIndex = 34;
             // 
             // label2
@@ -581,7 +581,7 @@ namespace Project
             this.busNonAcRadio.AutoSize = true;
             this.busNonAcRadio.Location = new System.Drawing.Point(150, 7);
             this.busNonAcRadio.Name = "busNonAcRadio";
-            this.busNonAcRadio.Size = new System.Drawing.Size(86, 23);
+            this.busNonAcRadio.Size = new System.Drawing.Size(73, 20);
             this.busNonAcRadio.TabIndex = 1;
             this.busNonAcRadio.TabStop = true;
             this.busNonAcRadio.Text = "Non AC";
@@ -593,7 +593,7 @@ namespace Project
             this.busAcRadio.AutoSize = true;
             this.busAcRadio.Location = new System.Drawing.Point(22, 7);
             this.busAcRadio.Name = "busAcRadio";
-            this.busAcRadio.Size = new System.Drawing.Size(53, 23);
+            this.busAcRadio.Size = new System.Drawing.Size(45, 20);
             this.busAcRadio.TabIndex = 0;
             this.busAcRadio.TabStop = true;
             this.busAcRadio.Text = "AC";
@@ -606,7 +606,7 @@ namespace Project
             this.label5.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(437, 217);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 24);
+            this.label5.Size = new System.Drawing.Size(59, 19);
             this.label5.TabIndex = 23;
             this.label5.Text = "Coach";
             // 
@@ -616,7 +616,7 @@ namespace Project
             this.label24.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(437, 270);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(114, 24);
+            this.label24.Size = new System.Drawing.Size(89, 19);
             this.label24.TabIndex = 22;
             this.label24.Text = "Bus Type";
             // 
@@ -704,7 +704,7 @@ namespace Project
             this.customerSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerSearchBox.Location = new System.Drawing.Point(62, 53);
             this.customerSearchBox.Name = "customerSearchBox";
-            this.customerSearchBox.Size = new System.Drawing.Size(361, 30);
+            this.customerSearchBox.Size = new System.Drawing.Size(361, 25);
             this.customerSearchBox.TabIndex = 31;
             // 
             // customerPhoneBox
@@ -712,7 +712,7 @@ namespace Project
             this.customerPhoneBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerPhoneBox.Location = new System.Drawing.Point(126, 267);
             this.customerPhoneBox.Name = "customerPhoneBox";
-            this.customerPhoneBox.Size = new System.Drawing.Size(297, 30);
+            this.customerPhoneBox.Size = new System.Drawing.Size(297, 25);
             this.customerPhoneBox.TabIndex = 30;
             // 
             // customerNameBox
@@ -720,7 +720,7 @@ namespace Project
             this.customerNameBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerNameBox.Location = new System.Drawing.Point(126, 220);
             this.customerNameBox.Name = "customerNameBox";
-            this.customerNameBox.Size = new System.Drawing.Size(297, 30);
+            this.customerNameBox.Size = new System.Drawing.Size(297, 25);
             this.customerNameBox.TabIndex = 29;
             // 
             // label25
@@ -760,7 +760,7 @@ namespace Project
             this.label26.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(34, 220);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(62, 24);
+            this.label26.Size = new System.Drawing.Size(49, 19);
             this.label26.TabIndex = 23;
             this.label26.Text = "Name";
             // 
@@ -770,7 +770,7 @@ namespace Project
             this.label27.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(34, 273);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(75, 24);
+            this.label27.Size = new System.Drawing.Size(59, 19);
             this.label27.TabIndex = 22;
             this.label27.Text = "Phone";
             // 
@@ -903,7 +903,7 @@ namespace Project
             this.managerPassword.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managerPassword.Location = new System.Drawing.Point(149, 303);
             this.managerPassword.Name = "managerPassword";
-            this.managerPassword.Size = new System.Drawing.Size(297, 30);
+            this.managerPassword.Size = new System.Drawing.Size(297, 25);
             this.managerPassword.TabIndex = 7;
             this.managerPassword.UseSystemPasswordChar = true;
             // 
@@ -913,7 +913,7 @@ namespace Project
             this.label7.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(20, 306);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 24);
+            this.label7.Size = new System.Drawing.Size(89, 19);
             this.label7.TabIndex = 6;
             this.label7.Text = "Password";
             // 
@@ -922,7 +922,7 @@ namespace Project
             this.managerUsername.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managerUsername.Location = new System.Drawing.Point(149, 241);
             this.managerUsername.Name = "managerUsername";
-            this.managerUsername.Size = new System.Drawing.Size(297, 30);
+            this.managerUsername.Size = new System.Drawing.Size(297, 25);
             this.managerUsername.TabIndex = 5;
             // 
             // label6
@@ -931,7 +931,7 @@ namespace Project
             this.label6.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(20, 244);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 24);
+            this.label6.Size = new System.Drawing.Size(89, 19);
             this.label6.TabIndex = 4;
             this.label6.Text = "Username";
             // 
@@ -940,7 +940,7 @@ namespace Project
             this.managerName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managerName.Location = new System.Drawing.Point(149, 177);
             this.managerName.Name = "managerName";
-            this.managerName.Size = new System.Drawing.Size(297, 30);
+            this.managerName.Size = new System.Drawing.Size(297, 25);
             this.managerName.TabIndex = 3;
             // 
             // manageName
@@ -949,7 +949,7 @@ namespace Project
             this.manageName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageName.Location = new System.Drawing.Point(20, 180);
             this.manageName.Name = "manageName";
-            this.manageName.Size = new System.Drawing.Size(62, 24);
+            this.manageName.Size = new System.Drawing.Size(49, 19);
             this.manageName.TabIndex = 2;
             this.manageName.Text = "Name";
             // 
@@ -970,7 +970,7 @@ namespace Project
             this.managerSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managerSearchBox.Location = new System.Drawing.Point(24, 25);
             this.managerSearchBox.Name = "managerSearchBox";
-            this.managerSearchBox.Size = new System.Drawing.Size(422, 30);
+            this.managerSearchBox.Size = new System.Drawing.Size(422, 25);
             this.managerSearchBox.TabIndex = 0;
             // 
             // salesmanPanel
@@ -1078,7 +1078,7 @@ namespace Project
             this.salesmanPassword.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salesmanPassword.Location = new System.Drawing.Point(149, 303);
             this.salesmanPassword.Name = "salesmanPassword";
-            this.salesmanPassword.Size = new System.Drawing.Size(297, 30);
+            this.salesmanPassword.Size = new System.Drawing.Size(297, 25);
             this.salesmanPassword.TabIndex = 7;
             this.salesmanPassword.UseSystemPasswordChar = true;
             // 
@@ -1088,7 +1088,7 @@ namespace Project
             this.label4.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 306);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 24);
+            this.label4.Size = new System.Drawing.Size(89, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password";
             // 
@@ -1097,7 +1097,7 @@ namespace Project
             this.salesmanUsername.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salesmanUsername.Location = new System.Drawing.Point(149, 241);
             this.salesmanUsername.Name = "salesmanUsername";
-            this.salesmanUsername.Size = new System.Drawing.Size(297, 30);
+            this.salesmanUsername.Size = new System.Drawing.Size(297, 25);
             this.salesmanUsername.TabIndex = 5;
             // 
             // label13
@@ -1106,7 +1106,7 @@ namespace Project
             this.label13.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(20, 244);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(114, 24);
+            this.label13.Size = new System.Drawing.Size(89, 19);
             this.label13.TabIndex = 4;
             this.label13.Text = "Username";
             // 
@@ -1115,7 +1115,7 @@ namespace Project
             this.salesmanName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salesmanName.Location = new System.Drawing.Point(149, 177);
             this.salesmanName.Name = "salesmanName";
-            this.salesmanName.Size = new System.Drawing.Size(297, 30);
+            this.salesmanName.Size = new System.Drawing.Size(297, 25);
             this.salesmanName.TabIndex = 3;
             // 
             // label14
@@ -1124,7 +1124,7 @@ namespace Project
             this.label14.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(20, 180);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 24);
+            this.label14.Size = new System.Drawing.Size(49, 19);
             this.label14.TabIndex = 2;
             this.label14.Text = "Name";
             // 
@@ -1145,7 +1145,7 @@ namespace Project
             this.salesmanSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salesmanSearchBox.Location = new System.Drawing.Point(24, 25);
             this.salesmanSearchBox.Name = "salesmanSearchBox";
-            this.salesmanSearchBox.Size = new System.Drawing.Size(422, 30);
+            this.salesmanSearchBox.Size = new System.Drawing.Size(422, 25);
             this.salesmanSearchBox.TabIndex = 0;
             // 
             // adminPanelView
@@ -1155,7 +1155,7 @@ namespace Project
             this.adminPanelView.Controls.Add(this.adminDeleteBtn);
             this.adminPanelView.Controls.Add(this.adminUpdateBtn);
             this.adminPanelView.Controls.Add(this.label29);
-            this.adminPanelView.Controls.Add(this.dataGridView1);
+            this.adminPanelView.Controls.Add(this.adminGridView);
             this.adminPanelView.Controls.Add(this.adminPasswordBox);
             this.adminPanelView.Controls.Add(this.label30);
             this.adminPanelView.Controls.Add(this.adminUsernameBox);
@@ -1180,6 +1180,7 @@ namespace Project
             this.adminTrash.Size = new System.Drawing.Size(41, 32);
             this.adminTrash.TabIndex = 31;
             this.adminTrash.Visible = false;
+            this.adminTrash.Click += new System.EventHandler(this.adminTrash_Click);
             // 
             // adminAddBtn
             // 
@@ -1189,8 +1190,9 @@ namespace Project
             this.adminAddBtn.Name = "adminAddBtn";
             this.adminAddBtn.Size = new System.Drawing.Size(297, 32);
             this.adminAddBtn.TabIndex = 12;
-            this.adminAddBtn.Text = "Add Salesman";
+            this.adminAddBtn.Text = "Add Admin";
             this.adminAddBtn.UseVisualStyleBackColor = false;
+            this.adminAddBtn.Click += new System.EventHandler(this.adminAddBtn_Click);
             // 
             // adminDeleteBtn
             // 
@@ -1202,6 +1204,7 @@ namespace Project
             this.adminDeleteBtn.TabIndex = 11;
             this.adminDeleteBtn.Text = "Delete";
             this.adminDeleteBtn.UseVisualStyleBackColor = false;
+            this.adminDeleteBtn.Click += new System.EventHandler(this.adminDeleteBtn_Click);
             // 
             // adminUpdateBtn
             // 
@@ -1213,6 +1216,7 @@ namespace Project
             this.adminUpdateBtn.TabIndex = 10;
             this.adminUpdateBtn.Text = "Update";
             this.adminUpdateBtn.UseVisualStyleBackColor = false;
+            this.adminUpdateBtn.Click += new System.EventHandler(this.adminUpdateBtn_Click);
             // 
             // label29
             // 
@@ -1224,32 +1228,32 @@ namespace Project
             this.label29.Text = "Admin List";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // adminGridView
             // 
-            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(480, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(390, 376);
-            this.dataGridView1.TabIndex = 8;
+            this.adminGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.adminGridView.AllowUserToAddRows = false;
+            this.adminGridView.AllowUserToDeleteRows = false;
+            this.adminGridView.AllowUserToResizeColumns = false;
+            this.adminGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.adminGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminGridView.Enabled = false;
+            this.adminGridView.EnableHeadersVisualStyles = false;
+            this.adminGridView.Location = new System.Drawing.Point(480, 70);
+            this.adminGridView.Name = "adminGridView";
+            this.adminGridView.ReadOnly = true;
+            this.adminGridView.RowHeadersVisible = false;
+            this.adminGridView.RowHeadersWidth = 51;
+            this.adminGridView.RowTemplate.Height = 24;
+            this.adminGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.adminGridView.Size = new System.Drawing.Size(390, 376);
+            this.adminGridView.TabIndex = 8;
             // 
             // adminPasswordBox
             // 
             this.adminPasswordBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminPasswordBox.Location = new System.Drawing.Point(149, 303);
             this.adminPasswordBox.Name = "adminPasswordBox";
-            this.adminPasswordBox.Size = new System.Drawing.Size(297, 30);
+            this.adminPasswordBox.Size = new System.Drawing.Size(297, 25);
             this.adminPasswordBox.TabIndex = 7;
             this.adminPasswordBox.UseSystemPasswordChar = true;
             // 
@@ -1259,7 +1263,7 @@ namespace Project
             this.label30.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(20, 306);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(114, 24);
+            this.label30.Size = new System.Drawing.Size(89, 19);
             this.label30.TabIndex = 6;
             this.label30.Text = "Password";
             // 
@@ -1268,7 +1272,7 @@ namespace Project
             this.adminUsernameBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminUsernameBox.Location = new System.Drawing.Point(149, 241);
             this.adminUsernameBox.Name = "adminUsernameBox";
-            this.adminUsernameBox.Size = new System.Drawing.Size(297, 30);
+            this.adminUsernameBox.Size = new System.Drawing.Size(297, 25);
             this.adminUsernameBox.TabIndex = 5;
             // 
             // label31
@@ -1277,7 +1281,7 @@ namespace Project
             this.label31.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(20, 244);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(114, 24);
+            this.label31.Size = new System.Drawing.Size(89, 19);
             this.label31.TabIndex = 4;
             this.label31.Text = "Username";
             // 
@@ -1286,7 +1290,7 @@ namespace Project
             this.adminNameBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminNameBox.Location = new System.Drawing.Point(149, 177);
             this.adminNameBox.Name = "adminNameBox";
-            this.adminNameBox.Size = new System.Drawing.Size(297, 30);
+            this.adminNameBox.Size = new System.Drawing.Size(297, 25);
             this.adminNameBox.TabIndex = 3;
             // 
             // label32
@@ -1295,7 +1299,7 @@ namespace Project
             this.label32.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(20, 180);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(62, 24);
+            this.label32.Size = new System.Drawing.Size(49, 19);
             this.label32.TabIndex = 2;
             this.label32.Text = "Name";
             // 
@@ -1309,13 +1313,14 @@ namespace Project
             this.adminSearchBtn.TabIndex = 1;
             this.adminSearchBtn.Text = "Search";
             this.adminSearchBtn.UseVisualStyleBackColor = false;
+            this.adminSearchBtn.Click += new System.EventHandler(this.adminSearchBtn_Click);
             // 
             // adminSearchBox
             // 
             this.adminSearchBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminSearchBox.Location = new System.Drawing.Point(24, 25);
             this.adminSearchBox.Name = "adminSearchBox";
-            this.adminSearchBox.Size = new System.Drawing.Size(422, 30);
+            this.adminSearchBox.Size = new System.Drawing.Size(422, 25);
             this.adminSearchBox.TabIndex = 0;
             // 
             // phoneBox
@@ -1323,7 +1328,7 @@ namespace Project
             this.phoneBox.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneBox.Location = new System.Drawing.Point(89, 6);
             this.phoneBox.Name = "phoneBox";
-            this.phoneBox.Size = new System.Drawing.Size(144, 30);
+            this.phoneBox.Size = new System.Drawing.Size(144, 25);
             this.phoneBox.TabIndex = 0;
             this.phoneBox.TextChanged += new System.EventHandler(this.ticketSearchBtn_Click);
             // 
@@ -1333,7 +1338,7 @@ namespace Project
             this.label18.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(3, 56);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 24);
+            this.label18.Size = new System.Drawing.Size(49, 19);
             this.label18.TabIndex = 2;
             this.label18.Text = "Name";
             // 
@@ -1342,7 +1347,7 @@ namespace Project
             this.customerName.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerName.Location = new System.Drawing.Point(89, 53);
             this.customerName.Name = "customerName";
-            this.customerName.Size = new System.Drawing.Size(236, 30);
+            this.customerName.Size = new System.Drawing.Size(236, 25);
             this.customerName.TabIndex = 3;
             // 
             // ticketUpdateBtn
@@ -1387,7 +1392,7 @@ namespace Project
             this.label15.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(3, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 24);
+            this.label15.Size = new System.Drawing.Size(59, 19);
             this.label15.TabIndex = 13;
             this.label15.Text = "Phone";
             // 
@@ -1397,7 +1402,7 @@ namespace Project
             this.label19.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(3, 102);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 24);
+            this.label19.Size = new System.Drawing.Size(69, 19);
             this.label19.TabIndex = 14;
             this.label19.Text = "Source";
             // 
@@ -1407,7 +1412,7 @@ namespace Project
             this.label20.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(3, 145);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(75, 24);
+            this.label20.Size = new System.Drawing.Size(59, 19);
             this.label20.TabIndex = 15;
             this.label20.Text = "Dest.";
             // 
@@ -1425,7 +1430,7 @@ namespace Project
             "Rangpur"});
             this.ticketSource.Location = new System.Drawing.Point(90, 98);
             this.ticketSource.Name = "ticketSource";
-            this.ticketSource.Size = new System.Drawing.Size(235, 29);
+            this.ticketSource.Size = new System.Drawing.Size(235, 25);
             this.ticketSource.TabIndex = 16;
             this.ticketSource.Text = "From";
             // 
@@ -1443,7 +1448,7 @@ namespace Project
             "Rangpur"});
             this.ticketDest.Location = new System.Drawing.Point(90, 140);
             this.ticketDest.Name = "ticketDest";
-            this.ticketDest.Size = new System.Drawing.Size(235, 29);
+            this.ticketDest.Size = new System.Drawing.Size(235, 25);
             this.ticketDest.TabIndex = 17;
             this.ticketDest.Text = "To";
             // 
@@ -1453,7 +1458,7 @@ namespace Project
             this.label16.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(339, 101);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(166, 24);
+            this.label16.Size = new System.Drawing.Size(129, 19);
             this.label16.TabIndex = 18;
             this.label16.Text = "Journey Date";
             // 
@@ -1465,7 +1470,7 @@ namespace Project
             this.journeyDate.Location = new System.Drawing.Point(500, 98);
             this.journeyDate.MinDate = new System.DateTime(2021, 4, 14, 0, 0, 0, 0);
             this.journeyDate.Name = "journeyDate";
-            this.journeyDate.Size = new System.Drawing.Size(205, 28);
+            this.journeyDate.Size = new System.Drawing.Size(205, 24);
             this.journeyDate.TabIndex = 19;
             this.journeyDate.Value = new System.DateTime(2021, 4, 15, 0, 0, 0, 0);
             // 
@@ -1475,7 +1480,7 @@ namespace Project
             this.label17.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(339, 144);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(166, 24);
+            this.label17.Size = new System.Drawing.Size(129, 19);
             this.label17.TabIndex = 20;
             this.label17.Text = "Journey Time";
             // 
@@ -1493,7 +1498,7 @@ namespace Project
             "10:00 PM"});
             this.journeyTime.Location = new System.Drawing.Point(500, 141);
             this.journeyTime.Name = "journeyTime";
-            this.journeyTime.Size = new System.Drawing.Size(206, 29);
+            this.journeyTime.Size = new System.Drawing.Size(206, 25);
             this.journeyTime.TabIndex = 21;
             this.journeyTime.Text = "Time";
             // 
@@ -1503,7 +1508,7 @@ namespace Project
             this.label21.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(339, 57);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(114, 24);
+            this.label21.Size = new System.Drawing.Size(89, 19);
             this.label21.TabIndex = 22;
             this.label21.Text = "Bus Type";
             // 
@@ -1513,7 +1518,7 @@ namespace Project
             this.label22.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(339, 12);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(75, 24);
+            this.label22.Size = new System.Drawing.Size(59, 19);
             this.label22.TabIndex = 23;
             this.label22.Text = "Coach";
             // 
@@ -1553,7 +1558,7 @@ namespace Project
             "E"});
             this.coachBox.Location = new System.Drawing.Point(500, 10);
             this.coachBox.Name = "coachBox";
-            this.coachBox.Size = new System.Drawing.Size(206, 29);
+            this.coachBox.Size = new System.Drawing.Size(206, 25);
             this.coachBox.TabIndex = 25;
             this.coachBox.Text = "Coach";
             // 
@@ -1662,7 +1667,7 @@ namespace Project
             this.nonAcRadioButton.AutoSize = true;
             this.nonAcRadioButton.Location = new System.Drawing.Point(101, 7);
             this.nonAcRadioButton.Name = "nonAcRadioButton";
-            this.nonAcRadioButton.Size = new System.Drawing.Size(86, 23);
+            this.nonAcRadioButton.Size = new System.Drawing.Size(73, 20);
             this.nonAcRadioButton.TabIndex = 1;
             this.nonAcRadioButton.TabStop = true;
             this.nonAcRadioButton.Text = "Non AC";
@@ -1674,7 +1679,7 @@ namespace Project
             this.acRadioButton.AutoSize = true;
             this.acRadioButton.Location = new System.Drawing.Point(22, 7);
             this.acRadioButton.Name = "acRadioButton";
-            this.acRadioButton.Size = new System.Drawing.Size(53, 23);
+            this.acRadioButton.Size = new System.Drawing.Size(45, 20);
             this.acRadioButton.TabIndex = 0;
             this.acRadioButton.TabStop = true;
             this.acRadioButton.Text = "AC";
@@ -1683,16 +1688,16 @@ namespace Project
             // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1008, 569);
+            this.Controls.Add(this.adminPanelView);
             this.Controls.Add(this.customersPanel);
             this.Controls.Add(this.busesPanel);
             this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.ticketsPanel);
-            this.Controls.Add(this.adminPanelView);
             this.Controls.Add(this.salesmanPanel);
             this.Controls.Add(this.managersPanel);
             this.Controls.Add(this.menuPanel);
@@ -1722,7 +1727,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.salesmanGridView)).EndInit();
             this.adminPanelView.ResumeLayout(false);
             this.adminPanelView.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGridView)).EndInit();
             this.ticketsPanel.ResumeLayout(false);
             this.ticketsPanel.PerformLayout();
@@ -1818,7 +1823,7 @@ namespace Project
         private System.Windows.Forms.Button adminDeleteBtn;
         private System.Windows.Forms.Button adminUpdateBtn;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView adminGridView;
         private System.Windows.Forms.TextBox adminPasswordBox;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox adminUsernameBox;

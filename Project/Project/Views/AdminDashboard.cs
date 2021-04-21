@@ -20,6 +20,7 @@ namespace Project
         int salesmanId = 0;
         int customerId = 0;
         int busId = 0;
+        int adminId = 0;
 
         public AdminDashboard()
         {
@@ -30,6 +31,7 @@ namespace Project
             reloadSalesman();
             reloadCustomer();
             reloadBuses();
+            reloadAdmin();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -223,24 +225,26 @@ namespace Project
                 password = managerPassword.Text.Trim(),
             };
 
-            if (manager.name.Length == 0 || manager.username.Length == 0 || manager.password.Length == 0)
-            {
-                MessageBox.Show("Fill all the required field");
-                return;
-            }
-            var has= ManagersController.getSingleManager(manager.username);
-            if (has != null)
-            {
-                MessageBox.Show("Username Already used");
-                return;
-            }
-            bool result = ManagersController.AddManager(manager);
-            if (result) 
-            {
-                reloadManager();
-                MessageBox.Show("Manager Added");
-            }
-            else MessageBox.Show("Could not Add");
+            //if (manager.name.Length == 0 || manager.username.Length == 0 || manager.password.Length == 0)
+            //{
+            //    MessageBox.Show("Fill all the required field");
+            //    return;
+            //}
+            //var has = ManagersController.getSingleManager(manager.username);
+            //if (has != null)
+            //{
+            //    MessageBox.Show("Username Already used");
+            //    return;
+            //}
+            //bool result = 
+            bool res = ManagersController.AddManager(manager);
+            if (res) reloadManager();
+            //if (result) 
+            //{
+            //    reloadManager();
+            //    MessageBox.Show("Manager Added");
+            //}
+            //else MessageBox.Show("Could not Add");
 
         }
 
@@ -702,8 +706,8 @@ namespace Project
                 MessageBox.Show("Search a customer first");
                 return;
             }
-            var customer = CustomerController.searchCustomer(customerPhoneBox.Text);
-            customerId = customer.Id;
+            //var customer = CustomerController.searchCustomer(customerPhoneBox.Text);
+            //customerId = customer.Id;
 
             var newCustomer = new
             {
@@ -714,6 +718,12 @@ namespace Project
             if(newCustomer.name.Length==0 || newCustomer.phone.Length == 0)
             {
                 MessageBox.Show("Fill all the required Fields");
+                return;
+            }
+            var has = CustomerController.searchCustomer(newCustomer.phone);
+            if (has != null && newCustomer.id != has.Id)
+            {
+                MessageBox.Show(string.Format("Error!! Phone number matched with {0}", has.Name));
                 return;
             }
             bool res = CustomerController.updateCustomer(newCustomer);
@@ -856,6 +866,77 @@ namespace Project
                 MessageBox.Show("Bus deleted");
             }
             else MessageBox.Show("Could not delete");
+        }
+
+        public void reloadAdmin()
+        {
+            adminId = 0;
+            adminNameBox.Text = "";
+            adminSearchBox.Text = "";
+            adminUsernameBox.Text = "";
+            adminPasswordBox.Text = "";
+
+            adminTrash.Visible = false;
+            adminAddBtn.Enabled = true;
+
+            List<Admin> adminlist = AdminController.getAllAdmin();
+            adminGridView.DataSource = adminlist;
+        }
+
+        private void adminAddBtn_Click(object sender, EventArgs e)
+        {
+            var admin = new
+            {
+                name = adminNameBox.Text.Trim(),
+                username = adminUsernameBox.Text.Trim(),
+                password = adminPasswordBox.Text.Trim()
+            };
+            bool res = AdminController.addAdmin(admin);
+            if (res) { reloadAdmin(); MessageBox.Show("Admin added"); }
+        }
+
+        private void adminSearchBtn_Click(object sender, EventArgs e)
+        {
+            string username = adminSearchBox.Text.Trim();
+            var admin = AdminController.searchAdmin(username);
+            if (admin != null)
+            {
+                adminId = admin.Id;
+                adminNameBox.Text = admin.Name;
+                adminUsernameBox.Text = admin.Username;
+                adminPasswordBox.Text = admin.Password;
+
+                adminTrash.Visible = true;
+                adminAddBtn.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Admin not found");
+            }
+        }
+
+        private void adminTrash_Click(object sender, EventArgs e)
+        {
+            reloadAdmin();
+        }
+
+        private void adminDeleteBtn_Click(object sender, EventArgs e)
+        {
+            bool res = AdminController.deleteAdmin(adminId);
+            if (res) { reloadAdmin(); MessageBox.Show("Admin deleted"); }
+        }
+
+        private void adminUpdateBtn_Click(object sender, EventArgs e)
+        {
+            var admin = new
+            {
+                id = adminId,
+                name = adminNameBox.Text.Trim(),
+                username = adminUsernameBox.Text.Trim(),
+                password = adminPasswordBox.Text.Trim()
+            };
+            bool res = AdminController.updateAdmin(admin);
+            if(res) { reloadAdmin(); MessageBox.Show("Admin updated"); }
         }
     }
 }
