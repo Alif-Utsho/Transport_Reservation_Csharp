@@ -1691,13 +1691,13 @@ namespace Project
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1008, 569);
-            this.Controls.Add(this.ticketsPanel);
-            this.Controls.Add(this.managersPanel);
-            this.Controls.Add(this.adminPanelView);
             this.Controls.Add(this.customersPanel);
             this.Controls.Add(this.busesPanel);
-            this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.salesmanPanel);
+            this.Controls.Add(this.managersPanel);
+            this.Controls.Add(this.ticketsPanel);
+            this.Controls.Add(this.AdminPanel);
+            this.Controls.Add(this.adminPanelView);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Fira Code Retina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

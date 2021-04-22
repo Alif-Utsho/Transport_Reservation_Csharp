@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Project.Controllers;
+using Project.Views;
 
 namespace Project
 {
@@ -59,7 +60,7 @@ namespace Project
                     MessageBox.Show("Invalid Credentials");
                     return;
                 }
-                //new AdminDashboard().Show();
+
                 if (role.ToLower().Equals("admin"))
                 {
                     this.Hide();
@@ -72,8 +73,8 @@ namespace Project
                 }
                 else if (role.ToLower().Equals("managers"))
                 {
-                    //new ManagerDashboard().Show();
-                    MessageBox.Show("Manager Dashboard Will be Created");
+                    this.Hide();
+                    new ManagerDashboard().Show();
                 }
             }
             else MessageBox.Show("Choose a Valid Role");
