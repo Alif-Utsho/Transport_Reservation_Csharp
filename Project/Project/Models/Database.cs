@@ -10,12 +10,12 @@ namespace Project.Models
     public class Database
     {
         public Authentication Authentication { get; set; }
-        public Managers Managers;
-        public Sellers Sellers;
-        public Tickets Tickets;
-        public Customers Customers;
-        public Buses Buses;
-        public Admins Admins;
+        public Managers Managers { get; set; }
+        public Sellers Sellers { get; set; }
+        public Tickets Tickets { get; set; }
+        public Customers Customers { get; set; }
+        public Buses Buses { get; set; }
+        public Admins Admins { get; set; }
         public Database()
         {
             string connectionString = @"Server=LAPTOP-LSE8ACET\SQL_SERVER;Database=TransportReservation;User Id=sa;Password=12345;";

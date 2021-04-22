@@ -25,12 +25,9 @@ namespace Project.Controllers
                 MessageBox.Show("Username Already used");
                 return false;
             }
-            //bool result = ManagersController.AddManager(manager);
             bool result=db.Managers.addManager(manager);
             if (result)
             {
-                //AdminDashboard.reloadManager();
-                MessageBox.Show("Manager Added");
                 return true;
             }
             else
@@ -52,11 +49,28 @@ namespace Project.Controllers
 
         public static bool updateManager(dynamic manager)
         {
+            if (manager.id == 0)
+            {
+                MessageBox.Show("Search a manager first");
+                return false;
+            }
+            if (manager.name.Length == 0 || manager.username.Length == 0 || manager.password.Length == 0)
+            {
+                MessageBox.Show("Fill all the required fields");
+                return false;
+            }
+            var has = getSingleManager(manager.username);
+            if(has != null) { MessageBox.Show("Username already exists"); return false; }
             return db.Managers.updateManager(manager);
         }
 
         public static bool deleteManager(int id)
         {
+            if (id == 0)
+            {
+                MessageBox.Show("Search a manager first");
+                return false;
+            }
             return db.Managers.deleteManager(id);
         }
     }

@@ -896,7 +896,6 @@ namespace Project
             this.managerGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.managerGridView.Size = new System.Drawing.Size(390, 376);
             this.managerGridView.TabIndex = 8;
-            this.managerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.managerGridView_CellContentClick);
             // 
             // managerPassword
             // 
@@ -1571,7 +1570,6 @@ namespace Project
             this.ticketSearchBtn.TabIndex = 26;
             this.ticketSearchBtn.Text = "Search";
             this.ticketSearchBtn.UseVisualStyleBackColor = false;
-            this.ticketSearchBtn.TextChanged += new System.EventHandler(this.ticketSearchBtn_Click);
             this.ticketSearchBtn.Click += new System.EventHandler(this.ticketSearchBtn_Click);
             // 
             // label23
@@ -1693,13 +1691,13 @@ namespace Project
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1008, 569);
+            this.Controls.Add(this.ticketsPanel);
+            this.Controls.Add(this.managersPanel);
             this.Controls.Add(this.adminPanelView);
             this.Controls.Add(this.customersPanel);
             this.Controls.Add(this.busesPanel);
             this.Controls.Add(this.AdminPanel);
-            this.Controls.Add(this.ticketsPanel);
             this.Controls.Add(this.salesmanPanel);
-            this.Controls.Add(this.managersPanel);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Fira Code Retina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

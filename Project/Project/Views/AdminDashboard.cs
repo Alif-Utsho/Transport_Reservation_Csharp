@@ -224,34 +224,10 @@ namespace Project
                 username = managerUsername.Text.Trim(),
                 password = managerPassword.Text.Trim(),
             };
-
-            //if (manager.name.Length == 0 || manager.username.Length == 0 || manager.password.Length == 0)
-            //{
-            //    MessageBox.Show("Fill all the required field");
-            //    return;
-            //}
-            //var has = ManagersController.getSingleManager(manager.username);
-            //if (has != null)
-            //{
-            //    MessageBox.Show("Username Already used");
-            //    return;
-            //}
-            //bool result = 
             bool res = ManagersController.AddManager(manager);
-            if (res) reloadManager();
-            //if (result) 
-            //{
-            //    reloadManager();
-            //    MessageBox.Show("Manager Added");
-            //}
-            //else MessageBox.Show("Could not Add");
-
+            if (res){ reloadManager(); MessageBox.Show("Manager Added"); }
         }
 
-        private void managerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         private void label28_Click(object sender, EventArgs e)
         {
@@ -294,22 +270,12 @@ namespace Project
                 managerPassword.Text = manager.Password;
             }
             managerId = manager.Id;
-            if (managerId > 0) 
-            {
-                managerTrash.Visible = true;
-                managerAddBtn.Enabled = false;
-            }
-
+            managerTrash.Visible = true;
+            managerAddBtn.Enabled = false;
         }
 
         private void managerUpdateBtn_Click(object sender, EventArgs e)
         {
-            if (managerId==0)
-            {
-                MessageBox.Show("Search a manager first");
-                return;
-            }
-
             var newManager = new
             {
                 id = managerId,
@@ -317,37 +283,15 @@ namespace Project
                 username = managerUsername.Text,
                 password = managerPassword.Text
             };
-            if(newManager.name.Length==0 || newManager.username.Length==0 || newManager.password.Length == 0)
-            {
-                MessageBox.Show("Fill all the required fields");
-                return;
-            }
 
             bool res = ManagersController.updateManager(newManager);
-            if (res)
-            {
-                reloadManager();
-                MessageBox.Show("Manager updated");
-            }
-            else MessageBox.Show("Could not updated");
+            if (res){ reloadManager(); MessageBox.Show("Manager updated"); }
         }
 
         private void managerDeleteBtn_Click(object sender, EventArgs e)
         {
-            if (managerId==0)
-            {
-                MessageBox.Show("Search a manager first");
-                return;
-            }
-
             bool res = ManagersController.deleteManager(managerId);
-            if (res)
-            {
-                reloadManager();
-
-                MessageBox.Show("Manager Deleted");
-            }
-            else MessageBox.Show("Could not Delete");
+            if (res){ reloadManager(); MessageBox.Show("Manager Deleted"); }
         }
 
         public void reloadSalesman()
@@ -375,24 +319,8 @@ namespace Project
                 password = salesmanPassword.Text.Trim()
             };
 
-            if(salesman.name.Length==0 || salesman.username.Length==0 || salesman.password.Length == 0)
-            {
-                MessageBox.Show("Fill all the required field");
-                return;
-            }
-            var has = SalesmanController.searchSalesman(salesman.username);
-            if (has != null)
-            {
-                MessageBox.Show("Username Already used");
-                return;
-            }
             bool res = SalesmanController.addSalesman(salesman);
-            if (res)
-            {
-                reloadSalesman();
-                MessageBox.Show("Salesman Added");
-            }
-            else MessageBox.Show("Could not be added");
+            if (res){ reloadSalesman(); MessageBox.Show("Salesman Added"); }
         }
 
         private void salesmanSearchBtn_Click(object sender, EventArgs e)
@@ -416,11 +344,6 @@ namespace Project
 
         private void salesmanUpdateBtn_Click(object sender, EventArgs e)
         {
-            if (salesmanId==0)
-            {
-                MessageBox.Show("Search a Salesman First");
-                return;
-            }
             var newSalesman = new
             {
                 id = salesmanId,
@@ -428,35 +351,19 @@ namespace Project
                 username = salesmanUsername.Text.Trim(),
                 password = salesmanPassword.Text.Trim()
             };
-            if(newSalesman.name.Length==0 || newSalesman.username.Length==0 || newSalesman.password.Length == 0)
-            {
-                MessageBox.Show("Fill all the required fields");
-                return;
-            }
+            
             bool res = SalesmanController.updateSalesman(newSalesman);
             if (res)
             {
                 reloadSalesman();
                 MessageBox.Show("Salesman Updated");
             }
-            else MessageBox.Show("Could not update Salesman");
         }
 
         private void salesmanDeleteBtn_Click(object sender, EventArgs e)
         {
-            if (salesmanId == 0)
-            {
-                MessageBox.Show("Search a Salesman First");
-                return;
-            }
-            
             bool res = SalesmanController.deleteSalesman(salesmanId);
-            if (res)
-            {
-                reloadSalesman();
-                MessageBox.Show("Salesman Deleted");
-            }
-            else MessageBox.Show("Could not Delete");
+            if (res){ reloadSalesman(); MessageBox.Show("Salesman Deleted"); }
         }
         
         public void reloadTickets()
@@ -495,12 +402,6 @@ namespace Project
                 date = journeyDate.Value.ToShortDateString(),
                 time = journeyTime.Text.Trim()
             };
-            if(ticket.name.Length==0 || ticket.phone.Length==0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
-                ticket.coach.Equals("Coach") || ticket.type.Length== 0 || ticket.time.Equals("Time"))
-            {
-                MessageBox.Show("Fill all the required fields");
-                return;
-            }
 
             //Customer Adding
             var hasCus = CustomerController.searchCustomer(ticket.phone);
@@ -509,17 +410,8 @@ namespace Project
                 bool customeradd = CustomerController.addCustomer(ticket);
                 reloadCustomer();
             }
-
-            try
-            {
-                bool res = TicketsController.boolTicket(ticket);
-                if (res)
-                {
-                    reloadTickets();
-                    MessageBox.Show("Ticket booked");
-                }
-                else MessageBox.Show("Could not booked");
-            }catch(Exception ex) { MessageBox.Show(ex.Message); }
+            bool res = TicketsController.boolTicket(ticket);
+            if (res){ reloadTickets(); MessageBox.Show("Ticket booked"); }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -588,28 +480,12 @@ namespace Project
 
         private void ticketCancelBtn_Click(object sender, EventArgs e)
         {
-            if (ticketId == 0)
-            {
-                MessageBox.Show("Select a ticket first");
-                return;
-            }
             bool res = TicketsController.cancelTicket(ticketId);
-            if (res)
-            {
-                reloadTickets();
-                MessageBox.Show("Ticket Cancelled");
-            }
-            else MessageBox.Show("Could not cancel");
+            if (res){ reloadTickets(); MessageBox.Show("Ticket Cancelled"); }
         }
 
         private void ticketUpdateBtn_Click(object sender, EventArgs e)
         {
-            if (ticketId == 0)
-            {
-                MessageBox.Show("Select a ticket first");
-                return;
-            }
-
             var ticket = new
             {
                 id = ticketId,
@@ -622,24 +498,9 @@ namespace Project
                 date = journeyDate.Value.ToShortDateString(),
                 time = journeyTime.Text.Trim()
             };
-            if (ticket.name.Length == 0 || ticket.phone.Length == 0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
-                ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time"))
-            {
-                MessageBox.Show("Fill all the required fields");
-                return;
-            }
-            try
-            {
-                bool res = TicketsController.updateTicket(ticket);
-                if (res)
-                {
-                    reloadTickets();
-                    MessageBox.Show("Ticket updated");
-                }
-                else MessageBox.Show("Could not update");
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
+            bool res = TicketsController.updateTicket(ticket);
+            if (res) { reloadTickets(); MessageBox.Show("Ticket updated"); }
         }
         private void ticketSearchBtn_Click(object sender, EventArgs e)
         {
@@ -685,59 +546,21 @@ namespace Project
 
         private void customerRemoveBtn_Click(object sender, EventArgs e)
         {
-            if (customerId == 0)
-            {
-                MessageBox.Show("Search a customer first");
-                return;
-            }
             bool res = CustomerController.deleteCustomer(customerId);
-            if (res)
-            {
-                reloadCustomer();
-                MessageBox.Show("Customer Deleted");
-            }
-            else MessageBox.Show("Could not Delete");
+            if (res){ reloadCustomer(); MessageBox.Show("Customer Deleted"); }
         }
 
         private void customerUpdateBtn_Click(object sender, EventArgs e)
         {
-            if (customerId == 0)
-            {
-                MessageBox.Show("Search a customer first");
-                return;
-            }
-            //var customer = CustomerController.searchCustomer(customerPhoneBox.Text);
-            //customerId = customer.Id;
-
             var newCustomer = new
             {
                 id = customerId,
                 name = customerNameBox.Text,
                 phone = customerPhoneBox.Text
             };
-            if(newCustomer.name.Length==0 || newCustomer.phone.Length == 0)
-            {
-                MessageBox.Show("Fill all the required Fields");
-                return;
-            }
-            var has = CustomerController.searchCustomer(newCustomer.phone);
-            if (has != null && newCustomer.id != has.Id)
-            {
-                MessageBox.Show(string.Format("Error!! Phone number matched with {0}", has.Name));
-                return;
-            }
+            
             bool res = CustomerController.updateCustomer(newCustomer);
-            if (res)
-            {
-                reloadCustomer();
-                MessageBox.Show("Customer Updated");
-            }
-            else MessageBox.Show("Could not update Customer");
-        }
-
-        private void ticketSearchBtn_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
+            if (res){ reloadCustomer(); MessageBox.Show("Customer Updated"); }
         }
 
         private void managerTrash_Click(object sender, EventArgs e)
@@ -785,18 +608,8 @@ namespace Project
                 type = busType,
             };
 
-            if (bus.coach.Length == 0 || bus.type.Length == 0)
-            {
-                MessageBox.Show("Fill all the required fields");
-                return;
-            }
             bool res = BusesController.addBus(bus);
-            if (res) 
-            {
-                reloadBuses();
-                MessageBox.Show("Bus Added"); 
-            }
-            else MessageBox.Show("Could not add");
+            if (res) {  reloadBuses(); MessageBox.Show("Bus Added"); }
         }
 
         private void busSearchBtn_Click(object sender, EventArgs e)
@@ -825,11 +638,6 @@ namespace Project
 
         private void busUpdateBtn_Click(object sender, EventArgs e)
         {
-            if (busId == 0)
-            {
-                MessageBox.Show("Search a bus first");
-                return;
-            }
             var bus = new
             {
                 id = busId,
@@ -837,35 +645,14 @@ namespace Project
                 type = busType,
             };
 
-            if (bus.coach.Length == 0 || bus.type.Length == 0)
-            {
-                MessageBox.Show("Fill all the required fields");
-                return;
-            }
             bool res = BusesController.updateBus(bus);
-            if (res)
-            {
-                reloadBuses();
-                MessageBox.Show("Bus updated");
-            }
-            else MessageBox.Show("Could not update");
-
+            if (res){ reloadBuses(); MessageBox.Show("Bus updated"); }
         }
 
         private void busRemoveBtn_Click(object sender, EventArgs e)
         {
-            if (busId == 0)
-            {
-                MessageBox.Show("Search a bus first");
-                return;
-            }
             bool res = BusesController.deleteBus(busId);
-            if (res)
-            {
-                reloadBuses();
-                MessageBox.Show("Bus deleted");
-            }
-            else MessageBox.Show("Could not delete");
+            if (res){ reloadBuses(); MessageBox.Show("Bus deleted"); }
         }
 
         public void reloadAdmin()

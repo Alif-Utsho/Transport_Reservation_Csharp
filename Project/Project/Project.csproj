@@ -54,19 +54,19 @@
     <Compile Include="Controllers\SalesmanController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\Admins.cs" />
+    <Compile Include="APIs\Admins.cs" />
     <Compile Include="Models\AuthModel.cs" />
-    <Compile Include="Models\Authentication.cs" />
+    <Compile Include="APIs\Authentication.cs" />
     <Compile Include="Models\Bus.cs" />
-    <Compile Include="Models\Buses.cs" />
+    <Compile Include="APIs\Buses.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Customers.cs" />
+    <Compile Include="APIs\Customers.cs" />
     <Compile Include="Models\Manager.cs" />
-    <Compile Include="Models\Managers.cs" />
+    <Compile Include="APIs\Managers.cs" />
     <Compile Include="Models\Salesman.cs" />
-    <Compile Include="Models\Sellers.cs" />
+    <Compile Include="APIs\Sellers.cs" />
     <Compile Include="Models\Ticket.cs" />
-    <Compile Include="Models\Tickets.cs" />
+    <Compile Include="APIs\Tickets.cs" />
     <Compile Include="Views\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
