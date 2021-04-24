@@ -241,5 +241,362 @@ namespace Project.Views
             var bus = BusesController.getAllBus();
             busGridView.DataSource = bus;
         }
+
+
+        //////// TICKET PANEL  ///////
+        private void ticketBookBtn_Click(object sender, EventArgs e)
+        {
+            var ticket = new
+            {
+                name = customerName.Text.Trim(),
+                phone = phoneBox.Text.Trim(),
+                source = ticketSource.Text.Trim(),
+                destination = ticketDest.Text.Trim(),
+                coach = coachBox.Text.Trim(),
+                type = bustype,
+                date = journeyDate.Value.ToShortDateString(),
+                time = journeyTime.Text.Trim()
+            };
+
+            bool res = TicketsController.boolTicket(ticket);
+            if (res) { reloadTickets(); reloadCustomer(); MessageBox.Show("Ticket booked"); }
+        }
+
+        private void acRadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            bustype = "AC";
+        }
+
+        private void nonAcRadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            bustype = "Non AC";
+        }
+        private void ticketsGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.ticketsGridView.Rows[e.RowIndex];
+                ticketId = Int32.Parse(row.Cells["Id"].Value.ToString());
+                customerName.Text = row.Cells["Name"].Value.ToString();
+                phoneBox.Text = row.Cells["Phone"].Value.ToString();
+                ticketSource.Text = row.Cells["Source"].Value.ToString();
+                ticketDest.Text = row.Cells["Destination"].Value.ToString();
+                coachBox.Text = row.Cells["Coach"].Value.ToString();
+                //busType.Text = row.Cells["BusType"].Value.ToString();
+                journeyTime.Text = row.Cells["Time"].Value.ToString();
+
+                DateTime date = DateTime.Parse(row.Cells["Date"].Value.ToString());
+                if (date < journeyDate.MinDate)
+                {
+                    MessageBox.Show("You cannot modify or delete previous Tickets");
+                    reloadTickets();
+                    return;
+                }
+                else if(date > journeyDate.MaxDate)
+                {
+                    MessageBox.Show("Manager cannot modify or delete Special type of Tickets");
+                    reloadTickets();
+                    return;
+                }
+                else journeyDate.Text = date.ToString();
+
+                var abustype = row.Cells["BusType"].Value.ToString();
+                if (abustype.Equals("AC"))
+                {
+                    acRadioButton.Checked = true;
+                    nonAcRadioButton.Checked = false;
+                }
+                else if (abustype == "Non AC")
+                {
+                    nonAcRadioButton.Checked = true;
+                    acRadioButton.Checked = false;
+                }
+                else
+                {
+                    acRadioButton.Checked = false;
+                    nonAcRadioButton.Checked = false;
+                }
+
+                if (ticketId > 0)
+                {
+                    ticketBookBtn.Enabled = false;
+                }
+                trashTicket.Visible = true;
+            }
+        }
+
+        private void ticketTrash_Click_1(object sender, EventArgs e)
+        {
+            reloadTickets();
+            trashTicket.Visible = false;
+        }
+
+        private void ticketCancelBtn_Click(object sender, EventArgs e)
+        {
+            bool res = TicketsController.cancelTicket(ticketId);
+            if (res) { reloadTickets(); MessageBox.Show("Ticket Cancelled"); }
+        }
+
+        private void ticketUpdateBtn_Click(object sender, EventArgs e)
+        {
+            var ticket = new
+            {
+                id = ticketId,
+                name = customerName.Text.Trim(),
+                phone = phoneBox.Text.Trim(),
+                source = ticketSource.Text.Trim(),
+                destination = ticketDest.Text.Trim(),
+                coach = coachBox.Text.Trim(),
+                type = bustype,
+                date = journeyDate.Value.ToShortDateString(),
+                time = journeyTime.Text.Trim()
+            };
+
+            bool res = TicketsController.updateTicket(ticket);
+            if (res) { reloadTickets(); MessageBox.Show("Ticket updated"); }
+        }
+        private void ticketSearchBtn_Click(object sender, EventArgs e)
+        {
+            string phone = phoneBox.Text;
+            var customer = CustomerController.searchCustomer(phone);
+            if (customer != null)
+            {
+                customerName.Text = customer.Name;
+            }
+            else customerName.Text = "";
+        }
+
+        /////////// MANAGER PANEL //////////////
+
+        private void managerAddBtn_Click(object sender, EventArgs e)
+        {
+            var manager = new
+            {
+                name = managerName.Text.Trim(),
+                username = managerUsername.Text.Trim(),
+                password = managerPassword.Text.Trim(),
+            };
+            bool res = ManagersController.AddManager(manager);
+            if (res) { reloadManager(); MessageBox.Show("Manager Added"); }
+        }
+
+
+        private void managerTrash_Click(object sender, EventArgs e)
+        {
+            reloadManager();
+        }
+
+        private void managerSearchBtn_Click(object sender, EventArgs e)
+        {
+            string username = managerSearchBox.Text;
+            var manager = ManagersController.getSingleManager(username);
+
+            if (manager == null)
+            {
+                MessageBox.Show("Manager not found");
+                return;
+            }
+            else
+            {
+                managerName.Text = manager.Name;
+                managerUsername.Text = manager.Username;
+                managerPassword.Text = manager.Password;
+            }
+            managerId = manager.Id;
+            managerTrash.Visible = true;
+            managerAddBtn.Enabled = false;
+        }
+
+        private void managerUpdateBtn_Click(object sender, EventArgs e)
+        {
+            var newManager = new
+            {
+                id = managerId,
+                name = managerName.Text,
+                username = managerUsername.Text,
+                password = managerPassword.Text
+            };
+
+            bool res = ManagersController.updateManager(newManager);
+            if (res) { reloadManager(); MessageBox.Show("Manager updated"); }
+        }
+
+        private void managerDeleteBtn_Click(object sender, EventArgs e)
+        {
+            bool res = ManagersController.deleteManager(managerId);
+            if (res) { reloadManager(); MessageBox.Show("Manager Deleted"); }
+        }
+
+        /////  SALESMAN PANEL /////
+
+        private void salesmanAddBtn_Click(object sender, EventArgs e)
+        {
+            var salesman = new
+            {
+                name = salesmanName.Text.Trim(),
+                username = salesmanUsername.Text.Trim(),
+                password = salesmanPassword.Text.Trim()
+            };
+
+            bool res = SalesmanController.addSalesman(salesman);
+            if (res) { reloadSalesman(); MessageBox.Show("Salesman Added"); }
+        }
+
+        private void salesmanSearchBtn_Click(object sender, EventArgs e)
+        {
+            string username = salesmanSearchBox.Text.Trim();
+            dynamic salesman = SalesmanController.searchSalesman(username);
+            if (salesman == null)
+            {
+                MessageBox.Show("Salesman not Found");
+                return;
+            }
+
+            salesmanId = salesman.Id;
+            salesmanAddBtn.Enabled = false;
+            salesmanTrash.Visible = true;
+
+            salesmanName.Text = salesman.Name;
+            salesmanUsername.Text = salesman.Username;
+            salesmanPassword.Text = salesman.Password;
+        }
+
+        private void salesmanUpdateBtn_Click(object sender, EventArgs e)
+        {
+            var newSalesman = new
+            {
+                id = salesmanId,
+                name = salesmanName.Text.Trim(),
+                username = salesmanUsername.Text.Trim(),
+                password = salesmanPassword.Text.Trim()
+            };
+
+            bool res = SalesmanController.updateSalesman(newSalesman);
+            if (res)
+            {
+                reloadSalesman();
+                MessageBox.Show("Salesman Updated");
+            }
+        }
+
+        private void salesmanDeleteBtn_Click(object sender, EventArgs e)
+        {
+            bool res = SalesmanController.deleteSalesman(salesmanId);
+            if (res) { reloadSalesman(); MessageBox.Show("Salesman Deleted"); }
+        }
+        private void salesmanTrash_Click(object sender, EventArgs e)
+        {
+            reloadSalesman();
+        }
+
+        ///// BUSES PANEL /////
+        string busType = "";
+        private void busAcRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            busType = "AC";
+        }
+
+        private void busNonAcRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            busType = "Non AC";
+        }
+
+
+        private void busAddBtn_Click(object sender, EventArgs e)
+        {
+            var bus = new
+            {
+                coach = busCoachBox.Text.Trim(),
+                type = busType,
+            };
+
+            bool res = BusesController.addBus(bus);
+            if (res) { reloadBuses(); MessageBox.Show("Bus Added"); }
+        }
+
+        private void busSearchBtn_Click(object sender, EventArgs e)
+        {
+            string coach = busSearchBox.Text.Trim();
+            var bus = BusesController.searchBus(coach);
+            if (bus == null)
+            {
+                MessageBox.Show("Bus not found");
+                return;
+            }
+            busCoachBox.Text = bus.Coach;
+            if (bus.Type == "AC") busAcRadio.Checked = true;
+            else busNonAcRadio.Checked = true;
+
+            busId = bus.Id;
+
+            busAddBtn.Enabled = false;
+            busTrash.Visible = true;
+        }
+
+        private void busTrash_Click(object sender, EventArgs e)
+        {
+            reloadBuses();
+        }
+
+        private void busUpdateBtn_Click(object sender, EventArgs e)
+        {
+            var bus = new
+            {
+                id = busId,
+                coach = busCoachBox.Text.Trim(),
+                type = busType,
+            };
+
+            bool res = BusesController.updateBus(bus);
+            if (res) { reloadBuses(); MessageBox.Show("Bus updated"); }
+        }
+
+        private void busRemoveBtn_Click(object sender, EventArgs e)
+        {
+            bool res = BusesController.deleteBus(busId);
+            if (res) { reloadBuses(); MessageBox.Show("Bus deleted"); }
+        }
+
+
+        ///// CUSTOMERS PANEL  /////
+
+        private void customerSearchBtn_Click(object sender, EventArgs e)
+        {
+            string phone = customerSearchBox.Text;
+            var customer = CustomerController.searchCustomer(phone);
+            if (customer == null)
+            {
+                MessageBox.Show("Customer not found");
+                return;
+            }
+            customerId = customer.Id;
+            customerNameBox.Text = customer.Name;
+            customerPhoneBox.Text = customer.Phone;
+            customerTrash.Visible = true;
+        }
+
+        private void customerTrash_Click(object sender, EventArgs e)
+        {
+            reloadCustomer();
+        }
+
+        private void customerRemoveBtn_Click(object sender, EventArgs e)
+        {
+            bool res = CustomerController.deleteCustomer(customerId);
+            if (res) { reloadCustomer(); MessageBox.Show("Customer Deleted"); }
+        }
+
+        private void customerUpdateBtn_Click(object sender, EventArgs e)
+        {
+            var newCustomer = new
+            {
+                id = customerId,
+                name = customerNameBox.Text,
+                phone = customerPhoneBox.Text
+            };
+
+            bool res = CustomerController.updateCustomer(newCustomer);
+            if (res) { reloadCustomer(); MessageBox.Show("Customer Updated"); }
+        }
     }
 }

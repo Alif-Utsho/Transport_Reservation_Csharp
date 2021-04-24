@@ -351,6 +351,7 @@ namespace Project.Views
             this.nonAcRadioButton.TabStop = true;
             this.nonAcRadioButton.Text = "Non AC";
             this.nonAcRadioButton.UseVisualStyleBackColor = true;
+            this.nonAcRadioButton.CheckedChanged += new System.EventHandler(this.nonAcRadioButton2_CheckedChanged);
             // 
             // acRadioButton
             // 
@@ -362,6 +363,7 @@ namespace Project.Views
             this.acRadioButton.TabStop = true;
             this.acRadioButton.Text = "AC";
             this.acRadioButton.UseVisualStyleBackColor = true;
+            this.acRadioButton.CheckedChanged += new System.EventHandler(this.acRadioButton1_CheckedChanged);
             // 
             // trashTicket
             // 
@@ -372,6 +374,7 @@ namespace Project.Views
             this.trashTicket.Size = new System.Drawing.Size(41, 32);
             this.trashTicket.TabIndex = 29;
             this.trashTicket.Visible = false;
+            this.trashTicket.Click += new System.EventHandler(this.ticketTrash_Click_1);
             // 
             // ticketsGridView
             // 
@@ -394,6 +397,7 @@ namespace Project.Views
             this.ticketsGridView.ShowEditingIcon = false;
             this.ticketsGridView.Size = new System.Drawing.Size(877, 230);
             this.ticketsGridView.TabIndex = 27;
+            this.ticketsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGridView_CellContentDoubleClick);
             // 
             // label23
             // 
@@ -416,6 +420,7 @@ namespace Project.Views
             this.ticketSearchBtn.TabIndex = 26;
             this.ticketSearchBtn.Text = "Search";
             this.ticketSearchBtn.UseVisualStyleBackColor = false;
+            this.ticketSearchBtn.Click += new System.EventHandler(this.ticketSearchBtn_Click);
             // 
             // coachBox
             // 
@@ -579,6 +584,7 @@ namespace Project.Views
             this.ticketBookBtn.TabIndex = 12;
             this.ticketBookBtn.Text = "Book Ticket";
             this.ticketBookBtn.UseVisualStyleBackColor = false;
+            this.ticketBookBtn.Click += new System.EventHandler(this.ticketBookBtn_Click);
             // 
             // ticketCancelBtn
             // 
@@ -590,6 +596,7 @@ namespace Project.Views
             this.ticketCancelBtn.TabIndex = 11;
             this.ticketCancelBtn.Text = "Cancel";
             this.ticketCancelBtn.UseVisualStyleBackColor = false;
+            this.ticketCancelBtn.Click += new System.EventHandler(this.ticketCancelBtn_Click);
             // 
             // ticketUpdateBtn
             // 
@@ -601,6 +608,7 @@ namespace Project.Views
             this.ticketUpdateBtn.TabIndex = 10;
             this.ticketUpdateBtn.Text = "Update";
             this.ticketUpdateBtn.UseVisualStyleBackColor = false;
+            this.ticketUpdateBtn.Click += new System.EventHandler(this.ticketUpdateBtn_Click);
             // 
             // customerName
             // 
@@ -627,6 +635,7 @@ namespace Project.Views
             this.phoneBox.Name = "phoneBox";
             this.phoneBox.Size = new System.Drawing.Size(144, 25);
             this.phoneBox.TabIndex = 0;
+            this.phoneBox.TextChanged += new System.EventHandler(this.ticketSearchBtn_Click);
             // 
             // managersPanel
             // 
@@ -660,6 +669,7 @@ namespace Project.Views
             this.managerTrash.Size = new System.Drawing.Size(41, 32);
             this.managerTrash.TabIndex = 30;
             this.managerTrash.Visible = false;
+            this.managerTrash.Click += new System.EventHandler(this.managerTrash_Click);
             // 
             // managerAddBtn
             // 
@@ -671,6 +681,7 @@ namespace Project.Views
             this.managerAddBtn.TabIndex = 12;
             this.managerAddBtn.Text = "Add Manager";
             this.managerAddBtn.UseVisualStyleBackColor = false;
+            this.managerAddBtn.Click += new System.EventHandler(this.managerAddBtn_Click);
             // 
             // managerDeleteBtn
             // 
@@ -682,6 +693,7 @@ namespace Project.Views
             this.managerDeleteBtn.TabIndex = 11;
             this.managerDeleteBtn.Text = "Delete";
             this.managerDeleteBtn.UseVisualStyleBackColor = false;
+            this.managerDeleteBtn.Click += new System.EventHandler(this.managerDeleteBtn_Click);
             // 
             // managerUpdateBtn
             // 
@@ -693,6 +705,7 @@ namespace Project.Views
             this.managerUpdateBtn.TabIndex = 10;
             this.managerUpdateBtn.Text = "Update";
             this.managerUpdateBtn.UseVisualStyleBackColor = false;
+            this.managerUpdateBtn.Click += new System.EventHandler(this.managerUpdateBtn_Click);
             // 
             // label8
             // 
@@ -788,6 +801,7 @@ namespace Project.Views
             this.managerSearchBtn.TabIndex = 1;
             this.managerSearchBtn.Text = "Search";
             this.managerSearchBtn.UseVisualStyleBackColor = false;
+            this.managerSearchBtn.Click += new System.EventHandler(this.managerSearchBtn_Click);
             // 
             // managerSearchBox
             // 
@@ -829,6 +843,7 @@ namespace Project.Views
             this.salesmanTrash.Size = new System.Drawing.Size(41, 32);
             this.salesmanTrash.TabIndex = 31;
             this.salesmanTrash.Visible = false;
+            this.salesmanTrash.Click += new System.EventHandler(this.salesmanTrash_Click);
             // 
             // salesmanAddBtn
             // 
@@ -840,6 +855,7 @@ namespace Project.Views
             this.salesmanAddBtn.TabIndex = 12;
             this.salesmanAddBtn.Text = "Add Salesman";
             this.salesmanAddBtn.UseVisualStyleBackColor = false;
+            this.salesmanAddBtn.Click += new System.EventHandler(this.salesmanAddBtn_Click);
             // 
             // salesmanDeleteBtn
             // 
@@ -851,6 +867,7 @@ namespace Project.Views
             this.salesmanDeleteBtn.TabIndex = 11;
             this.salesmanDeleteBtn.Text = "Delete";
             this.salesmanDeleteBtn.UseVisualStyleBackColor = false;
+            this.salesmanDeleteBtn.Click += new System.EventHandler(this.managerDeleteBtn_Click);
             // 
             // salesmanUpdateBtn
             // 
@@ -862,6 +879,7 @@ namespace Project.Views
             this.salesmanUpdateBtn.TabIndex = 10;
             this.salesmanUpdateBtn.Text = "Update";
             this.salesmanUpdateBtn.UseVisualStyleBackColor = false;
+            this.salesmanUpdateBtn.Click += new System.EventHandler(this.salesmanUpdateBtn_Click);
             // 
             // label3
             // 
@@ -958,6 +976,7 @@ namespace Project.Views
             this.salesmanSearchBtn.TabIndex = 1;
             this.salesmanSearchBtn.Text = "Search";
             this.salesmanSearchBtn.UseVisualStyleBackColor = false;
+            this.salesmanSearchBtn.Click += new System.EventHandler(this.salesmanSearchBtn_Click);
             // 
             // salesmanSearchBox
             // 
@@ -1005,6 +1024,7 @@ namespace Project.Views
             this.busTrash.Size = new System.Drawing.Size(41, 32);
             this.busTrash.TabIndex = 36;
             this.busTrash.Visible = false;
+            this.busTrash.Click += new System.EventHandler(this.busTrash_Click);
             // 
             // busSearchBtn
             // 
@@ -1016,6 +1036,7 @@ namespace Project.Views
             this.busSearchBtn.TabIndex = 35;
             this.busSearchBtn.Text = "Search";
             this.busSearchBtn.UseVisualStyleBackColor = false;
+            this.busSearchBtn.Click += new System.EventHandler(this.busSearchBtn_Click);
             // 
             // busSearchBox
             // 
@@ -1072,6 +1093,7 @@ namespace Project.Views
             this.busNonAcRadio.TabStop = true;
             this.busNonAcRadio.Text = "Non AC";
             this.busNonAcRadio.UseVisualStyleBackColor = true;
+            this.busNonAcRadio.CheckedChanged += new System.EventHandler(this.busNonAcRadio_CheckedChanged);
             // 
             // busAcRadio
             // 
@@ -1083,6 +1105,7 @@ namespace Project.Views
             this.busAcRadio.TabStop = true;
             this.busAcRadio.Text = "AC";
             this.busAcRadio.UseVisualStyleBackColor = true;
+            this.busAcRadio.CheckedChanged += new System.EventHandler(this.busAcRadio_CheckedChanged);
             // 
             // label5
             // 
@@ -1114,6 +1137,7 @@ namespace Project.Views
             this.busAddBtn.TabIndex = 12;
             this.busAddBtn.Text = "Add Bus";
             this.busAddBtn.UseVisualStyleBackColor = false;
+            this.busAddBtn.Click += new System.EventHandler(this.busAddBtn_Click);
             // 
             // busRemoveBtn
             // 
@@ -1125,6 +1149,7 @@ namespace Project.Views
             this.busRemoveBtn.TabIndex = 11;
             this.busRemoveBtn.Text = "Remove";
             this.busRemoveBtn.UseVisualStyleBackColor = false;
+            this.busRemoveBtn.Click += new System.EventHandler(this.busRemoveBtn_Click);
             // 
             // busUpdateBtn
             // 
@@ -1136,6 +1161,7 @@ namespace Project.Views
             this.busUpdateBtn.TabIndex = 10;
             this.busUpdateBtn.Text = "Update";
             this.busUpdateBtn.UseVisualStyleBackColor = false;
+            this.busUpdateBtn.Click += new System.EventHandler(this.busUpdateBtn_Click);
             // 
             // customersPanel
             // 
@@ -1166,6 +1192,7 @@ namespace Project.Views
             this.customerTrash.Size = new System.Drawing.Size(41, 32);
             this.customerTrash.TabIndex = 33;
             this.customerTrash.Visible = false;
+            this.customerTrash.Click += new System.EventHandler(this.customerTrash_Click);
             // 
             // customerSearchBtn
             // 
@@ -1177,6 +1204,7 @@ namespace Project.Views
             this.customerSearchBtn.TabIndex = 32;
             this.customerSearchBtn.Text = "Search";
             this.customerSearchBtn.UseVisualStyleBackColor = false;
+            this.customerSearchBtn.Click += new System.EventHandler(this.customerSearchBtn_Click);
             // 
             // customerSearchBox
             // 
@@ -1263,6 +1291,7 @@ namespace Project.Views
             this.customerRemoveBtn.TabIndex = 11;
             this.customerRemoveBtn.Text = "Remove";
             this.customerRemoveBtn.UseVisualStyleBackColor = false;
+            this.customerRemoveBtn.Click += new System.EventHandler(this.customerRemoveBtn_Click);
             // 
             // customerUpdateBtn
             // 
@@ -1274,6 +1303,7 @@ namespace Project.Views
             this.customerUpdateBtn.TabIndex = 10;
             this.customerUpdateBtn.Text = "Update";
             this.customerUpdateBtn.UseVisualStyleBackColor = false;
+            this.customerUpdateBtn.Click += new System.EventHandler(this.customerUpdateBtn_Click);
             // 
             // ManagerDashboard
             // 

@@ -15,11 +15,17 @@ namespace Project.Controllers
         {
             if (ticket.name.Length == 0 || ticket.phone.Length == 0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
                 ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time"))
-            {
+            { 
                 MessageBox.Show("Fill all the required fields");
                 return false;
             }
 
+            //Customer Adding
+            var hasCus = CustomerController.searchCustomer(ticket.phone);
+            if (hasCus == null)
+            {
+                bool customeradd = CustomerController.addCustomer(ticket);
+            }
             return db.Tickets.bookTicket(ticket);
         }
         public static List<Ticket> getAllTickets()

@@ -294,6 +294,7 @@ namespace Project
             if (res){ reloadManager(); MessageBox.Show("Manager Deleted"); }
         }
 
+        /////  SALESMAN PANEL  /////
         public void reloadSalesman()
         {
             salesmanName.Text = "";
@@ -403,15 +404,8 @@ namespace Project
                 time = journeyTime.Text.Trim()
             };
 
-            //Customer Adding
-            var hasCus = CustomerController.searchCustomer(ticket.phone);
-            if (hasCus == null)
-            {
-                bool customeradd = CustomerController.addCustomer(ticket);
-                reloadCustomer();
-            }
             bool res = TicketsController.boolTicket(ticket);
-            if (res){ reloadTickets(); MessageBox.Show("Ticket booked"); }
+            if (res){ reloadTickets(); reloadCustomer(); MessageBox.Show("Ticket booked"); }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -512,6 +506,8 @@ namespace Project
             }
             else customerName.Text = "";
         }
+
+        ///// CUSTOMERS PANEL /////
         public void reloadCustomer()
         {
             customerId = 0;
@@ -573,6 +569,7 @@ namespace Project
             reloadSalesman();
         }
 
+        ///// BUSES PANEL /////
         string busType="";
         private void busAcRadio_CheckedChanged(object sender, EventArgs e)
         {
@@ -654,6 +651,8 @@ namespace Project
             bool res = BusesController.deleteBus(busId);
             if (res){ reloadBuses(); MessageBox.Show("Bus deleted"); }
         }
+
+        ///// ADMIN PANEL /////
 
         public void reloadAdmin()
         {
