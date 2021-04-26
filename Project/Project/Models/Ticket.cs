@@ -17,5 +17,7 @@ namespace Project.Models
         public string Bustype { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
+        public string Seat { get; set; }
+        public string Author { get; set; }
     }
 }

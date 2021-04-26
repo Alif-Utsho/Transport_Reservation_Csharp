@@ -47,6 +47,8 @@ namespace Project.Models
                 aTicket.Coach = reader.GetString(reader.GetOrdinal("Coach")).Trim();
                 aTicket.Date = reader.GetString(reader.GetOrdinal("Date")).Trim();
                 aTicket.Time = reader.GetString(reader.GetOrdinal("Time")).Trim();
+                //aTicket.Seat = "A1";
+                //aTicket.Author = "Utsho(admin)";
                 ticket.Add(aTicket);
             }
             conn.Close();

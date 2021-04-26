@@ -727,9 +727,73 @@ namespace Project
             if(res) { reloadAdmin(); MessageBox.Show("Admin updated"); }
         }
 
+
+        ///////////////////// SEAT PANEL  /////////////////////
+
+        List<CheckBox> seatList = null;
         private void seatSelectBtn_Click(object sender, EventArgs e)
         {
-            new Reservation().Show();
+            seatList = allSeat();
+            seatPanel.Show();
         }
+
+        private void doneBtn_Click(object sender, EventArgs e)
+        {
+            if (reserve.Length > 0)
+            {
+                seatSelectBtn.Text = reserve;
+            }
+            else seatSelectBtn.Text = "Select Seat";
+            seatPanel.Hide();
+        }
+        
+        public List<CheckBox> allSeat()
+        {
+            List<CheckBox> seat = new List<CheckBox>();
+            seat.Add(a1); seat.Add(a2); seat.Add(a3); seat.Add(a4);
+            seat.Add(b1); seat.Add(b2); seat.Add(b3); seat.Add(b4);
+            seat.Add(c1); seat.Add(c2); seat.Add(c3); seat.Add(c4);
+            seat.Add(d1); seat.Add(d2); seat.Add(d3); seat.Add(d4);
+            seat.Add(e1); seat.Add(e2); seat.Add(e3); seat.Add(e4);
+            seat.Add(f1); seat.Add(f2); seat.Add(f3); seat.Add(f4);
+            seat.Add(g1); seat.Add(g2); seat.Add(g3); seat.Add(g4);
+            seat.Add(h1); seat.Add(h2); seat.Add(h3); seat.Add(h4);
+            seat.Add(i1); seat.Add(i2); seat.Add(i3); seat.Add(i4);
+            seat.Add(j1); seat.Add(j2); seat.Add(j3); seat.Add(j4);
+            return seat;
+        }
+
+        private void TrashSeatBtn_Click(object sender, EventArgs e)
+        {
+            foreach (var seat in seatList)
+            {
+                seat.Checked = false;
+            }
+            trashSeat.Visible = false;
+        }
+
+        string reserve = "";
+        List<string> reserveList;
+        private void seat_CheckedChanged(object sender, EventArgs e)
+        {
+            //reserve = "";
+            reserveList = new List<string>();
+
+            foreach(var seat in seatList)
+            {
+                if (seat.Checked == true)
+                {
+                    //reserve += seat.Text + ", ";
+                    reserveList.Add(seat.Text);
+                }
+            }
+            //reserveString.Text = reserve;
+            reserve = string.Join(", ", reserveList);
+            reserveString.Text = reserve;
+
+            if (reserve.Length > 0) trashSeat.Visible = true;
+        }
+
+        
     }
 }

@@ -153,10 +153,64 @@ namespace Project
             this.ticketsGridView = new System.Windows.Forms.DataGridView();
             this.trashTicket = new System.Windows.Forms.Label();
             this.ticketsPanel = new System.Windows.Forms.Panel();
+            this.seatPanel = new System.Windows.Forms.Panel();
+            this.reserveString = new System.Windows.Forms.Label();
+            this.reserveShow = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.availableCount = new System.Windows.Forms.Label();
+            this.bookedCount = new System.Windows.Forms.Label();
+            this.availableLabel = new System.Windows.Forms.Label();
+            this.bookedLabel = new System.Windows.Forms.Label();
+            this.doneBtn = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.driver = new System.Windows.Forms.CheckBox();
+            this.steering = new System.Windows.Forms.Label();
+            this.j4 = new System.Windows.Forms.CheckBox();
+            this.j3 = new System.Windows.Forms.CheckBox();
+            this.j2 = new System.Windows.Forms.CheckBox();
+            this.j1 = new System.Windows.Forms.CheckBox();
+            this.i4 = new System.Windows.Forms.CheckBox();
+            this.i3 = new System.Windows.Forms.CheckBox();
+            this.i2 = new System.Windows.Forms.CheckBox();
+            this.i1 = new System.Windows.Forms.CheckBox();
+            this.h4 = new System.Windows.Forms.CheckBox();
+            this.h3 = new System.Windows.Forms.CheckBox();
+            this.h2 = new System.Windows.Forms.CheckBox();
+            this.h1 = new System.Windows.Forms.CheckBox();
+            this.g4 = new System.Windows.Forms.CheckBox();
+            this.g3 = new System.Windows.Forms.CheckBox();
+            this.g2 = new System.Windows.Forms.CheckBox();
+            this.g1 = new System.Windows.Forms.CheckBox();
+            this.f4 = new System.Windows.Forms.CheckBox();
+            this.f3 = new System.Windows.Forms.CheckBox();
+            this.f2 = new System.Windows.Forms.CheckBox();
+            this.f1 = new System.Windows.Forms.CheckBox();
+            this.e4 = new System.Windows.Forms.CheckBox();
+            this.e3 = new System.Windows.Forms.CheckBox();
+            this.e2 = new System.Windows.Forms.CheckBox();
+            this.e1 = new System.Windows.Forms.CheckBox();
+            this.d4 = new System.Windows.Forms.CheckBox();
+            this.d3 = new System.Windows.Forms.CheckBox();
+            this.d2 = new System.Windows.Forms.CheckBox();
+            this.d1 = new System.Windows.Forms.CheckBox();
+            this.c4 = new System.Windows.Forms.CheckBox();
+            this.c3 = new System.Windows.Forms.CheckBox();
+            this.c2 = new System.Windows.Forms.CheckBox();
+            this.c1 = new System.Windows.Forms.CheckBox();
+            this.b4 = new System.Windows.Forms.CheckBox();
+            this.b3 = new System.Windows.Forms.CheckBox();
+            this.b2 = new System.Windows.Forms.CheckBox();
+            this.b1 = new System.Windows.Forms.CheckBox();
+            this.a4 = new System.Windows.Forms.CheckBox();
+            this.a3 = new System.Windows.Forms.CheckBox();
+            this.a2 = new System.Windows.Forms.CheckBox();
+            this.a1 = new System.Windows.Forms.CheckBox();
+            this.seatSelectBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nonAcRadioButton = new System.Windows.Forms.RadioButton();
             this.acRadioButton = new System.Windows.Forms.RadioButton();
-            this.seatSelectBtn = new System.Windows.Forms.Button();
+            this.trashSeat = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.AdminPanel.SuspendLayout();
@@ -174,6 +228,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.adminGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGridView)).BeginInit();
             this.ticketsPanel.SuspendLayout();
+            this.seatPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1578,7 +1633,7 @@ namespace Project
             this.label23.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label23.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label23.Location = new System.Drawing.Point(4, 230);
+            this.label23.Location = new System.Drawing.Point(4, 192);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(877, 23);
             this.label23.TabIndex = 28;
@@ -1593,7 +1648,7 @@ namespace Project
             this.ticketsGridView.AllowUserToResizeRows = false;
             this.ticketsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ticketsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsGridView.Location = new System.Drawing.Point(4, 253);
+            this.ticketsGridView.Location = new System.Drawing.Point(4, 215);
             this.ticketsGridView.MultiSelect = false;
             this.ticketsGridView.Name = "ticketsGridView";
             this.ticketsGridView.ReadOnly = true;
@@ -1604,7 +1659,7 @@ namespace Project
             this.ticketsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ticketsGridView.ShowCellErrors = false;
             this.ticketsGridView.ShowEditingIcon = false;
-            this.ticketsGridView.Size = new System.Drawing.Size(877, 230);
+            this.ticketsGridView.Size = new System.Drawing.Size(877, 243);
             this.ticketsGridView.TabIndex = 27;
             this.ticketsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGridView_CellContentDoubleClick);
             // 
@@ -1612,7 +1667,7 @@ namespace Project
             // 
             this.trashTicket.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trashTicket.Image = ((System.Drawing.Image)(resources.GetObject("trashTicket.Image")));
-            this.trashTicket.Location = new System.Drawing.Point(827, 218);
+            this.trashTicket.Location = new System.Drawing.Point(827, 180);
             this.trashTicket.Name = "trashTicket";
             this.trashTicket.Size = new System.Drawing.Size(41, 32);
             this.trashTicket.TabIndex = 29;
@@ -1621,6 +1676,7 @@ namespace Project
             // 
             // ticketsPanel
             // 
+            this.ticketsPanel.Controls.Add(this.seatPanel);
             this.ticketsPanel.Controls.Add(this.seatSelectBtn);
             this.ticketsPanel.Controls.Add(this.groupBox1);
             this.ticketsPanel.Controls.Add(this.trashTicket);
@@ -1648,9 +1704,1095 @@ namespace Project
             this.ticketsPanel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketsPanel.Location = new System.Drawing.Point(116, 74);
             this.ticketsPanel.Name = "ticketsPanel";
-            this.ticketsPanel.Size = new System.Drawing.Size(883, 492);
+            this.ticketsPanel.Size = new System.Drawing.Size(883, 467);
             this.ticketsPanel.TabIndex = 22;
             this.ticketsPanel.Visible = false;
+            // 
+            // seatPanel
+            // 
+            this.seatPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("seatPanel.BackgroundImage")));
+            this.seatPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.seatPanel.Controls.Add(this.trashSeat);
+            this.seatPanel.Controls.Add(this.reserveString);
+            this.seatPanel.Controls.Add(this.reserveShow);
+            this.seatPanel.Controls.Add(this.label33);
+            this.seatPanel.Controls.Add(this.label34);
+            this.seatPanel.Controls.Add(this.availableCount);
+            this.seatPanel.Controls.Add(this.bookedCount);
+            this.seatPanel.Controls.Add(this.availableLabel);
+            this.seatPanel.Controls.Add(this.bookedLabel);
+            this.seatPanel.Controls.Add(this.doneBtn);
+            this.seatPanel.Controls.Add(this.label28);
+            this.seatPanel.Controls.Add(this.driver);
+            this.seatPanel.Controls.Add(this.steering);
+            this.seatPanel.Controls.Add(this.j4);
+            this.seatPanel.Controls.Add(this.j3);
+            this.seatPanel.Controls.Add(this.j2);
+            this.seatPanel.Controls.Add(this.j1);
+            this.seatPanel.Controls.Add(this.i4);
+            this.seatPanel.Controls.Add(this.i3);
+            this.seatPanel.Controls.Add(this.i2);
+            this.seatPanel.Controls.Add(this.i1);
+            this.seatPanel.Controls.Add(this.h4);
+            this.seatPanel.Controls.Add(this.h3);
+            this.seatPanel.Controls.Add(this.h2);
+            this.seatPanel.Controls.Add(this.h1);
+            this.seatPanel.Controls.Add(this.g4);
+            this.seatPanel.Controls.Add(this.g3);
+            this.seatPanel.Controls.Add(this.g2);
+            this.seatPanel.Controls.Add(this.g1);
+            this.seatPanel.Controls.Add(this.f4);
+            this.seatPanel.Controls.Add(this.f3);
+            this.seatPanel.Controls.Add(this.f2);
+            this.seatPanel.Controls.Add(this.f1);
+            this.seatPanel.Controls.Add(this.e4);
+            this.seatPanel.Controls.Add(this.e3);
+            this.seatPanel.Controls.Add(this.e2);
+            this.seatPanel.Controls.Add(this.e1);
+            this.seatPanel.Controls.Add(this.d4);
+            this.seatPanel.Controls.Add(this.d3);
+            this.seatPanel.Controls.Add(this.d2);
+            this.seatPanel.Controls.Add(this.d1);
+            this.seatPanel.Controls.Add(this.c4);
+            this.seatPanel.Controls.Add(this.c3);
+            this.seatPanel.Controls.Add(this.c2);
+            this.seatPanel.Controls.Add(this.c1);
+            this.seatPanel.Controls.Add(this.b4);
+            this.seatPanel.Controls.Add(this.b3);
+            this.seatPanel.Controls.Add(this.b2);
+            this.seatPanel.Controls.Add(this.b1);
+            this.seatPanel.Controls.Add(this.a4);
+            this.seatPanel.Controls.Add(this.a3);
+            this.seatPanel.Controls.Add(this.a2);
+            this.seatPanel.Controls.Add(this.a1);
+            this.seatPanel.Location = new System.Drawing.Point(2, 6);
+            this.seatPanel.Name = "seatPanel";
+            this.seatPanel.Size = new System.Drawing.Size(879, 455);
+            this.seatPanel.TabIndex = 32;
+            this.seatPanel.Visible = false;
+            // 
+            // reserveString
+            // 
+            this.reserveString.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveString.Location = new System.Drawing.Point(221, 398);
+            this.reserveString.Name = "reserveString";
+            this.reserveString.Size = new System.Drawing.Size(394, 53);
+            this.reserveString.TabIndex = 94;
+            this.reserveString.Text = "--";
+            // 
+            // reserveShow
+            // 
+            this.reserveShow.AutoSize = true;
+            this.reserveShow.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reserveShow.Location = new System.Drawing.Point(113, 398);
+            this.reserveShow.Name = "reserveShow";
+            this.reserveShow.Size = new System.Drawing.Size(102, 24);
+            this.reserveShow.TabIndex = 93;
+            this.reserveShow.Text = "Reserve :";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(210, 21);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(24, 24);
+            this.label33.TabIndex = 92;
+            this.label33.Text = "--";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(121, 21);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(83, 24);
+            this.label34.TabIndex = 91;
+            this.label34.Text = "Coach :";
+            // 
+            // availableCount
+            // 
+            this.availableCount.AutoSize = true;
+            this.availableCount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availableCount.Location = new System.Drawing.Point(723, 22);
+            this.availableCount.Name = "availableCount";
+            this.availableCount.Size = new System.Drawing.Size(34, 24);
+            this.availableCount.TabIndex = 90;
+            this.availableCount.Text = "40";
+            // 
+            // bookedCount
+            // 
+            this.bookedCount.AutoSize = true;
+            this.bookedCount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookedCount.Location = new System.Drawing.Point(465, 22);
+            this.bookedCount.Name = "bookedCount";
+            this.bookedCount.Size = new System.Drawing.Size(22, 24);
+            this.bookedCount.TabIndex = 89;
+            this.bookedCount.Text = "0";
+            // 
+            // availableLabel
+            // 
+            this.availableLabel.AutoSize = true;
+            this.availableLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availableLabel.Location = new System.Drawing.Point(611, 21);
+            this.availableLabel.Name = "availableLabel";
+            this.availableLabel.Size = new System.Drawing.Size(106, 24);
+            this.availableLabel.TabIndex = 88;
+            this.availableLabel.Text = "Available :";
+            // 
+            // bookedLabel
+            // 
+            this.bookedLabel.AutoSize = true;
+            this.bookedLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookedLabel.Location = new System.Drawing.Point(366, 21);
+            this.bookedLabel.Name = "bookedLabel";
+            this.bookedLabel.Size = new System.Drawing.Size(93, 24);
+            this.bookedLabel.TabIndex = 87;
+            this.bookedLabel.Text = "Booked :";
+            // 
+            // doneBtn
+            // 
+            this.doneBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.doneBtn.FlatAppearance.BorderSize = 0;
+            this.doneBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doneBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.doneBtn.Location = new System.Drawing.Point(712, 393);
+            this.doneBtn.Name = "doneBtn";
+            this.doneBtn.Size = new System.Drawing.Size(89, 34);
+            this.doneBtn.TabIndex = 86;
+            this.doneBtn.Text = "Done";
+            this.doneBtn.UseVisualStyleBackColor = false;
+            this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Image = ((System.Drawing.Image)(resources.GetObject("label28.Image")));
+            this.label28.Location = new System.Drawing.Point(222, 256);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(97, 88);
+            this.label28.TabIndex = 85;
+            // 
+            // driver
+            // 
+            this.driver.Appearance = System.Windows.Forms.Appearance.Button;
+            this.driver.BackColor = System.Drawing.Color.Transparent;
+            this.driver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("driver.BackgroundImage")));
+            this.driver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.driver.Enabled = false;
+            this.driver.FlatAppearance.BorderSize = 0;
+            this.driver.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.driver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.driver.Location = new System.Drawing.Point(260, 145);
+            this.driver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.driver.Name = "driver";
+            this.driver.Size = new System.Drawing.Size(35, 35);
+            this.driver.TabIndex = 84;
+            this.driver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.driver.UseVisualStyleBackColor = false;
+            // 
+            // steering
+            // 
+            this.steering.BackColor = System.Drawing.Color.Transparent;
+            this.steering.Image = ((System.Drawing.Image)(resources.GetObject("steering.Image")));
+            this.steering.Location = new System.Drawing.Point(211, 142);
+            this.steering.Name = "steering";
+            this.steering.Size = new System.Drawing.Size(49, 47);
+            this.steering.TabIndex = 83;
+            // 
+            // j4
+            // 
+            this.j4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.j4.BackColor = System.Drawing.Color.Transparent;
+            this.j4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("j4.BackgroundImage")));
+            this.j4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.j4.FlatAppearance.BorderSize = 0;
+            this.j4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.j4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.j4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.j4.Location = new System.Drawing.Point(769, 132);
+            this.j4.Margin = new System.Windows.Forms.Padding(0);
+            this.j4.Name = "j4";
+            this.j4.Size = new System.Drawing.Size(32, 30);
+            this.j4.TabIndex = 82;
+            this.j4.TabStop = false;
+            this.j4.Text = "J4";
+            this.j4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.j4.UseVisualStyleBackColor = false;
+            this.j4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // j3
+            // 
+            this.j3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.j3.BackColor = System.Drawing.Color.Transparent;
+            this.j3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("j3.BackgroundImage")));
+            this.j3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.j3.FlatAppearance.BorderSize = 0;
+            this.j3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.j3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.j3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.j3.Location = new System.Drawing.Point(769, 172);
+            this.j3.Margin = new System.Windows.Forms.Padding(0);
+            this.j3.Name = "j3";
+            this.j3.Size = new System.Drawing.Size(32, 30);
+            this.j3.TabIndex = 81;
+            this.j3.TabStop = false;
+            this.j3.Text = "J3";
+            this.j3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.j3.UseVisualStyleBackColor = false;
+            this.j3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // j2
+            // 
+            this.j2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.j2.BackColor = System.Drawing.Color.Transparent;
+            this.j2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("j2.BackgroundImage")));
+            this.j2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.j2.FlatAppearance.BorderSize = 0;
+            this.j2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.j2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.j2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.j2.Location = new System.Drawing.Point(769, 253);
+            this.j2.Margin = new System.Windows.Forms.Padding(0);
+            this.j2.Name = "j2";
+            this.j2.Size = new System.Drawing.Size(32, 30);
+            this.j2.TabIndex = 80;
+            this.j2.TabStop = false;
+            this.j2.Text = "J2";
+            this.j2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.j2.UseVisualStyleBackColor = false;
+            this.j2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // j1
+            // 
+            this.j1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.j1.BackColor = System.Drawing.Color.Transparent;
+            this.j1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("j1.BackgroundImage")));
+            this.j1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.j1.FlatAppearance.BorderSize = 0;
+            this.j1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.j1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.j1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.j1.Location = new System.Drawing.Point(769, 292);
+            this.j1.Margin = new System.Windows.Forms.Padding(0);
+            this.j1.Name = "j1";
+            this.j1.Size = new System.Drawing.Size(32, 30);
+            this.j1.TabIndex = 79;
+            this.j1.TabStop = false;
+            this.j1.Text = "J1";
+            this.j1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.j1.UseVisualStyleBackColor = false;
+            this.j1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // i4
+            // 
+            this.i4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.i4.BackColor = System.Drawing.Color.Transparent;
+            this.i4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i4.BackgroundImage")));
+            this.i4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.i4.FlatAppearance.BorderSize = 0;
+            this.i4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.i4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.i4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.i4.Location = new System.Drawing.Point(723, 132);
+            this.i4.Margin = new System.Windows.Forms.Padding(0);
+            this.i4.Name = "i4";
+            this.i4.Size = new System.Drawing.Size(32, 30);
+            this.i4.TabIndex = 78;
+            this.i4.TabStop = false;
+            this.i4.Text = "I4";
+            this.i4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.i4.UseVisualStyleBackColor = false;
+            this.i4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // i3
+            // 
+            this.i3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.i3.BackColor = System.Drawing.Color.Transparent;
+            this.i3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i3.BackgroundImage")));
+            this.i3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.i3.FlatAppearance.BorderSize = 0;
+            this.i3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.i3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.i3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.i3.Location = new System.Drawing.Point(723, 172);
+            this.i3.Margin = new System.Windows.Forms.Padding(0);
+            this.i3.Name = "i3";
+            this.i3.Size = new System.Drawing.Size(32, 30);
+            this.i3.TabIndex = 77;
+            this.i3.TabStop = false;
+            this.i3.Text = "I3";
+            this.i3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.i3.UseVisualStyleBackColor = false;
+            this.i3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // i2
+            // 
+            this.i2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.i2.BackColor = System.Drawing.Color.Transparent;
+            this.i2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i2.BackgroundImage")));
+            this.i2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.i2.FlatAppearance.BorderSize = 0;
+            this.i2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.i2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.i2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.i2.Location = new System.Drawing.Point(723, 253);
+            this.i2.Margin = new System.Windows.Forms.Padding(0);
+            this.i2.Name = "i2";
+            this.i2.Size = new System.Drawing.Size(32, 30);
+            this.i2.TabIndex = 76;
+            this.i2.TabStop = false;
+            this.i2.Text = "I2";
+            this.i2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.i2.UseVisualStyleBackColor = false;
+            this.i2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // i1
+            // 
+            this.i1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.i1.BackColor = System.Drawing.Color.Transparent;
+            this.i1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i1.BackgroundImage")));
+            this.i1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.i1.FlatAppearance.BorderSize = 0;
+            this.i1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.i1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.i1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.i1.Location = new System.Drawing.Point(723, 292);
+            this.i1.Margin = new System.Windows.Forms.Padding(0);
+            this.i1.Name = "i1";
+            this.i1.Size = new System.Drawing.Size(32, 30);
+            this.i1.TabIndex = 75;
+            this.i1.TabStop = false;
+            this.i1.Text = "I1";
+            this.i1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.i1.UseVisualStyleBackColor = false;
+            this.i1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // h4
+            // 
+            this.h4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.h4.BackColor = System.Drawing.Color.Transparent;
+            this.h4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("h4.BackgroundImage")));
+            this.h4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.h4.FlatAppearance.BorderSize = 0;
+            this.h4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.h4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.h4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.h4.Location = new System.Drawing.Point(673, 132);
+            this.h4.Margin = new System.Windows.Forms.Padding(0);
+            this.h4.Name = "h4";
+            this.h4.Size = new System.Drawing.Size(32, 30);
+            this.h4.TabIndex = 74;
+            this.h4.TabStop = false;
+            this.h4.Text = "H4";
+            this.h4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.h4.UseVisualStyleBackColor = false;
+            this.h4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // h3
+            // 
+            this.h3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.h3.BackColor = System.Drawing.Color.Transparent;
+            this.h3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("h3.BackgroundImage")));
+            this.h3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.h3.FlatAppearance.BorderSize = 0;
+            this.h3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.h3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.h3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.h3.Location = new System.Drawing.Point(673, 172);
+            this.h3.Margin = new System.Windows.Forms.Padding(0);
+            this.h3.Name = "h3";
+            this.h3.Size = new System.Drawing.Size(32, 30);
+            this.h3.TabIndex = 73;
+            this.h3.TabStop = false;
+            this.h3.Text = "H3";
+            this.h3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.h3.UseVisualStyleBackColor = false;
+            this.h3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // h2
+            // 
+            this.h2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.h2.BackColor = System.Drawing.Color.Transparent;
+            this.h2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("h2.BackgroundImage")));
+            this.h2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.h2.FlatAppearance.BorderSize = 0;
+            this.h2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.h2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.h2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.h2.Location = new System.Drawing.Point(673, 253);
+            this.h2.Margin = new System.Windows.Forms.Padding(0);
+            this.h2.Name = "h2";
+            this.h2.Size = new System.Drawing.Size(32, 30);
+            this.h2.TabIndex = 72;
+            this.h2.TabStop = false;
+            this.h2.Text = "H2";
+            this.h2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.h2.UseVisualStyleBackColor = false;
+            this.h2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // h1
+            // 
+            this.h1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.h1.BackColor = System.Drawing.Color.Transparent;
+            this.h1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("h1.BackgroundImage")));
+            this.h1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.h1.FlatAppearance.BorderSize = 0;
+            this.h1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.h1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.h1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.h1.Location = new System.Drawing.Point(673, 292);
+            this.h1.Margin = new System.Windows.Forms.Padding(0);
+            this.h1.Name = "h1";
+            this.h1.Size = new System.Drawing.Size(32, 30);
+            this.h1.TabIndex = 71;
+            this.h1.TabStop = false;
+            this.h1.Text = "H1";
+            this.h1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.h1.UseVisualStyleBackColor = false;
+            this.h1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // g4
+            // 
+            this.g4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.g4.BackColor = System.Drawing.Color.Transparent;
+            this.g4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g4.BackgroundImage")));
+            this.g4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.g4.FlatAppearance.BorderSize = 0;
+            this.g4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.g4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.g4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.g4.Location = new System.Drawing.Point(621, 132);
+            this.g4.Margin = new System.Windows.Forms.Padding(0);
+            this.g4.Name = "g4";
+            this.g4.Size = new System.Drawing.Size(32, 30);
+            this.g4.TabIndex = 70;
+            this.g4.TabStop = false;
+            this.g4.Text = "G4";
+            this.g4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.g4.UseVisualStyleBackColor = false;
+            this.g4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // g3
+            // 
+            this.g3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.g3.BackColor = System.Drawing.Color.Transparent;
+            this.g3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g3.BackgroundImage")));
+            this.g3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.g3.FlatAppearance.BorderSize = 0;
+            this.g3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.g3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.g3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.g3.Location = new System.Drawing.Point(621, 172);
+            this.g3.Margin = new System.Windows.Forms.Padding(0);
+            this.g3.Name = "g3";
+            this.g3.Size = new System.Drawing.Size(32, 30);
+            this.g3.TabIndex = 69;
+            this.g3.TabStop = false;
+            this.g3.Text = "G3";
+            this.g3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.g3.UseVisualStyleBackColor = false;
+            this.g3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // g2
+            // 
+            this.g2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.g2.BackColor = System.Drawing.Color.Transparent;
+            this.g2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g2.BackgroundImage")));
+            this.g2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.g2.FlatAppearance.BorderSize = 0;
+            this.g2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.g2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.g2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.g2.Location = new System.Drawing.Point(621, 253);
+            this.g2.Margin = new System.Windows.Forms.Padding(0);
+            this.g2.Name = "g2";
+            this.g2.Size = new System.Drawing.Size(32, 30);
+            this.g2.TabIndex = 68;
+            this.g2.TabStop = false;
+            this.g2.Text = "G2";
+            this.g2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.g2.UseVisualStyleBackColor = false;
+            this.g2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // g1
+            // 
+            this.g1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.g1.BackColor = System.Drawing.Color.Transparent;
+            this.g1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g1.BackgroundImage")));
+            this.g1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.g1.FlatAppearance.BorderSize = 0;
+            this.g1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.g1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.g1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.g1.Location = new System.Drawing.Point(621, 292);
+            this.g1.Margin = new System.Windows.Forms.Padding(0);
+            this.g1.Name = "g1";
+            this.g1.Size = new System.Drawing.Size(32, 30);
+            this.g1.TabIndex = 67;
+            this.g1.TabStop = false;
+            this.g1.Text = "G1";
+            this.g1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.g1.UseVisualStyleBackColor = false;
+            this.g1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // f4
+            // 
+            this.f4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.f4.BackColor = System.Drawing.Color.Transparent;
+            this.f4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("f4.BackgroundImage")));
+            this.f4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.f4.FlatAppearance.BorderSize = 0;
+            this.f4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.f4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.f4.Location = new System.Drawing.Point(571, 132);
+            this.f4.Margin = new System.Windows.Forms.Padding(0);
+            this.f4.Name = "f4";
+            this.f4.Size = new System.Drawing.Size(32, 30);
+            this.f4.TabIndex = 66;
+            this.f4.TabStop = false;
+            this.f4.Text = "F4";
+            this.f4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.f4.UseVisualStyleBackColor = false;
+            this.f4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // f3
+            // 
+            this.f3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.f3.BackColor = System.Drawing.Color.Transparent;
+            this.f3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("f3.BackgroundImage")));
+            this.f3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.f3.FlatAppearance.BorderSize = 0;
+            this.f3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.f3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.f3.Location = new System.Drawing.Point(571, 172);
+            this.f3.Margin = new System.Windows.Forms.Padding(0);
+            this.f3.Name = "f3";
+            this.f3.Size = new System.Drawing.Size(32, 30);
+            this.f3.TabIndex = 65;
+            this.f3.TabStop = false;
+            this.f3.Text = "F3";
+            this.f3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.f3.UseVisualStyleBackColor = false;
+            this.f3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // f2
+            // 
+            this.f2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.f2.BackColor = System.Drawing.Color.Transparent;
+            this.f2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("f2.BackgroundImage")));
+            this.f2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.f2.FlatAppearance.BorderSize = 0;
+            this.f2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.f2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.f2.Location = new System.Drawing.Point(571, 253);
+            this.f2.Margin = new System.Windows.Forms.Padding(0);
+            this.f2.Name = "f2";
+            this.f2.Size = new System.Drawing.Size(32, 30);
+            this.f2.TabIndex = 64;
+            this.f2.TabStop = false;
+            this.f2.Text = "F2";
+            this.f2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.f2.UseVisualStyleBackColor = false;
+            this.f2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // f1
+            // 
+            this.f1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.f1.BackColor = System.Drawing.Color.Transparent;
+            this.f1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("f1.BackgroundImage")));
+            this.f1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.f1.FlatAppearance.BorderSize = 0;
+            this.f1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.f1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.f1.Location = new System.Drawing.Point(571, 292);
+            this.f1.Margin = new System.Windows.Forms.Padding(0);
+            this.f1.Name = "f1";
+            this.f1.Size = new System.Drawing.Size(32, 30);
+            this.f1.TabIndex = 63;
+            this.f1.TabStop = false;
+            this.f1.Text = "F1";
+            this.f1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.f1.UseVisualStyleBackColor = false;
+            this.f1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // e4
+            // 
+            this.e4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.e4.BackColor = System.Drawing.Color.Transparent;
+            this.e4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("e4.BackgroundImage")));
+            this.e4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.e4.FlatAppearance.BorderSize = 0;
+            this.e4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.e4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.e4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.e4.Location = new System.Drawing.Point(521, 132);
+            this.e4.Margin = new System.Windows.Forms.Padding(0);
+            this.e4.Name = "e4";
+            this.e4.Size = new System.Drawing.Size(32, 30);
+            this.e4.TabIndex = 62;
+            this.e4.TabStop = false;
+            this.e4.Text = "E4";
+            this.e4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.e4.UseVisualStyleBackColor = false;
+            this.e4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // e3
+            // 
+            this.e3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.e3.BackColor = System.Drawing.Color.Transparent;
+            this.e3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("e3.BackgroundImage")));
+            this.e3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.e3.FlatAppearance.BorderSize = 0;
+            this.e3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.e3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.e3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.e3.Location = new System.Drawing.Point(521, 172);
+            this.e3.Margin = new System.Windows.Forms.Padding(0);
+            this.e3.Name = "e3";
+            this.e3.Size = new System.Drawing.Size(32, 30);
+            this.e3.TabIndex = 61;
+            this.e3.TabStop = false;
+            this.e3.Text = "E3";
+            this.e3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.e3.UseVisualStyleBackColor = false;
+            this.e3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // e2
+            // 
+            this.e2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.e2.BackColor = System.Drawing.Color.Transparent;
+            this.e2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("e2.BackgroundImage")));
+            this.e2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.e2.FlatAppearance.BorderSize = 0;
+            this.e2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.e2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.e2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.e2.Location = new System.Drawing.Point(521, 253);
+            this.e2.Margin = new System.Windows.Forms.Padding(0);
+            this.e2.Name = "e2";
+            this.e2.Size = new System.Drawing.Size(32, 30);
+            this.e2.TabIndex = 60;
+            this.e2.TabStop = false;
+            this.e2.Text = "E2";
+            this.e2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.e2.UseVisualStyleBackColor = false;
+            this.e2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // e1
+            // 
+            this.e1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.e1.BackColor = System.Drawing.Color.Transparent;
+            this.e1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("e1.BackgroundImage")));
+            this.e1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.e1.FlatAppearance.BorderSize = 0;
+            this.e1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.e1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.e1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.e1.Location = new System.Drawing.Point(521, 292);
+            this.e1.Margin = new System.Windows.Forms.Padding(0);
+            this.e1.Name = "e1";
+            this.e1.Size = new System.Drawing.Size(32, 30);
+            this.e1.TabIndex = 59;
+            this.e1.TabStop = false;
+            this.e1.Text = "E1";
+            this.e1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.e1.UseVisualStyleBackColor = false;
+            this.e1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // d4
+            // 
+            this.d4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.d4.BackColor = System.Drawing.Color.Transparent;
+            this.d4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("d4.BackgroundImage")));
+            this.d4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d4.FlatAppearance.BorderSize = 0;
+            this.d4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.d4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.d4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.d4.Location = new System.Drawing.Point(471, 132);
+            this.d4.Margin = new System.Windows.Forms.Padding(0);
+            this.d4.Name = "d4";
+            this.d4.Size = new System.Drawing.Size(32, 30);
+            this.d4.TabIndex = 58;
+            this.d4.TabStop = false;
+            this.d4.Text = "D4";
+            this.d4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.d4.UseVisualStyleBackColor = false;
+            this.d4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // d3
+            // 
+            this.d3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.d3.BackColor = System.Drawing.Color.Transparent;
+            this.d3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("d3.BackgroundImage")));
+            this.d3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d3.FlatAppearance.BorderSize = 0;
+            this.d3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.d3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.d3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.d3.Location = new System.Drawing.Point(471, 172);
+            this.d3.Margin = new System.Windows.Forms.Padding(0);
+            this.d3.Name = "d3";
+            this.d3.Size = new System.Drawing.Size(32, 30);
+            this.d3.TabIndex = 57;
+            this.d3.TabStop = false;
+            this.d3.Text = "D3";
+            this.d3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.d3.UseVisualStyleBackColor = false;
+            this.d3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // d2
+            // 
+            this.d2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.d2.BackColor = System.Drawing.Color.Transparent;
+            this.d2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("d2.BackgroundImage")));
+            this.d2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d2.FlatAppearance.BorderSize = 0;
+            this.d2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.d2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.d2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.d2.Location = new System.Drawing.Point(471, 253);
+            this.d2.Margin = new System.Windows.Forms.Padding(0);
+            this.d2.Name = "d2";
+            this.d2.Size = new System.Drawing.Size(32, 30);
+            this.d2.TabIndex = 56;
+            this.d2.TabStop = false;
+            this.d2.Text = "D2";
+            this.d2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.d2.UseVisualStyleBackColor = false;
+            this.d2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // d1
+            // 
+            this.d1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.d1.BackColor = System.Drawing.Color.Transparent;
+            this.d1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("d1.BackgroundImage")));
+            this.d1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d1.FlatAppearance.BorderSize = 0;
+            this.d1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.d1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.d1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.d1.Location = new System.Drawing.Point(471, 292);
+            this.d1.Margin = new System.Windows.Forms.Padding(0);
+            this.d1.Name = "d1";
+            this.d1.Size = new System.Drawing.Size(32, 30);
+            this.d1.TabIndex = 55;
+            this.d1.TabStop = false;
+            this.d1.Text = "D1";
+            this.d1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.d1.UseVisualStyleBackColor = false;
+            this.d1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // c4
+            // 
+            this.c4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.c4.BackColor = System.Drawing.Color.Transparent;
+            this.c4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("c4.BackgroundImage")));
+            this.c4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.c4.FlatAppearance.BorderSize = 0;
+            this.c4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.c4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.c4.Location = new System.Drawing.Point(421, 132);
+            this.c4.Margin = new System.Windows.Forms.Padding(0);
+            this.c4.Name = "c4";
+            this.c4.Size = new System.Drawing.Size(32, 30);
+            this.c4.TabIndex = 54;
+            this.c4.TabStop = false;
+            this.c4.Text = "C4";
+            this.c4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.c4.UseVisualStyleBackColor = false;
+            this.c4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // c3
+            // 
+            this.c3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.c3.BackColor = System.Drawing.Color.Transparent;
+            this.c3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("c3.BackgroundImage")));
+            this.c3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.c3.FlatAppearance.BorderSize = 0;
+            this.c3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.c3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.c3.Location = new System.Drawing.Point(421, 172);
+            this.c3.Margin = new System.Windows.Forms.Padding(0);
+            this.c3.Name = "c3";
+            this.c3.Size = new System.Drawing.Size(32, 30);
+            this.c3.TabIndex = 53;
+            this.c3.TabStop = false;
+            this.c3.Text = "C3";
+            this.c3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.c3.UseVisualStyleBackColor = false;
+            this.c3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // c2
+            // 
+            this.c2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.c2.BackColor = System.Drawing.Color.Transparent;
+            this.c2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("c2.BackgroundImage")));
+            this.c2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.c2.FlatAppearance.BorderSize = 0;
+            this.c2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.c2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.c2.Location = new System.Drawing.Point(421, 253);
+            this.c2.Margin = new System.Windows.Forms.Padding(0);
+            this.c2.Name = "c2";
+            this.c2.Size = new System.Drawing.Size(32, 30);
+            this.c2.TabIndex = 52;
+            this.c2.TabStop = false;
+            this.c2.Text = "C2";
+            this.c2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.c2.UseVisualStyleBackColor = false;
+            this.c2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // c1
+            // 
+            this.c1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.c1.BackColor = System.Drawing.Color.Transparent;
+            this.c1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("c1.BackgroundImage")));
+            this.c1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.c1.FlatAppearance.BorderSize = 0;
+            this.c1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.c1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.c1.Location = new System.Drawing.Point(421, 292);
+            this.c1.Margin = new System.Windows.Forms.Padding(0);
+            this.c1.Name = "c1";
+            this.c1.Size = new System.Drawing.Size(32, 30);
+            this.c1.TabIndex = 51;
+            this.c1.TabStop = false;
+            this.c1.Text = "C1";
+            this.c1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.c1.UseVisualStyleBackColor = false;
+            this.c1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // b4
+            // 
+            this.b4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.b4.BackColor = System.Drawing.Color.Transparent;
+            this.b4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b4.BackgroundImage")));
+            this.b4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b4.FlatAppearance.BorderSize = 0;
+            this.b4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.b4.Location = new System.Drawing.Point(374, 132);
+            this.b4.Margin = new System.Windows.Forms.Padding(0);
+            this.b4.Name = "b4";
+            this.b4.Size = new System.Drawing.Size(32, 30);
+            this.b4.TabIndex = 50;
+            this.b4.TabStop = false;
+            this.b4.Text = "B4";
+            this.b4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.b4.UseVisualStyleBackColor = false;
+            this.b4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // b3
+            // 
+            this.b3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.b3.BackColor = System.Drawing.Color.Transparent;
+            this.b3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b3.BackgroundImage")));
+            this.b3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b3.FlatAppearance.BorderSize = 0;
+            this.b3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.b3.Location = new System.Drawing.Point(374, 172);
+            this.b3.Margin = new System.Windows.Forms.Padding(0);
+            this.b3.Name = "b3";
+            this.b3.Size = new System.Drawing.Size(32, 30);
+            this.b3.TabIndex = 49;
+            this.b3.TabStop = false;
+            this.b3.Text = "B3";
+            this.b3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.b3.UseVisualStyleBackColor = false;
+            this.b3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // b2
+            // 
+            this.b2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.b2.BackColor = System.Drawing.Color.Transparent;
+            this.b2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b2.BackgroundImage")));
+            this.b2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b2.FlatAppearance.BorderSize = 0;
+            this.b2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.b2.Location = new System.Drawing.Point(374, 253);
+            this.b2.Margin = new System.Windows.Forms.Padding(0);
+            this.b2.Name = "b2";
+            this.b2.Size = new System.Drawing.Size(32, 30);
+            this.b2.TabIndex = 48;
+            this.b2.TabStop = false;
+            this.b2.Text = "B2";
+            this.b2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.b2.UseVisualStyleBackColor = false;
+            this.b2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // b1
+            // 
+            this.b1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.b1.BackColor = System.Drawing.Color.Transparent;
+            this.b1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b1.BackgroundImage")));
+            this.b1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b1.FlatAppearance.BorderSize = 0;
+            this.b1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.b1.Location = new System.Drawing.Point(374, 292);
+            this.b1.Margin = new System.Windows.Forms.Padding(0);
+            this.b1.Name = "b1";
+            this.b1.Size = new System.Drawing.Size(32, 30);
+            this.b1.TabIndex = 47;
+            this.b1.TabStop = false;
+            this.b1.Text = "B1";
+            this.b1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.b1.UseVisualStyleBackColor = false;
+            this.b1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // a4
+            // 
+            this.a4.AccessibleName = "";
+            this.a4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.a4.BackColor = System.Drawing.Color.Transparent;
+            this.a4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("a4.BackgroundImage")));
+            this.a4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.a4.FlatAppearance.BorderSize = 0;
+            this.a4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.a4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.a4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.a4.Location = new System.Drawing.Point(327, 132);
+            this.a4.Margin = new System.Windows.Forms.Padding(0);
+            this.a4.Name = "a4";
+            this.a4.Size = new System.Drawing.Size(32, 30);
+            this.a4.TabIndex = 46;
+            this.a4.TabStop = false;
+            this.a4.Text = "A4";
+            this.a4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.a4.UseVisualStyleBackColor = false;
+            this.a4.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // a3
+            // 
+            this.a3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.a3.BackColor = System.Drawing.Color.Transparent;
+            this.a3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("a3.BackgroundImage")));
+            this.a3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.a3.FlatAppearance.BorderSize = 0;
+            this.a3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.a3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.a3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.a3.Location = new System.Drawing.Point(327, 172);
+            this.a3.Margin = new System.Windows.Forms.Padding(0);
+            this.a3.Name = "a3";
+            this.a3.Size = new System.Drawing.Size(32, 30);
+            this.a3.TabIndex = 45;
+            this.a3.TabStop = false;
+            this.a3.Text = "A3";
+            this.a3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.a3.UseVisualStyleBackColor = false;
+            this.a3.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // a2
+            // 
+            this.a2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.a2.BackColor = System.Drawing.Color.Transparent;
+            this.a2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("a2.BackgroundImage")));
+            this.a2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.a2.FlatAppearance.BorderSize = 0;
+            this.a2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.a2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.a2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.a2.Location = new System.Drawing.Point(327, 253);
+            this.a2.Margin = new System.Windows.Forms.Padding(0);
+            this.a2.Name = "a2";
+            this.a2.Size = new System.Drawing.Size(32, 30);
+            this.a2.TabIndex = 44;
+            this.a2.TabStop = false;
+            this.a2.Text = "A2";
+            this.a2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.a2.UseVisualStyleBackColor = false;
+            this.a2.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // a1
+            // 
+            this.a1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.a1.BackColor = System.Drawing.Color.Transparent;
+            this.a1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("a1.BackgroundImage")));
+            this.a1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.a1.FlatAppearance.BorderSize = 0;
+            this.a1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.a1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.a1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.a1.Location = new System.Drawing.Point(327, 292);
+            this.a1.Margin = new System.Windows.Forms.Padding(0);
+            this.a1.Name = "a1";
+            this.a1.Size = new System.Drawing.Size(32, 30);
+            this.a1.TabIndex = 43;
+            this.a1.TabStop = false;
+            this.a1.Text = "A1";
+            this.a1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.a1.UseVisualStyleBackColor = false;
+            this.a1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // seatSelectBtn
+            // 
+            this.seatSelectBtn.FlatAppearance.BorderSize = 0;
+            this.seatSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.seatSelectBtn.Location = new System.Drawing.Point(612, 10);
+            this.seatSelectBtn.Name = "seatSelectBtn";
+            this.seatSelectBtn.Size = new System.Drawing.Size(90, 26);
+            this.seatSelectBtn.TabIndex = 31;
+            this.seatSelectBtn.Text = "Select Seat";
+            this.seatSelectBtn.UseVisualStyleBackColor = true;
+            this.seatSelectBtn.Click += new System.EventHandler(this.seatSelectBtn_Click);
             // 
             // groupBox1
             // 
@@ -1686,17 +2828,15 @@ namespace Project
             this.acRadioButton.UseVisualStyleBackColor = true;
             this.acRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // seatSelectBtn
+            // trashSeat
             // 
-            this.seatSelectBtn.FlatAppearance.BorderSize = 0;
-            this.seatSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.seatSelectBtn.Location = new System.Drawing.Point(612, 10);
-            this.seatSelectBtn.Name = "seatSelectBtn";
-            this.seatSelectBtn.Size = new System.Drawing.Size(90, 26);
-            this.seatSelectBtn.TabIndex = 31;
-            this.seatSelectBtn.Text = "Select Seat";
-            this.seatSelectBtn.UseVisualStyleBackColor = true;
-            this.seatSelectBtn.Click += new System.EventHandler(this.seatSelectBtn_Click);
+            this.trashSeat.Image = ((System.Drawing.Image)(resources.GetObject("trashSeat.Image")));
+            this.trashSeat.Location = new System.Drawing.Point(665, 397);
+            this.trashSeat.Name = "trashSeat";
+            this.trashSeat.Size = new System.Drawing.Size(41, 29);
+            this.trashSeat.TabIndex = 95;
+            this.trashSeat.Visible = false;
+            this.trashSeat.Click += new System.EventHandler(this.TrashSeatBtn_Click);
             // 
             // AdminDashboard
             // 
@@ -1743,6 +2883,8 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGridView)).EndInit();
             this.ticketsPanel.ResumeLayout(false);
             this.ticketsPanel.PerformLayout();
+            this.seatPanel.ResumeLayout(false);
+            this.seatPanel.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -1878,5 +3020,59 @@ namespace Project
         private System.Windows.Forms.RadioButton nonAcRadioButton;
         private System.Windows.Forms.RadioButton acRadioButton;
         private System.Windows.Forms.Button seatSelectBtn;
+        private System.Windows.Forms.Panel seatPanel;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.CheckBox driver;
+        private System.Windows.Forms.Label steering;
+        private System.Windows.Forms.CheckBox j4;
+        private System.Windows.Forms.CheckBox j3;
+        private System.Windows.Forms.CheckBox j2;
+        private System.Windows.Forms.CheckBox j1;
+        private System.Windows.Forms.CheckBox i4;
+        private System.Windows.Forms.CheckBox i3;
+        private System.Windows.Forms.CheckBox i2;
+        private System.Windows.Forms.CheckBox i1;
+        private System.Windows.Forms.CheckBox h4;
+        private System.Windows.Forms.CheckBox h3;
+        private System.Windows.Forms.CheckBox h2;
+        private System.Windows.Forms.CheckBox h1;
+        private System.Windows.Forms.CheckBox g4;
+        private System.Windows.Forms.CheckBox g3;
+        private System.Windows.Forms.CheckBox g2;
+        private System.Windows.Forms.CheckBox g1;
+        private System.Windows.Forms.CheckBox f4;
+        private System.Windows.Forms.CheckBox f3;
+        private System.Windows.Forms.CheckBox f2;
+        private System.Windows.Forms.CheckBox f1;
+        private System.Windows.Forms.CheckBox e4;
+        private System.Windows.Forms.CheckBox e3;
+        private System.Windows.Forms.CheckBox e2;
+        private System.Windows.Forms.CheckBox e1;
+        private System.Windows.Forms.CheckBox d4;
+        private System.Windows.Forms.CheckBox d3;
+        private System.Windows.Forms.CheckBox d2;
+        private System.Windows.Forms.CheckBox d1;
+        private System.Windows.Forms.CheckBox c4;
+        private System.Windows.Forms.CheckBox c3;
+        private System.Windows.Forms.CheckBox c2;
+        private System.Windows.Forms.CheckBox c1;
+        private System.Windows.Forms.CheckBox b4;
+        private System.Windows.Forms.CheckBox b3;
+        private System.Windows.Forms.CheckBox b2;
+        private System.Windows.Forms.CheckBox b1;
+        private System.Windows.Forms.CheckBox a4;
+        private System.Windows.Forms.CheckBox a3;
+        private System.Windows.Forms.CheckBox a2;
+        private System.Windows.Forms.CheckBox a1;
+        private System.Windows.Forms.Button doneBtn;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label availableCount;
+        private System.Windows.Forms.Label bookedCount;
+        private System.Windows.Forms.Label availableLabel;
+        private System.Windows.Forms.Label bookedLabel;
+        private System.Windows.Forms.Label reserveString;
+        private System.Windows.Forms.Label reserveShow;
+        private System.Windows.Forms.Label trashSeat;
     }
 }
