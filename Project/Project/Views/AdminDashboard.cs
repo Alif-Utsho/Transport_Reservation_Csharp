@@ -1,5 +1,6 @@
 ﻿using Project.Controllers;
 using Project.Models;
+using Project.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -367,6 +368,7 @@ namespace Project
             if (res){ reloadSalesman(); MessageBox.Show("Salesman Deleted"); }
         }
         
+        ///// TICKETS PANEL  /////
         public void reloadTickets()
         {
             ticketId = 0;
@@ -723,6 +725,11 @@ namespace Project
             };
             bool res = AdminController.updateAdmin(admin);
             if(res) { reloadAdmin(); MessageBox.Show("Admin updated"); }
+        }
+
+        private void seatSelectBtn_Click(object sender, EventArgs e)
+        {
+            new Reservation().Show();
         }
     }
 }

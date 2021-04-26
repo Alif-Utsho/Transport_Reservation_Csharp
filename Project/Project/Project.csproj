@@ -88,6 +88,12 @@
     <Compile Include="Views\ManagerDashboard.Designer.cs">
       <DependentUpon>ManagerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="Views\ManagerDashboard.resx">
       <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

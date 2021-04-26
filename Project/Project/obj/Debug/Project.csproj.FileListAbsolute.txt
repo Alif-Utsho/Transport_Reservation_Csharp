@@ -10,3 +10,4 @@ E:\Educational Object\Academic\8th Semester\OBJECT ORIENTED PROGRAMMING 2 [H]\Pr
 E:\Educational Object\Academic\8th Semester\OBJECT ORIENTED PROGRAMMING 2 [H]\Project\Project\Project\obj\Debug\Project.LoginForm.resources
 E:\Educational Object\Academic\8th Semester\OBJECT ORIENTED PROGRAMMING 2 [H]\Project\Project\Project\obj\Debug\Project.AdminDashboard.resources
 E:\Educational Object\Academic\8th Semester\OBJECT ORIENTED PROGRAMMING 2 [H]\Project\Project\Project\obj\Debug\Project.Views.ManagerDashboard.resources
+E:\Educational Object\Academic\8th Semester\OBJECT ORIENTED PROGRAMMING 2 [H]\Project\Project\Project\obj\Debug\Project.Views.Reservation.resources
