@@ -29,6 +29,7 @@ namespace Project.Models
                 bus.Id = reader.GetInt32(reader.GetOrdinal("Id"));
                 bus.Coach = reader.GetString(reader.GetOrdinal("Coach")).Trim();
                 bus.Type = reader.GetString(reader.GetOrdinal("BusType")).Trim();
+                bus.Time = reader.GetString(reader.GetOrdinal("Time")).Trim();
                 buslist.Add(bus);
             }
             conn.Close();
@@ -37,7 +38,7 @@ namespace Project.Models
         public bool addBus(dynamic bus)
         {
             conn.Open();
-            string query = string.Format("INSERT INTO Buses VALUES('{0}', '{1}')", bus.type, bus.coach);
+            string query = string.Format("INSERT INTO Buses VALUES('{0}', '{1}', '{2}')", bus.type, bus.coach, bus.time);
             SqlCommand cmd = new SqlCommand(query, conn);
             int res = cmd.ExecuteNonQuery();
             conn.Close();
@@ -57,6 +58,7 @@ namespace Project.Models
                 bus.Id = reader.GetInt32(reader.GetOrdinal("Id"));
                 bus.Coach = reader.GetString(reader.GetOrdinal("Coach")).Trim();
                 bus.Type = reader.GetString(reader.GetOrdinal("BusType")).Trim();
+                bus.Time = reader.GetString(reader.GetOrdinal("Time"));
             }
             conn.Close();
             return bus;
@@ -64,7 +66,7 @@ namespace Project.Models
         public bool updateBus(dynamic bus)
         {
             conn.Open();
-            string query = string.Format("UPDATE Buses SET Coach='{0}', BusType='{1}' WHERE Id={2}", bus.coach, bus.type, bus.id);
+            string query = string.Format("UPDATE Buses SET Coach='{0}', BusType='{1}', Time='{2}' WHERE Id={3}", bus.coach, bus.type, bus.time, bus.id);
             SqlCommand cmd = new SqlCommand(query, conn);
             int res = cmd.ExecuteNonQuery();
             conn.Close();

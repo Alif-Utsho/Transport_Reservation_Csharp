@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Project.Controllers;
 using Project.Views;
+using Project.Models;
 
 namespace Project
 {
@@ -60,7 +61,9 @@ namespace Project
                     MessageBox.Show("Invalid Credentials");
                     return;
                 }
-
+                Author.Name = result.Name;
+                Author.Username = result.Username;
+                Author.Role = role;
                 if (role.ToLower().Equals("admin"))
                 {
                     this.Hide();

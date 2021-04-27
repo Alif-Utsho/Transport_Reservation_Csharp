@@ -10,14 +10,14 @@ namespace Project.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Phone { get; set; }
         public string Source { get; set; }
         public string Destination { get; set; }
         public string Coach { get; set; }
+        public string Seat { get; set; }
         public string Bustype { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
-        public string Seat { get; set; }
+        public string Phone { get; set; }
         public string Author { get; set; }
     }
 }

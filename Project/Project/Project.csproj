@@ -57,6 +57,7 @@
     <Compile Include="APIs\Admins.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="APIs\Authentication.cs" />
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Bus.cs" />
     <Compile Include="APIs\Buses.cs" />
     <Compile Include="Models\Customer.cs" />

@@ -17,7 +17,7 @@ namespace Project.Controllers
         }
         public static bool addBus(dynamic bus)
         {
-            if (bus.coach.Length == 0 || bus.type.Length == 0)
+            if (bus.coach.Length == 0 || bus.type.Length == 0 || bus.time.Equals("Time"))
             {
                 MessageBox.Show("Fill all the required fields");
                 return false;
@@ -35,7 +35,7 @@ namespace Project.Controllers
                 MessageBox.Show("Search a bus first");
                 return false;
             }
-            if (bus.coach.Length == 0 || bus.type.Length == 0)
+            if (bus.coach.Length == 0 || bus.type.Length == 0 || bus.time.Equals("Time"))
             {
                 MessageBox.Show("Fill all the required fields");
                 return false;

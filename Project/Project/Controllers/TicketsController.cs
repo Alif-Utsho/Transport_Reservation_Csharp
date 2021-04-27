@@ -14,7 +14,7 @@ namespace Project.Controllers
         public static bool boolTicket(dynamic ticket)
         {
             if (ticket.name.Length == 0 || ticket.phone.Length == 0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
-                ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time"))
+                ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time") || ticket.author.Length==0 || ticket.seat.Length==0)
             { 
                 MessageBox.Show("Fill all the required fields");
                 return false;
@@ -49,7 +49,7 @@ namespace Project.Controllers
                 return false;
             }
             if (ticket.name.Length == 0 || ticket.phone.Length == 0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
-                ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time"))
+                ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time") || ticket.author.Length == 0 || ticket.seat.Length == 0)
             {
                 MessageBox.Show("Fill all the required fields");
                 return false;

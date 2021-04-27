@@ -386,11 +386,41 @@ namespace Project
             // for manager and salesman
             // journeyDate.MaxDate = DateTime.Parse(DateTime.Now.AddDays(6).ToShortDateString());
 
+            var coachlist = BusesController.getAllBus();
+            coachBox.Items.Clear();
+            foreach(var a in coachlist)
+            {
+                coachBox.Items.Add(a.Coach);
+            }
+
+            reserve = "";
+            seatList = allSeat();
+            reloadSeat();
+
             ticketBookBtn.Enabled = true;
             trashTicket.Visible = false;
 
             var tickets = TicketsController.getAllTickets();
             ticketsGridView.DataSource = tickets;
+        }
+        private void coachBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var coach = BusesController.searchBus(coachBox.Text);
+            if(coach != null)
+            {
+                bustype = coach.Type;
+                if (bustype.Equals("AC"))
+                {
+                    acRadioButton.Checked = true;
+                    nonAcRadioButton.Checked = false;
+                }
+                else if (bustype == "Non AC")
+                {
+                    nonAcRadioButton.Checked = true;
+                    acRadioButton.Checked = false;
+                }
+                journeyTime.Text = coach.Time;
+            }
         }
         private void ticketBookBtn_Click(object sender, EventArgs e)
         {
@@ -403,7 +433,9 @@ namespace Project
                 coach = coachBox.Text.Trim(),
                 type = bustype,
                 date = journeyDate.Value.ToShortDateString(),
-                time = journeyTime.Text.Trim()
+                time = journeyTime.Text.Trim(),
+                author = Author.Name,
+                seat = reserve
             };
 
             bool res = TicketsController.boolTicket(ticket);
@@ -492,7 +524,9 @@ namespace Project
                 coach = coachBox.Text.Trim(),
                 type = bustype,
                 date = journeyDate.Value.ToShortDateString(),
-                time = journeyTime.Text.Trim()
+                time = journeyTime.Text.Trim(),
+                seat=reserve,
+                author=Author.Name
             };
 
             bool res = TicketsController.updateTicket(ticket);
@@ -589,6 +623,7 @@ namespace Project
             busCoachBox.Text = "";
             busAcRadio.Checked = false;
             busNonAcRadio.Checked = false;
+            busesTime.Text = "Time";
 
             busId = 0;
 
@@ -605,10 +640,11 @@ namespace Project
             {
                 coach = busCoachBox.Text.Trim(),
                 type = busType,
+                time = busesTime.Text.Trim()
             };
 
             bool res = BusesController.addBus(bus);
-            if (res) {  reloadBuses(); MessageBox.Show("Bus Added"); }
+            if (res) {  reloadBuses(); reloadTickets(); MessageBox.Show("Bus Added"); }
         }
 
         private void busSearchBtn_Click(object sender, EventArgs e)
@@ -623,6 +659,7 @@ namespace Project
             busCoachBox.Text = bus.Coach;
             if (bus.Type == "AC") busAcRadio.Checked = true;
             else busNonAcRadio.Checked = true;
+            busesTime.Text = bus.Time;
 
             busId = bus.Id;
 
@@ -642,16 +679,17 @@ namespace Project
                 id = busId,
                 coach = busCoachBox.Text.Trim(),
                 type = busType,
+                time=busesTime.Text.Trim()
             };
 
             bool res = BusesController.updateBus(bus);
-            if (res){ reloadBuses(); MessageBox.Show("Bus updated"); }
+            if (res){ reloadBuses(); reloadTickets(); MessageBox.Show("Bus updated"); }
         }
 
         private void busRemoveBtn_Click(object sender, EventArgs e)
         {
             bool res = BusesController.deleteBus(busId);
-            if (res){ reloadBuses(); MessageBox.Show("Bus deleted"); }
+            if (res){ reloadBuses(); reloadTickets(); MessageBox.Show("Bus deleted"); }
         }
 
         ///// ADMIN PANEL /////
@@ -731,9 +769,16 @@ namespace Project
         ///////////////////// SEAT PANEL  /////////////////////
 
         List<CheckBox> seatList = null;
+        
         private void seatSelectBtn_Click(object sender, EventArgs e)
         {
-            seatList = allSeat();
+            if (coachBox.Text.Equals("Coach"))
+            {
+                MessageBox.Show("Select a coach first");
+                return;
+            }
+            coachNameSeat.Text = coachBox.Text;
+            
             seatPanel.Show();
         }
 
@@ -765,11 +810,17 @@ namespace Project
 
         private void TrashSeatBtn_Click(object sender, EventArgs e)
         {
+            reloadSeat();
+        }
+
+        private void reloadSeat()
+        {
             foreach (var seat in seatList)
             {
                 seat.Checked = false;
             }
             trashSeat.Visible = false;
+            seatSelectBtn.Text = "Select Seat";
         }
 
         string reserve = "";
@@ -786,12 +837,14 @@ namespace Project
                     //reserve += seat.Text + ", ";
                     reserveList.Add(seat.Text);
                 }
+                if (reserveList.Count > 0) trashSeat.Visible = true;
+                else trashSeat.Visible = false;
             }
             //reserveString.Text = reserve;
             reserve = string.Join(", ", reserveList);
             reserveString.Text = reserve;
 
-            if (reserve.Length > 0) trashSeat.Visible = true;
+            //if (reserve.Length > 0) trashSeat.Visible = true;
         }
 
         

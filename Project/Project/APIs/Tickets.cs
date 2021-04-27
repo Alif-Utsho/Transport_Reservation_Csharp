@@ -19,7 +19,7 @@ namespace Project.Models
         public bool bookTicket(dynamic ticket)
         {
             conn.Open();
-            string query = string.Format("INSERT INTO Tickets VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')", ticket.name, ticket.phone, ticket.source, ticket.destination, ticket.type, ticket.coach, ticket.date, ticket.time);
+            string query = string.Format("INSERT INTO Tickets VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}' ,'{8}', '{9}')", ticket.name, ticket.phone, ticket.source, ticket.destination, ticket.type, ticket.coach, ticket.date, ticket.time, ticket.seat, ticket.author);
             SqlCommand cmd = new SqlCommand(query, conn);
             int res = cmd.ExecuteNonQuery();
             conn.Close();
@@ -47,8 +47,8 @@ namespace Project.Models
                 aTicket.Coach = reader.GetString(reader.GetOrdinal("Coach")).Trim();
                 aTicket.Date = reader.GetString(reader.GetOrdinal("Date")).Trim();
                 aTicket.Time = reader.GetString(reader.GetOrdinal("Time")).Trim();
-                //aTicket.Seat = "A1";
-                //aTicket.Author = "Utsho(admin)";
+                aTicket.Seat = reader.GetString(reader.GetOrdinal("Seat")).Trim();
+                aTicket.Author = reader.GetString(reader.GetOrdinal("Author")).Trim();
                 ticket.Add(aTicket);
             }
             conn.Close();
@@ -67,7 +67,7 @@ namespace Project.Models
         public bool updateTicket(dynamic ticket)
         {
             conn.Open();
-            string query = string.Format("UPDATE Tickets SET Name='{0}', Phone='{1}', Source='{2}', Destination='{3}', BusType='{4}', Coach='{5}', Date='{6}', Time='{7}' WHERE Id={8}", ticket.name, ticket.phone, ticket.source, ticket.destination, ticket.type, ticket.coach, ticket.date, ticket.time, ticket.id);
+            string query = string.Format("UPDATE Tickets SET Name='{0}', Phone='{1}', Source='{2}', Destination='{3}', BusType='{4}', Coach='{5}', Date='{6}', Time='{7}', Seat='{8}', Author='{9}' WHERE Id={10}", ticket.name, ticket.phone, ticket.source, ticket.destination, ticket.type, ticket.coach, ticket.date, ticket.time,ticket.seat, ticket.author, ticket.id);
             SqlCommand cmd = new SqlCommand(query, conn);
             int res = cmd.ExecuteNonQuery();
             conn.Close();
