@@ -402,6 +402,9 @@ namespace Project
 
             var tickets = TicketsController.getAllTickets();
             ticketsGridView.DataSource = tickets;
+
+            var reservation = ReservationController.getAllReservations();
+            reservationGridView.DataSource = reservation;
         }
         private void coachBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -463,8 +466,9 @@ namespace Project
                 ticketSource.Text = row.Cells["Source"].Value.ToString();
                 ticketDest.Text = row.Cells["Destination"].Value.ToString();
                 coachBox.Text = row.Cells["Coach"].Value.ToString();
-                //busType.Text = row.Cells["BusType"].Value.ToString();
                 journeyTime.Text = row.Cells["Time"].Value.ToString();
+
+                
 
                 DateTime date = DateTime.Parse(row.Cells["Date"].Value.ToString());
                 if (date < journeyDate.MinDate)
@@ -497,6 +501,28 @@ namespace Project
                     ticketBookBtn.Enabled = false;
                 }
                 trashTicket.Visible = true;
+
+                ///seat selection////
+                ///
+                foreach (var s in seatList) s.Checked = false;
+                reserve = row.Cells["Seat"].Value.ToString();
+                seatSelectBtn.Text = reserve;
+                
+                if (reserve.Length > 0)
+                {
+                    char[] separator = { ',' };
+                    string[] seats = reserve.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+                    foreach (var seat in seats)
+                    {
+                        foreach (var seatlist in seatList)
+                        {
+                            if (seatlist.Text.Equals(seat.Trim()))
+                            {
+                                seatlist.Checked = true;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -827,26 +853,37 @@ namespace Project
         List<string> reserveList;
         private void seat_CheckedChanged(object sender, EventArgs e)
         {
-            //reserve = "";
             reserveList = new List<string>();
 
             foreach(var seat in seatList)
             {
                 if (seat.Checked == true)
                 {
-                    //reserve += seat.Text + ", ";
                     reserveList.Add(seat.Text);
                 }
                 if (reserveList.Count > 0) trashSeat.Visible = true;
                 else trashSeat.Visible = false;
             }
-            //reserveString.Text = reserve;
             reserve = string.Join(", ", reserveList);
             reserveString.Text = reserve;
-
-            //if (reserve.Length > 0) trashSeat.Visible = true;
         }
 
-        
+        private void ticketListLabel_Click(object sender, EventArgs e)
+        {
+            ticketListLabel.BackColor = SystemColors.MenuHighlight;
+            ticketsGridView.Visible = true;
+
+            reservationLabel.BackColor = Color.DimGray;
+            reservationGridView.Visible = false;
+        }
+
+        private void reservationLabel_Click(object sender, EventArgs e)
+        {
+            ticketListLabel.BackColor = Color.DimGray;
+            ticketsGridView.Visible = false;
+
+            reservationLabel.BackColor = SystemColors.MenuHighlight;
+            reservationGridView.Visible = true;
+        }
     }
 }

@@ -57,6 +57,8 @@ namespace Project
             this.button5 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.busesPanel = new System.Windows.Forms.Panel();
+            this.busesTime = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.busCoachBox = new System.Windows.Forms.TextBox();
             this.busTrash = new System.Windows.Forms.Label();
             this.busSearchBtn = new System.Windows.Forms.Button();
@@ -149,7 +151,7 @@ namespace Project
             this.nonAcRadioBtn = new System.Windows.Forms.RadioButton();
             this.coachBox = new System.Windows.Forms.ComboBox();
             this.ticketSearchBtn = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
+            this.ticketListLabel = new System.Windows.Forms.Label();
             this.ticketsGridView = new System.Windows.Forms.DataGridView();
             this.trashTicket = new System.Windows.Forms.Label();
             this.ticketsPanel = new System.Windows.Forms.Panel();
@@ -211,8 +213,8 @@ namespace Project
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nonAcRadioButton = new System.Windows.Forms.RadioButton();
             this.acRadioButton = new System.Windows.Forms.RadioButton();
-            this.busesTime = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
+            this.reservationGridView = new System.Windows.Forms.DataGridView();
+            this.reservationLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.AdminPanel.SuspendLayout();
@@ -232,6 +234,7 @@ namespace Project
             this.ticketsPanel.SuspendLayout();
             this.seatPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -559,6 +562,34 @@ namespace Project
             this.busesPanel.Size = new System.Drawing.Size(883, 460);
             this.busesPanel.TabIndex = 17;
             this.busesPanel.Visible = false;
+            // 
+            // busesTime
+            // 
+            this.busesTime.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busesTime.FormattingEnabled = true;
+            this.busesTime.Items.AddRange(new object[] {
+            "07:00 AM",
+            "10:00 AM",
+            "12:00 PM",
+            "02:00 PM",
+            "05:00 PM",
+            "07:00 PM",
+            "10:00 PM"});
+            this.busesTime.Location = new System.Drawing.Point(571, 267);
+            this.busesTime.Name = "busesTime";
+            this.busesTime.Size = new System.Drawing.Size(297, 25);
+            this.busesTime.TabIndex = 39;
+            this.busesTime.Text = "Time";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(456, 270);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(49, 19);
+            this.label35.TabIndex = 38;
+            this.label35.Text = "Time";
             // 
             // busCoachBox
             // 
@@ -1629,17 +1660,18 @@ namespace Project
             this.ticketSearchBtn.UseVisualStyleBackColor = false;
             this.ticketSearchBtn.Click += new System.EventHandler(this.ticketSearchBtn_Click);
             // 
-            // label23
+            // ticketListLabel
             // 
-            this.label23.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label23.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label23.Location = new System.Drawing.Point(4, 192);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(877, 23);
-            this.label23.TabIndex = 28;
-            this.label23.Text = "Tickets List";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ticketListLabel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ticketListLabel.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketListLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ticketListLabel.Location = new System.Drawing.Point(5, 192);
+            this.ticketListLabel.Name = "ticketListLabel";
+            this.ticketListLabel.Size = new System.Drawing.Size(269, 23);
+            this.ticketListLabel.TabIndex = 28;
+            this.ticketListLabel.Text = "Tickets List";
+            this.ticketListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ticketListLabel.Click += new System.EventHandler(this.ticketListLabel_Click);
             // 
             // ticketsGridView
             // 
@@ -1667,7 +1699,7 @@ namespace Project
             // 
             this.trashTicket.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trashTicket.Image = ((System.Drawing.Image)(resources.GetObject("trashTicket.Image")));
-            this.trashTicket.Location = new System.Drawing.Point(827, 180);
+            this.trashTicket.Location = new System.Drawing.Point(821, 181);
             this.trashTicket.Name = "trashTicket";
             this.trashTicket.Size = new System.Drawing.Size(41, 32);
             this.trashTicket.TabIndex = 29;
@@ -1677,11 +1709,13 @@ namespace Project
             // ticketsPanel
             // 
             this.ticketsPanel.Controls.Add(this.seatPanel);
+            this.ticketsPanel.Controls.Add(this.reservationLabel);
+            this.ticketsPanel.Controls.Add(this.reservationGridView);
             this.ticketsPanel.Controls.Add(this.seatSelectBtn);
             this.ticketsPanel.Controls.Add(this.groupBox1);
             this.ticketsPanel.Controls.Add(this.trashTicket);
             this.ticketsPanel.Controls.Add(this.ticketsGridView);
-            this.ticketsPanel.Controls.Add(this.label23);
+            this.ticketsPanel.Controls.Add(this.ticketListLabel);
             this.ticketsPanel.Controls.Add(this.ticketSearchBtn);
             this.ticketsPanel.Controls.Add(this.coachBox);
             this.ticketsPanel.Controls.Add(this.label22);
@@ -2840,33 +2874,40 @@ namespace Project
             this.acRadioButton.UseVisualStyleBackColor = true;
             this.acRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // busesTime
+            // reservationGridView
             // 
-            this.busesTime.Font = new System.Drawing.Font("Fira Code Retina", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busesTime.FormattingEnabled = true;
-            this.busesTime.Items.AddRange(new object[] {
-            "07:00 AM",
-            "10:00 AM",
-            "12:00 PM",
-            "02:00 PM",
-            "05:00 PM",
-            "07:00 PM",
-            "10:00 PM"});
-            this.busesTime.Location = new System.Drawing.Point(571, 267);
-            this.busesTime.Name = "busesTime";
-            this.busesTime.Size = new System.Drawing.Size(297, 25);
-            this.busesTime.TabIndex = 39;
-            this.busesTime.Text = "Time";
+            this.reservationGridView.AllowUserToAddRows = false;
+            this.reservationGridView.AllowUserToDeleteRows = false;
+            this.reservationGridView.AllowUserToResizeColumns = false;
+            this.reservationGridView.AllowUserToResizeRows = false;
+            this.reservationGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reservationGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationGridView.Location = new System.Drawing.Point(4, 215);
+            this.reservationGridView.MultiSelect = false;
+            this.reservationGridView.Name = "reservationGridView";
+            this.reservationGridView.ReadOnly = true;
+            this.reservationGridView.RowHeadersVisible = false;
+            this.reservationGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.reservationGridView.RowTemplate.Height = 24;
+            this.reservationGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.reservationGridView.ShowCellErrors = false;
+            this.reservationGridView.ShowEditingIcon = false;
+            this.reservationGridView.Size = new System.Drawing.Size(877, 243);
+            this.reservationGridView.TabIndex = 33;
+            this.reservationGridView.Visible = false;
             // 
-            // label35
+            // reservationLabel
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Fira Code Retina", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(456, 270);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(49, 19);
-            this.label35.TabIndex = 38;
-            this.label35.Text = "Time";
+            this.reservationLabel.BackColor = System.Drawing.Color.DimGray;
+            this.reservationLabel.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservationLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.reservationLabel.Location = new System.Drawing.Point(275, 192);
+            this.reservationLabel.Name = "reservationLabel";
+            this.reservationLabel.Size = new System.Drawing.Size(269, 23);
+            this.reservationLabel.TabIndex = 34;
+            this.reservationLabel.Text = "Coach Reservation";
+            this.reservationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reservationLabel.Click += new System.EventHandler(this.reservationLabel_Click);
             // 
             // AdminDashboard
             // 
@@ -2917,6 +2958,7 @@ namespace Project
             this.seatPanel.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3042,7 +3084,7 @@ namespace Project
         private System.Windows.Forms.RadioButton nonAcRadioBtn;
         private System.Windows.Forms.ComboBox coachBox;
         private System.Windows.Forms.Button ticketSearchBtn;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label ticketListLabel;
         private System.Windows.Forms.DataGridView ticketsGridView;
         private System.Windows.Forms.Label trashTicket;
         private System.Windows.Forms.Panel ticketsPanel;
@@ -3106,5 +3148,7 @@ namespace Project
         private System.Windows.Forms.Label trashSeat;
         private System.Windows.Forms.ComboBox busesTime;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.DataGridView reservationGridView;
+        private System.Windows.Forms.Label reservationLabel;
     }
 }

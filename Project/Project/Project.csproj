@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIs\Reservations.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthenticateController.cs" />
     <Compile Include="Controllers\BusesController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ManagersController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\SalesmanController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="APIs\Customers.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="APIs\Managers.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Salesman.cs" />
     <Compile Include="APIs\Sellers.cs" />
     <Compile Include="Models\Ticket.cs" />
