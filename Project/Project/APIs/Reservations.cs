@@ -56,7 +56,7 @@ namespace Project.APIs
         public bool updateCoachReservation(dynamic reservation)
         {
             conn.Open();
-            string query = string.Format("UPDATE Reservation SET Coach='{0}', Source='{1}', Destination='{2}', Date='{3}' Time='{4}', Seats='{5}', Booked='{6}', Availeble='{7}' WHERE Id={8}", reservation.coach, reservation.source, reservation.destination, reservation.date, reservation.time, reservation.seats, reservation.booked, reservation.available, reservation.id);
+            string query = string.Format("UPDATE Reservation SET Seats='{0}', Booked='{1}', Available='{2}' WHERE Coach='{3}' AND Source='{4}' AND Destination='{5}' AND Date='{6}' AND Time='{7}'", reservation.seats, reservation.booked, reservation.available, reservation.coach, reservation.source, reservation.destination, reservation.date, reservation.time);
             SqlCommand cmd = new SqlCommand(query, conn);
             int res = cmd.ExecuteNonQuery();
             conn.Close();
@@ -67,7 +67,7 @@ namespace Project.APIs
         public Reservation getSingleCoachReservation(dynamic reservation)
         {
             conn.Open();
-            string query = string.Format("SELECT * FROM Reservation WHERE Coach='{0}', Source='{1}', Destination='{2}', Date='{3}', Time='{4}'", reservation.coach, reservation.source, reservation.destination, reservation.date, reservation.time);
+            string query = string.Format("SELECT * FROM Reservation WHERE Coach='{0}' AND Source='{1}' AND Destination='{2}' AND Date='{3}' AND Time='{4}'", reservation.coach, reservation.source, reservation.destination, reservation.date, reservation.time);
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             Reservation reservationData = null;
@@ -85,7 +85,7 @@ namespace Project.APIs
                 reservationData.Available = reader.GetInt32(reader.GetOrdinal("Available"));
             }
             conn.Close();
-            return reservation;
+            return reservationData;
         }
         public bool cancelReservation(int id)
         {

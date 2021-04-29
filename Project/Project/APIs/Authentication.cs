@@ -28,8 +28,10 @@ namespace Project.Models
             {
                 authModel = new AuthModel();
                 authModel.Id = reader.GetInt32(reader.GetOrdinal("Id"));
-                authModel.Name = reader.GetString(reader.GetOrdinal("Username"));
+                authModel.Name = reader.GetString(reader.GetOrdinal("Name"));
+                authModel.Username = reader.GetString(reader.GetOrdinal("Username"));
                 authModel.Password = reader.GetString(reader.GetOrdinal("Password"));
+                authModel.Role = role;
             }
             conn.Close();
             return authModel;

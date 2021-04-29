@@ -12,5 +12,6 @@ namespace Project.Models
         public string Name { get; set; }
         public string Password { get; set; }
         public string Username { get; internal set; }
+        public string Role { get; set; }
     }
 }

@@ -394,6 +394,7 @@ namespace Project
             }
 
             reserve = "";
+            booked = "";
             seatList = allSeat();
             reloadSeat();
 
@@ -438,7 +439,8 @@ namespace Project
                 date = journeyDate.Value.ToShortDateString(),
                 time = journeyTime.Text.Trim(),
                 author = Author.Name,
-                seat = reserve
+                seat = reserve,
+                booked
             };
 
             bool res = TicketsController.boolTicket(ticket);
@@ -518,6 +520,7 @@ namespace Project
                         {
                             if (seatlist.Text.Equals(seat.Trim()))
                             {
+                                seatlist.Enabled = true;
                                 seatlist.Checked = true;
                             }
                         }
@@ -795,15 +798,69 @@ namespace Project
         ///////////////////// SEAT PANEL  /////////////////////
 
         List<CheckBox> seatList = null;
-        
+
         private void seatSelectBtn_Click(object sender, EventArgs e)
         {
-            if (coachBox.Text.Equals("Coach"))
+            if (coachBox.Text.Equals("Coach")){ MessageBox.Show("Select a coach first"); return; }
+            if (ticketSource.Text.Equals("From")) { MessageBox.Show("Select a source first"); return; }
+            if (ticketDest.Text.Equals("To")) { MessageBox.Show("Select a destination first"); return; }
+
+            var coachInfo = new
             {
-                MessageBox.Show("Select a coach first");
-                return;
+                coach = coachBox.Text.Trim(),
+                source = ticketSource.Text.Trim(),
+                destination = ticketDest.Text.Trim(),
+                date = journeyDate.Text.Trim(),
+                time = journeyTime.Text.Trim()
+            };
+            var reservedCoach = ReservationController.getSingleCoachReservation(coachInfo);
+            if (reservedCoach == null) 
+            { 
+                coachNameSeat.Text = coachInfo.coach; 
+                bookedCount.Text = "0"; 
+                availableCount.Text = "40";
+                foreach (var s in seatList) 
+                {
+                    //s.Checked = false;
+                    s.Enabled = true;
+                    s.BackColor = Color.Transparent;
+                }
             }
-            coachNameSeat.Text = coachBox.Text;
+            else 
+            { 
+                coachNameSeat.Text = coachInfo.coach; 
+                bookedCount.Text = reservedCoach.Booked.ToString(); 
+                availableCount.Text = reservedCoach.Available.ToString();
+                char[] separator = { ',' };
+                string[] bookedSeats = reservedCoach.Seats.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var s in seatList) { s.Checked = false; s.Enabled = true; s.BackColor = Color.Transparent; }
+                foreach(var bs in bookedSeats)
+                {
+                    foreach(var s in seatList)
+                    {
+                        if (s.Text.Equals(bs.Trim()))
+                        {
+                            s.BackColor = Color.DimGray;
+                            s.Enabled = false;
+                        }
+                    }
+                }
+            }
+
+            if (reserve.Length > 0)
+            {
+                foreach(var s in seatList)
+                {
+                    foreach(var r in reserveList)
+                    {
+                        if (r.Trim().Equals(s.Text))
+                        {
+                            s.Checked = true;
+                        }
+                    }
+                }
+            }
             
             seatPanel.Show();
         }
@@ -850,10 +907,13 @@ namespace Project
         }
 
         string reserve = "";
+        string booked = "";
         List<string> reserveList;
+        List<string> bookedList;
         private void seat_CheckedChanged(object sender, EventArgs e)
         {
             reserveList = new List<string>();
+            bookedList = new List<string>();
 
             foreach(var seat in seatList)
             {
@@ -861,15 +921,26 @@ namespace Project
                 {
                     reserveList.Add(seat.Text);
                 }
+
+                if(seat.Checked==true || seat.Enabled == false)
+                {
+                    bookedList.Add(seat.Text);
+                }
+
                 if (reserveList.Count > 0) trashSeat.Visible = true;
                 else trashSeat.Visible = false;
             }
+
             reserve = string.Join(", ", reserveList);
             reserveString.Text = reserve;
+
+            booked = string.Join(", ", bookedList);
         }
 
         private void ticketListLabel_Click(object sender, EventArgs e)
         {
+            reloadTickets();
+
             ticketListLabel.BackColor = SystemColors.MenuHighlight;
             ticketsGridView.Visible = true;
 
@@ -879,11 +950,45 @@ namespace Project
 
         private void reservationLabel_Click(object sender, EventArgs e)
         {
+            reloadTickets();
+
             ticketListLabel.BackColor = Color.DimGray;
             ticketsGridView.Visible = false;
 
             reservationLabel.BackColor = SystemColors.MenuHighlight;
             reservationGridView.Visible = true;
+        }
+
+        private void reservationGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                foreach (var s in seatList) s.Checked = false;
+
+                DataGridViewRow row = this.reservationGridView.Rows[e.RowIndex];
+                booked = row.Cells["Seats"].Value.ToString();
+                coachNameSeat.Text = row.Cells["Coach"].Value.ToString();
+                bookedCount.Text = row.Cells["Booked"].Value.ToString();
+                availableCount.Text = row.Cells["Available"].Value.ToString();
+
+                char[] separator = { ',' };
+                string[] book = booked.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+                foreach(var b in book)
+                {
+                    foreach(var s in seatList)
+                    {
+                        if (b.Trim().Equals(s.Text))
+                        {
+                            s.CheckState = CheckState.Checked;
+                            s.Enabled = false;
+                        }
+                        else s.Enabled = false;
+                    }
+                }
+                trashSeat.Visible = false;
+                reserve = "";
+                seatPanel.Visible = true;
+            }
         }
     }
 }

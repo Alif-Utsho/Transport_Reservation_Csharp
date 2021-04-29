@@ -209,12 +209,12 @@ namespace Project
             this.a3 = new System.Windows.Forms.CheckBox();
             this.a2 = new System.Windows.Forms.CheckBox();
             this.a1 = new System.Windows.Forms.CheckBox();
+            this.reservationLabel = new System.Windows.Forms.Label();
+            this.reservationGridView = new System.Windows.Forms.DataGridView();
             this.seatSelectBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nonAcRadioButton = new System.Windows.Forms.RadioButton();
             this.acRadioButton = new System.Windows.Forms.RadioButton();
-            this.reservationGridView = new System.Windows.Forms.DataGridView();
-            this.reservationLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.AdminPanel.SuspendLayout();
@@ -233,8 +233,8 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGridView)).BeginInit();
             this.ticketsPanel.SuspendLayout();
             this.seatPanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -1955,6 +1955,8 @@ namespace Project
             this.j4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.j4.FlatAppearance.BorderSize = 0;
             this.j4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.j4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.j4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.j4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.j4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -1977,6 +1979,8 @@ namespace Project
             this.j3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.j3.FlatAppearance.BorderSize = 0;
             this.j3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.j3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.j3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.j3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.j3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -1999,6 +2003,8 @@ namespace Project
             this.j2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.j2.FlatAppearance.BorderSize = 0;
             this.j2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.j2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.j2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.j2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.j2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2021,6 +2027,8 @@ namespace Project
             this.j1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.j1.FlatAppearance.BorderSize = 0;
             this.j1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.j1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.j1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.j1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.j1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.j1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2043,6 +2051,8 @@ namespace Project
             this.i4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.i4.FlatAppearance.BorderSize = 0;
             this.i4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.i4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.i4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.i4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.i4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2065,6 +2075,8 @@ namespace Project
             this.i3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.i3.FlatAppearance.BorderSize = 0;
             this.i3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.i3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.i3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.i3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.i3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2087,6 +2099,8 @@ namespace Project
             this.i2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.i2.FlatAppearance.BorderSize = 0;
             this.i2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.i2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.i2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.i2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.i2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2109,6 +2123,8 @@ namespace Project
             this.i1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.i1.FlatAppearance.BorderSize = 0;
             this.i1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.i1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.i1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.i1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.i1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.i1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2131,6 +2147,8 @@ namespace Project
             this.h4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.h4.FlatAppearance.BorderSize = 0;
             this.h4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.h4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.h4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.h4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.h4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2153,6 +2171,8 @@ namespace Project
             this.h3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.h3.FlatAppearance.BorderSize = 0;
             this.h3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.h3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.h3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.h3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.h3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2175,6 +2195,8 @@ namespace Project
             this.h2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.h2.FlatAppearance.BorderSize = 0;
             this.h2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.h2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.h2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.h2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.h2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2197,6 +2219,8 @@ namespace Project
             this.h1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.h1.FlatAppearance.BorderSize = 0;
             this.h1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.h1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.h1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.h1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.h1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.h1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2219,6 +2243,8 @@ namespace Project
             this.g4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.g4.FlatAppearance.BorderSize = 0;
             this.g4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.g4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.g4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.g4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2241,6 +2267,8 @@ namespace Project
             this.g3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.g3.FlatAppearance.BorderSize = 0;
             this.g3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.g3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.g3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.g3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2263,6 +2291,8 @@ namespace Project
             this.g2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.g2.FlatAppearance.BorderSize = 0;
             this.g2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.g2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.g2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.g2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2285,6 +2315,8 @@ namespace Project
             this.g1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.g1.FlatAppearance.BorderSize = 0;
             this.g1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.g1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.g1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.g1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.g1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2307,6 +2339,8 @@ namespace Project
             this.f4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.f4.FlatAppearance.BorderSize = 0;
             this.f4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.f4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.f4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.f4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2329,6 +2363,8 @@ namespace Project
             this.f3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.f3.FlatAppearance.BorderSize = 0;
             this.f3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.f3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.f3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.f3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2351,6 +2387,8 @@ namespace Project
             this.f2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.f2.FlatAppearance.BorderSize = 0;
             this.f2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.f2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.f2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.f2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2373,6 +2411,8 @@ namespace Project
             this.f1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.f1.FlatAppearance.BorderSize = 0;
             this.f1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.f1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.f1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.f1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.f1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2395,6 +2435,8 @@ namespace Project
             this.e4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.e4.FlatAppearance.BorderSize = 0;
             this.e4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.e4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.e4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.e4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.e4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2417,6 +2459,8 @@ namespace Project
             this.e3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.e3.FlatAppearance.BorderSize = 0;
             this.e3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.e3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.e3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.e3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.e3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2439,6 +2483,8 @@ namespace Project
             this.e2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.e2.FlatAppearance.BorderSize = 0;
             this.e2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.e2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.e2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.e2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.e2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2461,6 +2507,8 @@ namespace Project
             this.e1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.e1.FlatAppearance.BorderSize = 0;
             this.e1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.e1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.e1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.e1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.e1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.e1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2483,6 +2531,8 @@ namespace Project
             this.d4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d4.FlatAppearance.BorderSize = 0;
             this.d4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.d4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.d4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2505,6 +2555,8 @@ namespace Project
             this.d3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d3.FlatAppearance.BorderSize = 0;
             this.d3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.d3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.d3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2527,6 +2579,8 @@ namespace Project
             this.d2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d2.FlatAppearance.BorderSize = 0;
             this.d2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.d2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.d2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2549,6 +2603,8 @@ namespace Project
             this.d1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.d1.FlatAppearance.BorderSize = 0;
             this.d1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.d1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.d1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.d1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2571,6 +2627,8 @@ namespace Project
             this.c4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c4.FlatAppearance.BorderSize = 0;
             this.c4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.c4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.c4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.c4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2593,6 +2651,8 @@ namespace Project
             this.c3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c3.FlatAppearance.BorderSize = 0;
             this.c3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.c3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.c3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.c3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2615,6 +2675,8 @@ namespace Project
             this.c2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c2.FlatAppearance.BorderSize = 0;
             this.c2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.c2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.c2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.c2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2637,6 +2699,8 @@ namespace Project
             this.c1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.c1.FlatAppearance.BorderSize = 0;
             this.c1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.c1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.c1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.c1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.c1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2659,6 +2723,8 @@ namespace Project
             this.b4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b4.FlatAppearance.BorderSize = 0;
             this.b4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.b4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.b4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2681,6 +2747,8 @@ namespace Project
             this.b3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b3.FlatAppearance.BorderSize = 0;
             this.b3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.b3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.b3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2703,6 +2771,8 @@ namespace Project
             this.b2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b2.FlatAppearance.BorderSize = 0;
             this.b2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.b2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.b2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2725,6 +2795,8 @@ namespace Project
             this.b1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.b1.FlatAppearance.BorderSize = 0;
             this.b1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.b1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.b1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.b1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2748,6 +2820,8 @@ namespace Project
             this.a4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a4.FlatAppearance.BorderSize = 0;
             this.a4.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.a4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.a4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.a4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.a4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2770,6 +2844,8 @@ namespace Project
             this.a3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a3.FlatAppearance.BorderSize = 0;
             this.a3.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.a3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.a3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.a3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.a3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2792,6 +2868,8 @@ namespace Project
             this.a2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a2.FlatAppearance.BorderSize = 0;
             this.a2.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.a2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.a2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.a2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.a2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2814,6 +2892,8 @@ namespace Project
             this.a1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.a1.FlatAppearance.BorderSize = 0;
             this.a1.FlatAppearance.CheckedBackColor = System.Drawing.Color.CornflowerBlue;
+            this.a1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.a1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.a1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.a1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.a1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -2827,6 +2907,43 @@ namespace Project
             this.a1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.a1.UseVisualStyleBackColor = false;
             this.a1.CheckedChanged += new System.EventHandler(this.seat_CheckedChanged);
+            // 
+            // reservationLabel
+            // 
+            this.reservationLabel.BackColor = System.Drawing.Color.DimGray;
+            this.reservationLabel.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservationLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.reservationLabel.Location = new System.Drawing.Point(275, 192);
+            this.reservationLabel.Name = "reservationLabel";
+            this.reservationLabel.Size = new System.Drawing.Size(269, 23);
+            this.reservationLabel.TabIndex = 34;
+            this.reservationLabel.Text = "Coach Reservation";
+            this.reservationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reservationLabel.Click += new System.EventHandler(this.reservationLabel_Click);
+            // 
+            // reservationGridView
+            // 
+            this.reservationGridView.AllowUserToAddRows = false;
+            this.reservationGridView.AllowUserToDeleteRows = false;
+            this.reservationGridView.AllowUserToResizeColumns = false;
+            this.reservationGridView.AllowUserToResizeRows = false;
+            this.reservationGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reservationGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationGridView.Location = new System.Drawing.Point(4, 215);
+            this.reservationGridView.MultiSelect = false;
+            this.reservationGridView.Name = "reservationGridView";
+            this.reservationGridView.ReadOnly = true;
+            this.reservationGridView.RowHeadersVisible = false;
+            this.reservationGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.reservationGridView.RowTemplate.Height = 24;
+            this.reservationGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.reservationGridView.ShowCellErrors = false;
+            this.reservationGridView.ShowEditingIcon = false;
+            this.reservationGridView.Size = new System.Drawing.Size(877, 243);
+            this.reservationGridView.TabIndex = 33;
+            this.reservationGridView.Visible = false;
+            this.reservationGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationGridView_CellContentDoubleClick);
+            this.reservationGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationGridView_CellContentDoubleClick);
             // 
             // seatSelectBtn
             // 
@@ -2873,41 +2990,6 @@ namespace Project
             this.acRadioButton.Text = "AC";
             this.acRadioButton.UseVisualStyleBackColor = true;
             this.acRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // reservationGridView
-            // 
-            this.reservationGridView.AllowUserToAddRows = false;
-            this.reservationGridView.AllowUserToDeleteRows = false;
-            this.reservationGridView.AllowUserToResizeColumns = false;
-            this.reservationGridView.AllowUserToResizeRows = false;
-            this.reservationGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.reservationGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reservationGridView.Location = new System.Drawing.Point(4, 215);
-            this.reservationGridView.MultiSelect = false;
-            this.reservationGridView.Name = "reservationGridView";
-            this.reservationGridView.ReadOnly = true;
-            this.reservationGridView.RowHeadersVisible = false;
-            this.reservationGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.reservationGridView.RowTemplate.Height = 24;
-            this.reservationGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reservationGridView.ShowCellErrors = false;
-            this.reservationGridView.ShowEditingIcon = false;
-            this.reservationGridView.Size = new System.Drawing.Size(877, 243);
-            this.reservationGridView.TabIndex = 33;
-            this.reservationGridView.Visible = false;
-            // 
-            // reservationLabel
-            // 
-            this.reservationLabel.BackColor = System.Drawing.Color.DimGray;
-            this.reservationLabel.Font = new System.Drawing.Font("Fira Code Retina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservationLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.reservationLabel.Location = new System.Drawing.Point(275, 192);
-            this.reservationLabel.Name = "reservationLabel";
-            this.reservationLabel.Size = new System.Drawing.Size(269, 23);
-            this.reservationLabel.TabIndex = 34;
-            this.reservationLabel.Text = "Coach Reservation";
-            this.reservationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.reservationLabel.Click += new System.EventHandler(this.reservationLabel_Click);
             // 
             // AdminDashboard
             // 
@@ -2956,9 +3038,9 @@ namespace Project
             this.ticketsPanel.PerformLayout();
             this.seatPanel.ResumeLayout(false);
             this.seatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
