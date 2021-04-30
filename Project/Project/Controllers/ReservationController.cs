@@ -27,9 +27,9 @@ namespace Project.Controllers
         {
             return db.Reservations.updateCoachReservation(reservation);
         }
-        public static bool cancelReservation(int id)
+        public static bool cancelReservation(dynamic reservation)
         {
-            return db.Reservations.cancelReservation(id);
+            return db.Reservations.cancelReservation(reservation);
         }
     }
 }

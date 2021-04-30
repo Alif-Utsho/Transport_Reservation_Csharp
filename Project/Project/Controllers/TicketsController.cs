@@ -36,6 +36,7 @@ namespace Project.Controllers
                 booked = ticket.booked.Split(',').Length,
                 available = 40 - ticket.booked.Split(',').Length
             };
+            //if (ticket.booked.Length == 0) { bool reserve = ReservationController.cancelReservation(reservation); }
             var hasCoach = ReservationController.getSingleCoachReservation(reservation);
             if (hasCoach == null) { bool reserve = ReservationController.addCoachReservation(reservation); }
             else { bool reserve = ReservationController.updateCoachReservation(reservation); }
@@ -72,7 +73,7 @@ namespace Project.Controllers
             List<string> newSeats = new List<string>();
             foreach(var s in bookedSeats)
             {
-                newSeats.Add(s);
+                newSeats.Add(s.Trim());
             }
             foreach(var bs in bookedSeats)
             {
@@ -80,7 +81,7 @@ namespace Project.Controllers
                 {
                     if (bs.Trim().Equals(cs.Trim()))
                     {
-                        newSeats.Remove(cs);
+                        newSeats.Remove(cs.Trim());
                     }
                 }
             }
@@ -96,9 +97,13 @@ namespace Project.Controllers
                 booked = newSeats.Count,
                 available = 40 - newSeats.Count
             };
-
-            if (hasCoach == null) { bool reserve = ReservationController.addCoachReservation(newReservation); }
-            else { bool reserve = ReservationController.updateCoachReservation(newReservation); }
+             
+            if (newReservation.booked == 0) { bool res = ReservationController.cancelReservation(reservation); }
+            else
+            {
+                if (hasCoach == null) { bool reserve = ReservationController.addCoachReservation(newReservation); }
+                else { bool reserve = ReservationController.updateCoachReservation(newReservation); }
+            }
 
             return db.Tickets.cancelTicket(ticketId);
         }

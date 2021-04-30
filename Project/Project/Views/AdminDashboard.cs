@@ -802,6 +802,8 @@ namespace Project
 
         private void seatSelectBtn_Click(object sender, EventArgs e)
         {
+            if (seatSelectBtn.Text.Equals("Select Seat")) reloadSeat();
+
             if (coachBox.Text.Equals("Coach")){ MessageBox.Show("Select a coach first"); return; }
             if (ticketSource.Text.Equals("From")) { MessageBox.Show("Select a source first"); return; }
             if (ticketDest.Text.Equals("To")) { MessageBox.Show("Select a destination first"); return; }
@@ -859,7 +861,7 @@ namespace Project
                     }
                 }
             }
-
+            trashSeat.Visible = false;
             seatPanel.Show();
         }
 
@@ -899,6 +901,7 @@ namespace Project
             foreach (var seat in seatList)
             {
                 seat.Checked = false;
+                seat.BackColor = Color.Transparent;
             }
             trashSeat.Visible = false;
             seatSelectBtn.Text = "Select Seat";
@@ -937,7 +940,7 @@ namespace Project
 
         private void ticketListLabel_Click(object sender, EventArgs e)
         {
-            reloadTickets();
+            if(seatSelectBtn.Text.Equals("Select Seat")) reloadSeat();
 
             ticketListLabel.BackColor = SystemColors.MenuHighlight;
             ticketsGridView.Visible = true;
@@ -948,7 +951,7 @@ namespace Project
 
         private void reservationLabel_Click(object sender, EventArgs e)
         {
-            reloadTickets();
+            if(ticketId>0) reloadTickets();
 
             ticketListLabel.BackColor = Color.DimGray;
             ticketsGridView.Visible = false;

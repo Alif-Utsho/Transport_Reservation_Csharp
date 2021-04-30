@@ -19,7 +19,7 @@ namespace Project.APIs
         public List<Reservation> getAllReservations()
         {
             conn.Open();
-            string query = string.Format("SELECT * FROM Reservation");
+            string query = string.Format("SELECT * FROM Reservation ORDER BY CONVERT(DATETIME, DATE) DESC");
             SqlCommand cmd = new SqlCommand(query, conn);
             List<Reservation> reservationList = new List<Reservation>();
             Reservation reservation = null;
@@ -75,22 +75,22 @@ namespace Project.APIs
             {
                 reservationData = new Reservation();
                 reservationData.Id = reader.GetInt32(reader.GetOrdinal("Id"));
-                reservationData.Coach = reader.GetString(reader.GetOrdinal("Coach"));
-                reservationData.Source = reader.GetString(reader.GetOrdinal("Source"));
-                reservationData.Destination = reader.GetString(reader.GetOrdinal("Destination"));
-                reservationData.Date = reader.GetString(reader.GetOrdinal("Date"));
-                reservationData.Time = reader.GetString(reader.GetOrdinal("Time"));
-                reservationData.Seats = reader.GetString(reader.GetOrdinal("Seats"));
+                reservationData.Coach = reader.GetString(reader.GetOrdinal("Coach")).Trim();
+                reservationData.Source = reader.GetString(reader.GetOrdinal("Source")).Trim();
+                reservationData.Destination = reader.GetString(reader.GetOrdinal("Destination")).Trim();
+                reservationData.Date = reader.GetString(reader.GetOrdinal("Date")).Trim();
+                reservationData.Time = reader.GetString(reader.GetOrdinal("Time")).Trim();
+                reservationData.Seats = reader.GetString(reader.GetOrdinal("Seats")).Trim();
                 reservationData.Booked = reader.GetInt32(reader.GetOrdinal("Booked"));
                 reservationData.Available = reader.GetInt32(reader.GetOrdinal("Available"));
             }
             conn.Close();
             return reservationData;
         }
-        public bool cancelReservation(int id)
+        public bool cancelReservation(dynamic reservation)
         {
             conn.Open();
-            string query = string.Format("DELETE FROM Reservation WHERE Id={0}", id);
+            string query = string.Format("DELETE FROM Reservation WHERE Coach='{0}' AND Source='{1}' AND Destination='{2}' AND Date='{3}' AND Time='{4}'", reservation.coach, reservation.source, reservation.destination, reservation.date, reservation.time);
             SqlCommand cmd = new SqlCommand(query, conn);
             int res = cmd.ExecuteNonQuery();
             conn.Close();
