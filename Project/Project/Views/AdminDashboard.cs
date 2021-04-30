@@ -554,8 +554,9 @@ namespace Project
                 type = bustype,
                 date = journeyDate.Value.ToShortDateString(),
                 time = journeyTime.Text.Trim(),
-                seat=reserve,
-                author=Author.Name
+                author=Author.Name,
+                seat = reserve,
+                booked
             };
 
             bool res = TicketsController.updateTicket(ticket);
@@ -834,10 +835,12 @@ namespace Project
                 char[] separator = { ',' };
                 string[] bookedSeats = reservedCoach.Seats.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
+                string[] reservedSeats = reserve.Split(separator, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var s in seatList) { s.Checked = false; s.Enabled = true; s.BackColor = Color.Transparent; }
-                foreach(var bs in bookedSeats)
+                
+                foreach (var s in seatList)
                 {
-                    foreach(var s in seatList)
+                    foreach(var bs in bookedSeats)
                     {
                         if (s.Text.Equals(bs.Trim()))
                         {
@@ -845,23 +848,18 @@ namespace Project
                             s.Enabled = false;
                         }
                     }
-                }
-            }
-
-            if (reserve.Length > 0)
-            {
-                foreach(var s in seatList)
-                {
-                    foreach(var r in reserveList)
+                    foreach(var rs in reservedSeats)
                     {
-                        if (r.Trim().Equals(s.Text))
+                        if (s.Text.Equals(rs.Trim()))
                         {
+                            s.Enabled = true;
                             s.Checked = true;
+                            s.BackColor = Color.Transparent;
                         }
                     }
                 }
             }
-            
+
             seatPanel.Show();
         }
 

@@ -74,5 +74,31 @@ namespace Project.Models
             if (res > 0) return true;
             return false;
         }
+
+        public Ticket searchTicketById(int id)
+        {
+            conn.Open();
+            string query = string.Format("SELECT * FROM Tickets WHERE Id={0}", id);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Ticket ticket = null;
+            while (reader.Read())
+            {
+                ticket = new Ticket();
+                ticket.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                ticket.Name = reader.GetString(reader.GetOrdinal("Name")).Trim();
+                ticket.Phone = reader.GetString(reader.GetOrdinal("Phone")).Trim();
+                ticket.Source = reader.GetString(reader.GetOrdinal("Source")).Trim();
+                ticket.Destination = reader.GetString(reader.GetOrdinal("Destination")).Trim();
+                ticket.Bustype = reader.GetString(reader.GetOrdinal("BusType")).Trim();
+                ticket.Coach = reader.GetString(reader.GetOrdinal("Coach")).Trim();
+                ticket.Date = reader.GetString(reader.GetOrdinal("Date")).Trim();
+                ticket.Time = reader.GetString(reader.GetOrdinal("Time")).Trim();
+                ticket.Seat = reader.GetString(reader.GetOrdinal("Seat")).Trim();
+                ticket.Author = reader.GetString(reader.GetOrdinal("Author")).Trim();
+            }
+            conn.Close();
+            return ticket;
+        }
     }
 }

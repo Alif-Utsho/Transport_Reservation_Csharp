@@ -53,7 +53,59 @@ namespace Project.Controllers
                 MessageBox.Show("Select a ticket first");
                 return false;
             }
+            var ticket = searchTicketById(ticketId);
+            var reservation = new
+            {
+                coach = ticket.Coach,
+                source = ticket.Source,
+                destination = ticket.Destination,
+                date = ticket.Date,
+                time = ticket.Time,
+                seats = ticket.Seat,
+                //booked = ticket.Booked.Split(',').Length,
+                //available = 40 - ticket.Booked.Split(',').Length
+            };
+            var hasCoach = ReservationController.getSingleCoachReservation(reservation);
+            char[] separator = { ',' };
+            string[] bookedSeats = hasCoach.Seats.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            string[] cancelSeats = ticket.Seat.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            List<string> newSeats = new List<string>();
+            foreach(var s in bookedSeats)
+            {
+                newSeats.Add(s);
+            }
+            foreach(var bs in bookedSeats)
+            {
+                foreach(var cs in cancelSeats)
+                {
+                    if (bs.Trim().Equals(cs.Trim()))
+                    {
+                        newSeats.Remove(cs);
+                    }
+                }
+            }
+            string seats = string.Join(", ", newSeats);
+            var newReservation = new
+            {
+                coach = hasCoach.Coach.Trim(),
+                source = hasCoach.Source.Trim(),
+                destination = hasCoach.Destination.Trim(),
+                date = hasCoach.Date.Trim(),
+                time = hasCoach.Time.Trim(),
+                seats = seats.Trim(),
+                booked = newSeats.Count,
+                available = 40 - newSeats.Count
+            };
+
+            if (hasCoach == null) { bool reserve = ReservationController.addCoachReservation(newReservation); }
+            else { bool reserve = ReservationController.updateCoachReservation(newReservation); }
+
             return db.Tickets.cancelTicket(ticketId);
+        }
+
+        public static Ticket searchTicketById(int id)
+        {
+            return db.Tickets.searchTicketById(id);
         }
         public static bool updateTicket(dynamic ticket)
         {
@@ -68,6 +120,22 @@ namespace Project.Controllers
                 MessageBox.Show("Fill all the required fields");
                 return false;
             }
+
+            //Coach Update
+            var reservation = new
+            {
+                ticket.coach,
+                ticket.source,
+                ticket.destination,
+                ticket.date,
+                ticket.time,
+                seats = ticket.booked,
+                booked = ticket.booked.Split(',').Length,
+                available = 40 - ticket.booked.Split(',').Length
+            };
+            var hasCoach = ReservationController.getSingleCoachReservation(reservation);
+            if (hasCoach == null) { bool reserve = ReservationController.addCoachReservation(reservation); }
+            else { bool reserve = ReservationController.updateCoachReservation(reservation); }
 
             return db.Tickets.updateTicket(ticket);
         }
