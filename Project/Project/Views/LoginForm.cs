@@ -71,8 +71,8 @@ namespace Project
                 }
                 else if (role.ToLower().Equals("salesman"))
                 {
-                    //new SalesManDashboard().Show();
-                    MessageBox.Show("Salesman Dashboard Will be Created");
+                    this.Hide();
+                    new SalesmanDashboard().Show();
                 }
                 else if (role.ToLower().Equals("managers"))
                 {
