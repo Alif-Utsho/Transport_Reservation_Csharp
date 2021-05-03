@@ -226,7 +226,7 @@ namespace Project
                 password = managerPassword.Text.Trim(),
             };
             bool res = ManagersController.AddManager(manager);
-            if (res){ reloadManager(); MessageBox.Show("Manager Added"); }
+            if (res){ reloadManager(); MessageBox.Show("Manager Added", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
 
@@ -261,7 +261,7 @@ namespace Project
             
             if (manager == null)
             {
-                MessageBox.Show("Manager not found");
+                MessageBox.Show("Manager not found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -286,13 +286,13 @@ namespace Project
             };
 
             bool res = ManagersController.updateManager(newManager);
-            if (res){ reloadManager(); MessageBox.Show("Manager updated"); }
+            if (res){ reloadManager(); MessageBox.Show("Manager updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void managerDeleteBtn_Click(object sender, EventArgs e)
         {
             bool res = ManagersController.deleteManager(managerId);
-            if (res){ reloadManager(); MessageBox.Show("Manager Deleted"); }
+            if (res){ reloadManager(); MessageBox.Show("Manager Deleted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         /////  SALESMAN PANEL  /////
@@ -322,7 +322,7 @@ namespace Project
             };
 
             bool res = SalesmanController.addSalesman(salesman);
-            if (res){ reloadSalesman(); MessageBox.Show("Salesman Added"); }
+            if (res){ reloadSalesman(); MessageBox.Show("Salesman Added", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void salesmanSearchBtn_Click(object sender, EventArgs e)
@@ -331,7 +331,7 @@ namespace Project
             dynamic salesman = SalesmanController.searchSalesman(username);
             if (salesman == null)
             {
-                MessageBox.Show("Salesman not Found");
+                MessageBox.Show("Salesman not Found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -358,14 +358,14 @@ namespace Project
             if (res)
             {
                 reloadSalesman();
-                MessageBox.Show("Salesman Updated");
+                MessageBox.Show("Salesman Updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void salesmanDeleteBtn_Click(object sender, EventArgs e)
         {
             bool res = SalesmanController.deleteSalesman(salesmanId);
-            if (res){ reloadSalesman(); MessageBox.Show("Salesman Deleted"); }
+            if (res){ reloadSalesman(); MessageBox.Show("Salesman Deleted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
         
         ///// TICKETS PANEL  /////
@@ -444,7 +444,7 @@ namespace Project
             };
 
             bool res = TicketsController.boolTicket(ticket);
-            if (res){ reloadTickets(); reloadCustomer(); MessageBox.Show("Ticket booked"); }
+            if (res){ reloadTickets(); reloadCustomer(); MessageBox.Show("Ticket booked", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -475,7 +475,7 @@ namespace Project
                 DateTime date = DateTime.Parse(row.Cells["Date"].Value.ToString());
                 if (date < journeyDate.MinDate)
                 {
-                    MessageBox.Show("You cannot modify or delete previous Tickets");
+                    MessageBox.Show("You cannot modify or delete previous Tickets", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reloadTickets();
                     return;
                 }
@@ -532,13 +532,12 @@ namespace Project
         private void label28_Click_1(object sender, EventArgs e)
         {
             reloadTickets();
-            trashTicket.Visible = false;
         }
 
         private void ticketCancelBtn_Click(object sender, EventArgs e)
         {
             bool res = TicketsController.cancelTicket(ticketId);
-            if (res){ reloadTickets(); MessageBox.Show("Ticket Cancelled"); }
+            if (res){ reloadTickets(); MessageBox.Show("Ticket Cancelled", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void ticketUpdateBtn_Click(object sender, EventArgs e)
@@ -560,7 +559,7 @@ namespace Project
             };
 
             bool res = TicketsController.updateTicket(ticket);
-            if (res) { reloadTickets(); MessageBox.Show("Ticket updated"); }
+            if (res) { reloadTickets(); MessageBox.Show("Ticket updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
         private void ticketSearchBtn_Click(object sender, EventArgs e)
         {
@@ -592,7 +591,7 @@ namespace Project
             var customer = CustomerController.searchCustomer(phone);
             if(customer == null)
             {
-                MessageBox.Show("Customer not found");
+                MessageBox.Show("Customer not found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             customerId = customer.Id;
@@ -609,7 +608,7 @@ namespace Project
         private void customerRemoveBtn_Click(object sender, EventArgs e)
         {
             bool res = CustomerController.deleteCustomer(customerId);
-            if (res){ reloadCustomer(); MessageBox.Show("Customer Deleted"); }
+            if (res){ reloadCustomer(); MessageBox.Show("Customer Deleted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void customerUpdateBtn_Click(object sender, EventArgs e)
@@ -622,7 +621,7 @@ namespace Project
             };
             
             bool res = CustomerController.updateCustomer(newCustomer);
-            if (res){ reloadCustomer(); MessageBox.Show("Customer Updated"); }
+            if (res){ reloadCustomer(); MessageBox.Show("Customer Updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void managerTrash_Click(object sender, EventArgs e)
@@ -674,7 +673,7 @@ namespace Project
             };
 
             bool res = BusesController.addBus(bus);
-            if (res) {  reloadBuses(); reloadTickets(); MessageBox.Show("Bus Added"); }
+            if (res) {  reloadBuses(); reloadTickets(); MessageBox.Show("Bus Added", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void busSearchBtn_Click(object sender, EventArgs e)
@@ -683,7 +682,7 @@ namespace Project
             var bus = BusesController.searchBus(coach);
             if (bus == null)
             {
-                MessageBox.Show("Bus not found");
+                MessageBox.Show("Bus not found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             busCoachBox.Text = bus.Coach;
@@ -713,13 +712,13 @@ namespace Project
             };
 
             bool res = BusesController.updateBus(bus);
-            if (res){ reloadBuses(); reloadTickets(); MessageBox.Show("Bus updated"); }
+            if (res){ reloadBuses(); reloadTickets(); MessageBox.Show("Bus updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void busRemoveBtn_Click(object sender, EventArgs e)
         {
             bool res = BusesController.deleteBus(busId);
-            if (res){ reloadBuses(); reloadTickets(); MessageBox.Show("Bus deleted"); }
+            if (res){ reloadBuses(); reloadTickets(); MessageBox.Show("Bus deleted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         ///// ADMIN PANEL /////
@@ -748,7 +747,7 @@ namespace Project
                 password = adminPasswordBox.Text.Trim()
             };
             bool res = AdminController.addAdmin(admin);
-            if (res) { reloadAdmin(); MessageBox.Show("Admin added"); }
+            if (res) { reloadAdmin(); MessageBox.Show("Admin added", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void adminSearchBtn_Click(object sender, EventArgs e)
@@ -767,7 +766,7 @@ namespace Project
             }
             else
             {
-                MessageBox.Show("Admin not found");
+                MessageBox.Show("Admin not found", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -779,7 +778,7 @@ namespace Project
         private void adminDeleteBtn_Click(object sender, EventArgs e)
         {
             bool res = AdminController.deleteAdmin(adminId);
-            if (res) { reloadAdmin(); MessageBox.Show("Admin deleted"); }
+            if (res) { reloadAdmin(); MessageBox.Show("Admin deleted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void adminUpdateBtn_Click(object sender, EventArgs e)
@@ -792,7 +791,7 @@ namespace Project
                 password = adminPasswordBox.Text.Trim()
             };
             bool res = AdminController.updateAdmin(admin);
-            if(res) { reloadAdmin(); MessageBox.Show("Admin updated"); }
+            if(res) { reloadAdmin(); MessageBox.Show("Admin updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
 
@@ -804,9 +803,9 @@ namespace Project
         {
             if (seatSelectBtn.Text.Equals("Select Seat")) reloadSeat();
 
-            if (coachBox.Text.Equals("Coach")){ MessageBox.Show("Select a coach first"); return; }
-            if (ticketSource.Text.Equals("From")) { MessageBox.Show("Select a source first"); return; }
-            if (ticketDest.Text.Equals("To")) { MessageBox.Show("Select a destination first"); return; }
+            if (coachBox.Text.Equals("Coach")){ MessageBox.Show("Select a coach first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+            if (ticketSource.Text.Equals("From")) { MessageBox.Show("Select a source first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+            if (ticketDest.Text.Equals("To")) { MessageBox.Show("Select a destination first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
 
             var coachInfo = new
             {

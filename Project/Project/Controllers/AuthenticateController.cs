@@ -9,7 +9,6 @@ namespace Project.Controllers
 {
     public class AuthenticateController
     {
-
         public static AuthModel AuthController(string name, string password, string role)
         {
             return new Database().Authentication.Authenticate(name, password, role);

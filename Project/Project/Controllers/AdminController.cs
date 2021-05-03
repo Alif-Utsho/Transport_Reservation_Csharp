@@ -20,18 +20,18 @@ namespace Project.Controllers
         {
             if(admin.name.Length==0 || admin.username.Length==0 || admin.password.Length == 0)
             {
-                MessageBox.Show("Fill all the required fields");
+                MessageBox.Show("Fill all the required fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             var has = searchAdmin(admin.username);
             if (has != null)
             {
-                MessageBox.Show("Username already exist");
+                MessageBox.Show("Username already exist", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             bool res = db.Admins.addAdmin(admin);
             if (res) return true;
-            else MessageBox.Show("Could not added");
+            else MessageBox.Show("Could not added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
 
@@ -44,7 +44,7 @@ namespace Project.Controllers
         {
             if (id == 0)
             {
-                MessageBox.Show("Search a admin first");
+                MessageBox.Show("Search a admin first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return db.Admins.deleteAdmin(id);
@@ -54,25 +54,25 @@ namespace Project.Controllers
         {
             if (admin.id == 0)
             {
-                MessageBox.Show("Search a admin first");
+                MessageBox.Show("Search a admin first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (admin.name.Length == 0 || admin.username.Length == 0 || admin.password.Length == 0)
             {
-                MessageBox.Show("Fill all the required fields");
+                MessageBox.Show("Fill all the required fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             var has = searchAdmin(admin.username);
             if (has != null && has.Id != admin.id)
             {
-                MessageBox.Show("Username already exist");
+                MessageBox.Show("Username already exist", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             bool res = db.Admins.updateAdmin(admin);
             if (res) return true;
             else
             {
-                MessageBox.Show("Could not updated");
+                MessageBox.Show("Could not updated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

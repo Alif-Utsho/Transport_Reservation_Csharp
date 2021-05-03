@@ -28,7 +28,7 @@ namespace Project.Controllers
         {
             if (id== 0)
             {
-                MessageBox.Show("Search a customer first");
+                MessageBox.Show("Search a customer first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return db.Customers.deleteCustomer(id);
@@ -37,18 +37,18 @@ namespace Project.Controllers
         {
             if (customer.id == 0)
             {
-                MessageBox.Show("Search a customer first");
+                MessageBox.Show("Search a customer first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (customer.name.Length == 0 || customer.phone.Length == 0)
             {
-                MessageBox.Show("Fill all the required Fields");
+                MessageBox.Show("Fill all the required Fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             var has = searchCustomer(customer.phone);
             if (has != null && customer.id != has.Id)
             {
-                MessageBox.Show(string.Format("Error!! Phone number matched with {0}", has.Name));
+                MessageBox.Show(string.Format("Error!! Phone number matched with {0}", has.Name), "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return db.Customers.updateCustomer(customer);

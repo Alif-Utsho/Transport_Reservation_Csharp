@@ -19,7 +19,7 @@ namespace Project.Controllers
         {
             if (bus.coach.Length == 0 || bus.type.Length == 0 || bus.time.Equals("Time"))
             {
-                MessageBox.Show("Fill all the required fields");
+                MessageBox.Show("Fill all the required fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return db.Buses.addBus(bus);
@@ -32,12 +32,12 @@ namespace Project.Controllers
         {
             if (bus.id == 0)
             {
-                MessageBox.Show("Search a bus first");
+                MessageBox.Show("Search a bus first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (bus.coach.Length == 0 || bus.type.Length == 0 || bus.time.Equals("Time"))
             {
-                MessageBox.Show("Fill all the required fields");
+                MessageBox.Show("Fill all the required fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return db.Buses.updateBus(bus);
@@ -46,7 +46,7 @@ namespace Project.Controllers
         {
             if (id == 0)
             {
-                MessageBox.Show("Search a bus first");
+                MessageBox.Show("Search a bus first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return db.Buses.deleteBus(id);

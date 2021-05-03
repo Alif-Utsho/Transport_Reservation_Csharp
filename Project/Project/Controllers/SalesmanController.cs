@@ -20,13 +20,13 @@ namespace Project.Controllers
         {
             if (salesman.name.Length == 0 || salesman.username.Length == 0 || salesman.password.Length == 0)
             {
-                MessageBox.Show("Fill all the required field");
+                MessageBox.Show("Fill all the required field", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             var has = searchSalesman(salesman.username);
             if (has != null)
             {
-                MessageBox.Show("Username already used");
+                MessageBox.Show("Username already used", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return db.Sellers.addSalesMan(salesman);
@@ -39,23 +39,23 @@ namespace Project.Controllers
         {
             if (salesman.id == 0)
             {
-                MessageBox.Show("Search a Salesman First");
+                MessageBox.Show("Search a Salesman First", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (salesman.name.Length == 0 || salesman.username.Length == 0 || salesman.password.Length == 0)
             {
-                MessageBox.Show("Fill all the required fields");
+                MessageBox.Show("Fill all the required fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             var has = searchSalesman(salesman.username);
-            if (has != null) { MessageBox.Show("Username already exists"); return false; }
+            if (has != null) { MessageBox.Show("Username already exists", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning); return false; }
             return db.Sellers.updateSalesman(salesman);
         }
         public static bool deleteSalesman(int id)
         {
             if (id == 0)
             {
-                MessageBox.Show("Search a Salesman First");
+                MessageBox.Show("Search a Salesman First", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

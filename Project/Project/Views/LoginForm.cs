@@ -48,7 +48,7 @@ namespace Project
 
             if(username.Length==0 || password.Length == 0)
             {
-                MessageBox.Show("Fill all the required field");
+                MessageBox.Show("Fill all the required field", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             
@@ -58,7 +58,7 @@ namespace Project
                 
                 if(result == null)
                 {
-                    MessageBox.Show("Invalid Credentials");
+                    MessageBox.Show("Invalid Credentials", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 Author.Name = result.Name;
@@ -80,7 +80,7 @@ namespace Project
                     new ManagerDashboard().Show();
                 }
             }
-            else MessageBox.Show("Choose a Valid Role");
+            else MessageBox.Show("Choose a Valid Role", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             
         }
     }

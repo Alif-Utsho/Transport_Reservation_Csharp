@@ -16,7 +16,7 @@ namespace Project.Controllers
             if (ticket.name.Length == 0 || ticket.phone.Length == 0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
                 ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time") || ticket.author.Length==0 || ticket.seat.Length==0)
             { 
-                MessageBox.Show("Fill all the required fields");
+                MessageBox.Show("Fill all the required fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -51,7 +51,7 @@ namespace Project.Controllers
         {
             if (ticketId == 0)
             {
-                MessageBox.Show("Select a ticket first");
+                MessageBox.Show("Select a ticket first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             var ticket = searchTicketById(ticketId);
@@ -116,13 +116,13 @@ namespace Project.Controllers
         {
             if (ticket.id == 0)
             {
-                MessageBox.Show("Select a ticket first");
+                MessageBox.Show("Select a ticket first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (ticket.name.Length == 0 || ticket.phone.Length == 0 || ticket.source.Equals("Source") || ticket.destination.Equals("To") ||
                 ticket.coach.Equals("Coach") || ticket.type.Length == 0 || ticket.time.Equals("Time") || ticket.author.Length == 0 || ticket.seat.Length == 0)
             {
-                MessageBox.Show("Fill all the required fields");
+                MessageBox.Show("Fill all the required fields", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
